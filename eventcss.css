@@ -14,7 +14,7 @@ h1 {
 }
 
 img {
-  width: 250px;
+  width: 300px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s;
@@ -46,7 +46,7 @@ img:hover {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  width: 50%;
+  width: 40%;
   max-width: 600px;
   text-align: center;
   position: relative;
@@ -112,5 +112,6 @@ button:hover {
   background-color: black;
   color: white; 
 }
+
 
 
