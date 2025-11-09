@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Artwork</title>
+</head>
+<body>
+
+    <h1>Submit Your Artwork</h1>
+
+    <form id="artworkForm">
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="artworkTitle">Artwork Title:</label>
+        <input type="text" id="artworkTitle" name="artworkTitle" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+        <label for="artworkFile">Upload Artwork:</label>
+        <input type="file" id="artworkFile" name="artworkFile" accept="image/*" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <img id="preview" src="" alt="Artwork Preview" width="300">
+
+  <script>
+    // Display the image immediately after selecting a file
+    document.getElementById('artworkFile').onchange = function() {
+      const file = this.files[0]; // Get the selected file
+      if (file) {
+        // Show the image in the <img> tag using a temporary URL
+        document.getElementById('preview').src = URL.createObjectURL(file);
+      } else {
+        // If no file is selected, clear the preview
+        document.getElementById('preview').src = '';
+      }
+    };
+
+    // Prevent the form from reloading the page when submitting
+    document.getElementById('artworkForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert('Form submitted');
+    };
+  </script>
+
+</body>
+</html>
