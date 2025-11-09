@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Art Exhibitions</title>
+  
+</head>
+<body>
+
+  <h1>Art Exhibitions</h1>
+  <p>Step inside a universe of creativity! </p>
+  <p>Experience breathtaking exhibitions, discover inspiring creations from" Silent Stories" most promising artists, and immerse yourself in unforgettable artistic journeys online and in galleries worldwide.</p>
+
+  <div id="gallery">
+
+    <div>
+      <h2>Drop-in Drawing</h2>
+      <img src="Drop-in Drawing.png" alt="Drop-in Drawing" onclick="showDetails('Drawin')">
+      <p><h3>Get creative with Ruth Asawa’s art in a fun, drop-in drawing session for all ages!</h3></p>
+      <p><h4>December 10, 2025 — City Art Center</h4></p>
+      <span class="like-btn" onclick="toggleLike(this)">♡</span>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>Member Early Hour</h2>
+      <img src="ev2.png" alt="Member Early Hour" onclick="showDetails('Hour')">
+      <p><h3>Start your morning with art register for Member Early Hour!</h3></p>
+      <p><h4>Sat, Nov 8, 9:30–10:30 a.m.</h4></p>
+      <span class="like-btn" onclick="toggleLike(this)">♡</span>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>Into The Wild</h2>
+      <img src="ev3.png" alt="Into The Wild" onclick="showDetails('Wild')">
+      <p><h3>Discover 45 stunning artworks celebrating wildlife — experience art that inspires and advocates for our planet!</h3></p>
+      <p><h4>Thu, Nov 13, 2:30–4:00 p.m. — MoMA, Floor 1, Film, and Administrative Entrance</h4></p>
+      <span class="like-btn" onclick="toggleLike(this)">♡</span>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>Internet Art</h2>
+      <img src="ev4.png" alt="Internet Art" onclick="showDetails('Art')">
+      <p><h3>Explore how the online world inspires a new visual language, 12 emerging artists challenge your perception of art and community!</h3></p>
+      <p><h4>Sat, Nov 15, 1:00–3:00 p.m. — Gallery 5</h4></p>
+      <span class="like-btn" onclick="toggleLike(this)">♡</span>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>Threadwork</h2>
+      <img src="ev5.png" alt="Threadwork" onclick="showDetails('Threadwork')">
+      <p><h3>Discover how needlework, quilting, and weaving become cutting-edge art through the vision of 17 women fabric artists!</h3></p>
+      <p><h4>Sun, Nov 16, 2:00–4:00 p.m. — Gallery 2</h4></p>
+      <span class="like-btn" onclick="toggleLike(this)">♡</span>
+    </div>
+
+  </div>
+
+  <div id="details">
+    <h2 id="exTitle"></h2>
+    <img id="exImage" src="" alt=""><br><br>
+    <p id="exInfo"></p>
+    
+  
+    <div>
+      <button onclick="alert('You have registered successfully!')">
+        Sign In Now!
+      </button>
+    </div>
+
+    <p><a href="#" onclick="goBack()">← Back</a></p>
+  </div>
+
+  <script>
+    const exhibitions = {
+      Drawin: { title: "Drop-in Drawing", image: "Drop-in Drawing.png", info: "Join our November Drop-in Drawing sessions in the Ruth Asawa exhibition galleries! Guided by a teaching artist and MoMA staff, enjoy self-guided prompts and short demos. All materials provided — open to all ages and skill levels, no reservations required. Part of UNIQLO Friday Nights, with free admission for New York State residents. For more information, please email:event@gmail.com" },
+      Hour: { title: "Member Early Hour", image: "ev2.png", info: "On Saturday and Sunday mornings from 9:30 to 10:30 a.m., select galleries in the Museum are open to members and their guests only. Explore our fourth-floor collection galleries, open for Member Early Hour. Corporate Members and their guests are welcome, and are not required to reserve timed tickets. Standard methods of admission apply. For more information, please email corporate_membership@moma.org" },
+      Wild: { title: "Into The Wild", image: "ev3.png", info: "One of life’s greatest wonders is coexisting with the extraordinary animals that share our world. These creatures play a vital part in our ecosystem and our imagination. Our digital exhibition brings together 15 global perspectives to highlight a universal reverence for Earth’s biodiversity. Experience art as advocacy as our emerging artists share their tributes to wildlife in 45 vibrant, transportive, and uplifting artworks. For more information, please email: membership@moma.org" },
+      Art: { title: "Internet Art", image: "ev4.png", info: "Modern life lies somewhere between screens and reality, and as with changes in collective consciousness and communication, art responds accordingly. From our current state of online existence stems a new visual language. Discover this evolution with 12 up-and-coming artists whose works challenge us to consider how the online world shapes our perception of community, personal values, beauty, emotion, and art itself. For more info, email: info@moma.org" },
+      Threadwork: { title: "Threadwork", image: "ev5.png", info: "What once was considered 'women’s work', needlework, knitting, quilting, and crocheting, is now at the forefront of boundary-pushing contemporary art. Saatchi Art presents 17 women fabric artists whose mixed-media tapestries, handwoven art objects, and tactile wall hangings continue the medium's evolution through the recontextualization of traditional techniques and adaptation of surprising materials. For more info, email: info@moma.org" }
+    };
+
+    function showDetails(key) {
+      const ex = exhibitions[key];
+      document.getElementById("gallery").style.display = "none";
+      document.getElementById("details").style.display = "block";
+      document.getElementById("exTitle").textContent = ex.title;
+      document.getElementById("exImage").src = ex.image;
+      document.getElementById("exInfo").textContent = ex.info;
+    }
+
+    function goBack() {
+      document.getElementById("details").style.display = "none";
+      document.getElementById("gallery").style.display = "block";
+    }
+
+    function toggleLike(el) {
+      el.textContent = el.textContent === "♡" ? "❤️" : "♡";
+    }
+  </script>
+
+</body>
+</html>
