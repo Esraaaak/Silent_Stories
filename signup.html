@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sing in Silent storiest</title>
+   <link rel="Silent storiest home" href="Silent storiest home.html" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form> 
+      <fieldset>
+    <legend><h2>Create Your Account</h2></legend>
+    <form action="home.html">
+  <form method="post" action="Tales in Color home.html">
+
+      <label for="full-name"><b> name:</b></label>
+      <br>
+      <input type="txte" id="full-name" name="name" placeholder="enter your name" required> 
+      <br>
+
+      <label for="email-e"><b>email:</b></label>
+      <br>
+      <input type="email" id="email-e" name="email" placeholder="enter your email" required>
+      <br>
+     
+      <label for="pass"><b>Password:</b></label>
+<br>
+<input type="password" id="pass" name="password" placeholder="Enter your password"
+       pattern="^[A-Z][a-zA-Z\d/*\-?!@#\.]{7,}$"
+       title="Minimum of 8 characters.
+        Begins with an uppercase letter. 
+        Includes lowercase letters. 
+        Contains at least one symbol from the following: ?/*-?!@#."
+       required>
+<br>
+
+<!--<label for="confirm"><b>Confirm Password:</b></label>
+<br>
+<input type="password" id="confirm" name="confirm_password" placeholder="Enter your password again"
+       oninput="this.setCustomValidity(this.value !== document.getElementById('pass').value ? 'Passwords do not match.' : '')"
+       required>
+<br>-->
+
+
+      <button type="submit" class="btn">Sign Up</button>
+
+    </form>
+   <p> Already have an account?<a href="login.html"> Login</a></p><br>
+    <a href="Silent storiest home.html" class="back-home"> Back to Home</a>
+</fieldset>
+  </form>
+  </div>
+</body>
+</html>
+
