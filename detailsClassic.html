@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Details</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        img { width: 300px; border-radius: 10px; }
+        .back { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="details-container"></div>
+
+    <a href="classicPage.html" class="back">← Back to Gallery</a>
+
+    <script>
+        // نقرأ رقم الصورة من الرابط
+        const params = new URLSearchParams(window.location.search);
+        const artId = params.get('art');
+
+        // كل التفاصيل موجودة هنا
+        const artworks = {
+            almond: {
+                title: "Almond Blossom",
+                artist: "Vincent van Gogh",
+                year: "1890",
+                description: "Painted to celebrate the birth of his nephew. It captures the fragile beauty of flowering almond branches against a vivid blue sky.",
+                image: "almond blossom.jpg"
+            },
+            art2: { title: "The Swing", artist: "Jean-Honoré Fragonard", year: "1767", description: "A Rococo masterpiece known for its lightness and playful elegance.", image: "art2.jpg" },
+            art3: { title: "Girl with a Pearl Earring", artist: "Johannes Vermeer", year: "1665", description: "Famous portrait representing serene beauty and mystery.", image: "art3.jpg" },
+            art4: { title: "The Birth of Venus", artist: "Sandro Botticelli", year: "1486", description: "Depicts the goddess Venus emerging from the sea on a shell.", image: "art4.jpg" },
+            art5: { title: "The Hay Wain", artist: "John Constable", year: "1821", description: "A pastoral landscape that captures the English countryside.", image: "art5.jpg" },
+            art6: { title: "The Night Watch", artist: "Rembrandt van Rijn", year: "1642", description: "A grand group portrait that revolutionized Baroque painting.", image: "art6.jpg" },
+            art7: { title: "The Last Supper", artist: "Leonardo da Vinci", year: "1498", description: "A depiction of Christ’s final meal with his apostles.", image: "art7.jpg" },
+            art8: { title: "Oath of the Horatii", artist: "Jacques-Louis David", year: "1784", description: "An icon of Neoclassical art emphasizing duty and sacrifice.", image: "art8.jpg" },
+            art9: { title: "School of Athens", artist: "Raphael", year: "1511", description: "Celebrates philosophy through classical figures in perspective.", image: "art9.jpg" },
+            art10: { title: "The Kiss", artist: "Gustav Klimt", year: "1908", description: "A symbolist masterpiece representing love and intimacy.", image: "art10.jpg" }
+        };
+
+        const art = artworks[artId];
+
+        // عرض التفاصيل
+        if (art) {
+            document.getElementById("details-container").innerHTML = `
+                <h1>${art.title}</h1>
+                <h3>${art.artist} (${art.year})</h3>
+                <img src="${art.image}" alt="${art.title}">
+                <p>${art.description}</p>
+            `;
+        } else {
+            document.getElementById("details-container").innerHTML = `<p>Artwork not found.</p>`;
+        }
+    </script>
+</body>
+</html>
