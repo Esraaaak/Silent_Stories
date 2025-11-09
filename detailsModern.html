@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Artwork Details</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        img { width: 300px; border-radius: 10px; }
+        .back { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="details-container"></div>
+
+    <a href="modernPage.html" class="back">← Back to Modern Gallery</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const artId = params.get('art');
+
+        const artworks = {
+            scream: {
+                title: "The Scream",
+                artist: "Edvard Munch",
+                year: "1893",
+                description: "Munch’s expression of existential angst, symbolizing the anxiety of the modern human experience.",
+                image: "The scream.jpg"
+            },
+            art2: { title: "Marilyn Diptych", artist: "Andy Warhol", year: "1962", description: "An iconic Pop Art piece that captures celebrity culture and consumerism.", image: "art2.jpg" },
+            art3: { title: "No.5, 1948", artist: "Jackson Pollock", year: "1948", description: "A masterpiece of Abstract Expressionism showcasing Pollock’s signature drip style.", image: "art3.jpg" },
+            art4: { title: "Untitled", artist: "Donald Judd", year: "1969", description: "A leading example of Minimalism, emphasizing form and material over expression.", image: "art4.jpg" },
+            art5: { title: "One and Three Chairs", artist: "Joseph Kosuth", year: "1965", description: "A conceptual piece exploring representation, meaning, and perception.", image: "art5.jpg" },
+            art6: { title: "Refik Anadol - Machine Hallucinations", artist: "Refik Anadol", year: "2020", description: "A digital art project using AI to visualize collective human memories.", image: "art6.jpg" },
+            art7: { title: "Untitled", artist: "Jean-Michel Basquiat", year: "1981", description: "A graffiti-inspired artwork combining symbols, text, and raw energy.", image: "art7.jpg" },
+            art8: { title: "Audrey Flack – Marilyn (Vanitas)", artist: "Audrey Flack", year: "1977", description: "Photorealistic still life reflecting fame and mortality.", image: "art8.jpg" },
+            art9: { title: "Balloon Dog", artist: "Jeff Koons", year: "1994–2000", description: "A Postmodern sculpture merging playfulness and consumerism.", image: "art9.jpg" },
+            art10: { title: "Guernica", artist: "Pablo Picasso", year: "1937", description: "A monumental anti-war painting capturing the suffering caused by conflict.", image: "art10.jpg" }
+        };
+
+        const art = artworks[artId];
+
+        if (art) {
+            document.getElementById("details-container").innerHTML = `
+                <h1>${art.title}</h1>
+                <h3>${art.artist} (${art.year})</h3>
+                <img src="${art.image}" alt="${art.title}">
+                <p>${art.description}</p>
+            `;
+        } else {
+            document.getElementById("details-container").innerHTML = `<p>Artwork not found.</p>`;
+        }
+    </script>
+</body>
+</html>
