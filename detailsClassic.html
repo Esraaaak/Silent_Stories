@@ -6,7 +6,7 @@
     <title>Artwork Details</title>
     <style>
         body { font-family: Arial; margin: 40px; }
-        img { width: 300px; border-radius: 10px; }
+        img { width: 500px; border-radius: 10px; }
         .back { display: inline-block; margin-top: 20px; }
     </style>
 </head>
@@ -17,18 +17,17 @@
     <a href="classicPage.html" class="back">← Back to Gallery</a>
 
     <script>
-        // نقرأ رقم الصورة من الرابط
+       
         const params = new URLSearchParams(window.location.search);
         const artId = params.get('art');
 
-        // كل التفاصيل موجودة هنا
         const artworks = {
             almond: {
                 title: "Almond Blossom",
                 artist: "Vincent van Gogh",
                 year: "1890",
                 description: "Painted to celebrate the birth of his nephew. It captures the fragile beauty of flowering almond branches against a vivid blue sky.",
-                image: "almond blossom.jpg"
+                image: "images/almond blossom.jpg"
             },
             art2: { title: "The Swing", artist: "Jean-Honoré Fragonard", year: "1767", description: "A Rococo masterpiece known for its lightness and playful elegance.", image: "art2.jpg" },
             art3: { title: "Girl with a Pearl Earring", artist: "Johannes Vermeer", year: "1665", description: "Famous portrait representing serene beauty and mystery.", image: "art3.jpg" },
@@ -57,3 +56,4 @@
     </script>
 </body>
 </html>
+
