@@ -6,6 +6,12 @@
   <link rel="stylesheet" href="eventcss.css">
 </head>
 <body>
+<header>
+        <div>
+            <a href="Silent storiest home.html">The Gallery Collection</a>
+            <button id="menu-toggle" aria-label="Toggle navigation">Menu</button>
+        </div>
+    </header>
 
   <h1>Art Exhibitions</h1>
   <p style="text-align:center;">Step inside a universe of creativity! Discover inspiring creations and artistic journeys.</p>
@@ -14,7 +20,7 @@
 
     <div>
       <h2>Drop-in Drawing</h2>
-      <img src="Drop-in Drawing.png" alt="Drop-in Drawing" onclick="showPopup('Drawin')">
+      <img src="images/Drop-in Drawing.png" alt="Drop-in Drawing" onclick="showPopup('Drawin')">
       <p><strong>Get creative with Ruth Asawa’s art in a fun, drop-in drawing session for all ages!</strong></p>
       <p>December 10, 2025 — City Art Center</p>
       <span class="like-btn" onclick="toggleLike(this)">♡</span>
@@ -24,7 +30,7 @@
 
     <div>
       <h2>Member Early Hour</h2>
-      <img src="ev2.png" alt="Member Early Hour" onclick="showPopup('Hour')">
+      <img src="images/ev2.png" alt="Member Early Hour" onclick="showPopup('Hour')">
       <p><strong>Start your morning with art — register for Member Early Hour!</strong></p>
       <p>Sat, Nov 8, 9:30–10:30 a.m.</p>
       <span class="like-btn" onclick="toggleLike(this)">♡</span>
@@ -34,7 +40,7 @@
 
     <div>
       <h2>Into The Wild</h2>
-      <img src="ev3.png" alt="Into The Wild" onclick="showPopup('Wild')">
+      <img src="images/ev3.png" alt="Into The Wild" onclick="showPopup('Wild')">
       <p><strong>Discover 45 stunning artworks celebrating wildlife!</strong></p>
       <p>Thu, Nov 13, 2:30–4:00 p.m. — MoMA, Floor 1</p>
       <span class="like-btn" onclick="toggleLike(this)">♡</span>
@@ -44,7 +50,7 @@
 
     <div>
       <h2>Internet Art</h2>
-      <img src="ev4.png" alt="Internet Art" onclick="showPopup('Art')">
+      <img src="images/ev4.png" alt="Internet Art" onclick="showPopup('Art')">
       <p><strong>Explore how the online world inspires a new visual language!</strong></p>
       <p>Sat, Nov 15, 1:00–3:00 p.m. — Gallery 5</p>
       <span class="like-btn" onclick="toggleLike(this)">♡</span>
@@ -54,7 +60,7 @@
 
     <div>
       <h2>Threadwork</h2>
-      <img src="ev5.png" alt="Threadwork" onclick="showPopup('Threadwork')">
+      <img src="images/ev5.png" alt="Threadwork" onclick="showPopup('Threadwork')">
       <p><strong>Discover how needlework becomes cutting-edge art!</strong></p>
       <p>Sun, Nov 16, 2:00–4:00 p.m. — Gallery 2</p>
       <span class="like-btn" onclick="toggleLike(this)">♡</span>
@@ -76,11 +82,11 @@
 
   <script>
     const exhibitions = {
-      Drawin: { title: "Drop-in Drawing", image: "Drop-in Drawing.png", info: "Join our Drop-in Drawing sessions in the Ruth Asawa exhibition galleries! Guided by a teaching artist and MoMA staff. Open to all ages — no reservations required. Email: event@gmail.com" },
-      Hour: { title: "Member Early Hour", image: "ev2.png", info: "Saturday & Sunday mornings from 9:30 to 10:30 a.m. — exclusive early access for members and guests. No reservation required. Email: corporate_membership@moma.org" },
-      Wild: { title: "Into The Wild", image: "ev3.png", info: "A digital exhibition highlighting biodiversity through 45 stunning wildlife artworks. Experience art as advocacy! Email: membership@moma.org" },
-      Art: { title: "Internet Art", image: "ev4.png", info: "Twelve emerging artists explore how the online world reshapes art and community. Email: info@moma.org" },
-      Threadwork: { title: "Threadwork", image: "ev5.png", info: "17 women fabric artists redefining textile art through innovative weaving and mixed media. Email: info@moma.org" }
+      Drawin: { title: "Drop-in Drawing", image: "images/Drop-in Drawing.png", info: "Join our Drop-in Drawing sessions in the Ruth Asawa exhibition galleries! Guided by a teaching artist and MoMA staff. Open to all ages — no reservations required. Email: event@gmail.com" },
+      Hour: { title: "Member Early Hour", image: "images/ev2.png", info: "Saturday & Sunday mornings from 9:30 to 10:30 a.m. — exclusive early access for members and guests. No reservation required. Email: corporate_membership@moma.org" },
+      Wild: { title: "Into The Wild", image: "images/ev3.png", info: "A digital exhibition highlighting biodiversity through 45 stunning wildlife artworks. Experience art as advocacy! Email: membership@moma.org" },
+      Art: { title: "Internet Art", image: "images/ev4.png", info: "Twelve emerging artists explore how the online world reshapes art and community. Email: info@moma.org" },
+      Threadwork: { title: "Threadwork", image: "images/ev5.png", info: "17 women fabric artists redefining textile art through innovative weaving and mixed media. Email: info@moma.org" }
     };
 
     function showPopup(key) {
@@ -122,7 +128,6 @@
       <a href="Contact.html">Contact us</a>
     </p>
   </footer>
-
 
 </body>
 </html>
