@@ -38,12 +38,9 @@
                     <div>
                         <div>
                              <img src="images/almond blossom.jpg" style="width:200px;" alt="Vincent van Gogh's Almond Blossom">
-                        </div>
-                        <div>
-                            <p>Vincent van Gogh's iconic 1890 work, painted to celebrate the birth of his nephew. It captures the fragile beauty of flowering almond branches against a vivid blue sky.</p>
-                            <div>
+                       <div>
                                 <div>
-                                    <button type="button">Details</button>
+                                    <button type="button" onclick="openDetails('almond')">Details</button>
                                     <button type="button"><a href="van_gogh_artist_page.html">Artist</a></button>
                                 </div>
                                 <span>Post-Impressionism</span>
@@ -51,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <div>
                     <div>
@@ -106,6 +104,11 @@
     </p>
         </div>
     </footer>
-
+<script>
+        
+        function openDetails(id) {
+            window.location.href = `detailsClassic.html?art=${id}`;
+        }
+    </script>
 </body>
 </html>

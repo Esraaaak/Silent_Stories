@@ -43,7 +43,7 @@
                             <p>Edvard Munch’s iconic 1893 Expressionist work, reflecting intense psychological distress and anxiety. The swirling lines and fiery sky capture the isolation of modern human experience.</p>
                             <div>
                                 <div>
-                                    <button type="button">Details</button>
+                                    <button type="button" onclick="openDetails('scream')">Details</button>
                                     <button type="button">Artist</button>
                                 </div>
                                 <span>Expressionism</span>
@@ -78,6 +78,11 @@
     </p>
 
     </footer>
-
+<script>
+    
+        function openDetails(id) {
+            window.location.href = `detailsModern.html?art=${id}`;
+        }
+    </script>
 </body>
 </html>
