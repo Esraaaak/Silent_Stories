@@ -1,52 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sing in Silent storiest</title>
-   <link rel="Silent storiest home" href="Silent storiest home.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Silent Storiest</title>
+  <link rel="stylesheet" href="lscss.css">
 </head>
-
 <body>
-  <div class="form-container">
-    <form> 
-      <fieldset>
-    <legend><h2>Create Your Account</h2></legend>
-    <form action="home.html">
-  <form method="post" action="Tales in Color home.html">
 
-      <label for="full-name"><b> name:</b></label>
-      <br>
-      <input type="txte" id="full-name" name="name" placeholder="enter your name" required> 
-      <br>
+<header>
+  <h1>Sign Up Silent Storiest</h1>
+</header>
 
-      <label for="email-e"><b>email:</b></label>
-      <br>
-      <input type="email" id="email-e" name="email" placeholder="enter your email" required>
-      <br>
-     
-      <label for="pass"><b>Password:</b></label>
-<br>
-<input type="password" id="pass" name="password" placeholder="Enter your password"
-       pattern="^[A-Z][a-zA-Z\d/*\-?!@#\.]{7,}$"
-       title="Minimum of 8 characters.
-        Begins with an uppercase letter. 
-        Includes lowercase letters. 
-        Contains at least one symbol from the following: ?/*-?!@#."
-       required>
-<br>
+<div class="form-container">
+  <form id="signupForm" action="singup.php" method="POST"> 
+    <fieldset>
+      <legend><h2>Create Your Account</h2></legend>
+
+      <label for="signupName">Name:</label>
+      <input type="text" id="signupName" name="name" placeholder="Enter your name" required>
+
+      <label for="signupEmail">Email:</label>
+      <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+
+      <label for="signupPassword">Password:</label>
+      <input type="password" id="signupPassword" name="password" placeholder="Enter your password"
+             pattern="^[A-Z][a-zA-Z\d/*\-?!@#\.]{7,}$"
+             title="Minimum of 8 characters. Begins with an uppercase letter. Includes lowercase letters. Contains at least one symbol from ?/*-?!@#."
+             required>
+
+      <label for="signupPhone">Mobile (SA):</label>
+      <input type="tel" id="signupPhone" name="phone" placeholder="05XXXXXXXX" pattern="^05\d{8}$" 
+             title="Start with 05 and 10 digits total (e.g., 05XXXXXXXX)" required>
 
       <button type="submit" class="btn">Sign Up</button>
 
-    </form>
-   <p> Already have an account?<a href="login.html"> Login</a></p><br>
-    <a href="Silent storiest home.html" class="back-home"> Back to Home</a>
-</fieldset>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+      <a href="Silent storiest home.html" class="back-home">Back to Home</a>
+    </fieldset>
   </form>
-  </div>
+</div>
 
-   <footer>
-    <p>© 2025 Silent storiest. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>© 2025 Silent Storiest. All rights reserved.</p>
+  <p class="in1">
+      <a href="aboutPage.html">About</a> | 
+      <a href="Contact.html">Contact us</a> | 
+      <a href="ArtistsPage.html">Artists Page</a>|
+  </p>
+</footer>
+
+<script src="JS.js"></script>
 </body>
 </html>
 
