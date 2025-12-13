@@ -1,80 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Silent Stories</title>
-  <link rel="stylesheet" href="lscss.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    
+      /* 1. HEADER OVERRIDES */
+      header {
+          background-color: rgba(255, 255, 255, 0.95);
+          border-bottom: 1px solid #ddd;
+      }
+
+      /* 2. HERO SECTION (Adapted for Contact) */
+      .hero-classic {
+          min-height: 50vh; /* Shorter than the gallery home so form is visible */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 8rem 1rem 3rem 1rem; 
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 3rem;
+      }
+
+      .hero-classic::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          /* Same background texture as Classic Page */
+          background-image: url('https://images.unsplash.com/photo-1710162734135-8dc148f53abe?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.3; 
+          z-index: -1;
+      }
+
+      .hero-classic h1 {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(3rem, 6vw, 5rem);
+          line-height: 0.9;
+          margin-bottom: 1.5rem;
+          letter-spacing: -1px;
+          color: var(--text-primary);
+      }
+
+      .hero-classic h1 span {
+          display: flex;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 300;
+          font-size: 0.18em;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 15px;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+      }
+
+      /* Decorative lines next to "Get in Touch" */
+      .hero-classic h1 span::before, 
+      .hero-classic h1 span::after {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 1px;
+          background-color: var(--accent);
+      }
+
+      .hero-classic p {
+          max-width: 600px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1rem;
+          color: var(--text-secondary);
+          font-weight: 300;
+      }
+
+      /* 3. FORM STYLING (To match the Classic Aesthetic) */
+      .contact-container {
+          max-width: 800px;
+          margin: 0 auto 80px auto;
+          padding: 0 20px;
+      }
+
+      .contact-form {
+          background-color: #fff;
+          padding: 40px;
+          border: 1px solid #e0e0e0;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      }
+
+      .form-group {
+          margin-bottom: 25px;
+          text-align: left;
+      }
+
+      /* Label styled like the "Era Tag" from classicPage */
+      label {
+          display: block;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--accent);
+          font-weight: bold;
+          margin-bottom: 8px;
+      }
+
+      /* Elegant Input Fields */
+      input[type="text"],
+      input[type="email"],
+      textarea {
+          width: 100%;
+          padding: 15px;
+          border: 1px solid #ccc;
+          background-color: #fafafa;
+          font-family: 'Cormorant Garamond', serif; /* Serif typing for classic feel */
+          font-size: 1.1rem;
+          color: var(--text-primary);
+          transition: border-color 0.3s;
+      }
+
+      input:focus, textarea:focus {
+          outline: none;
+          border-color: var(--accent);
+          background-color: #fff;
+      }
+
+      textarea {
+          min-height: 150px;
+          resize: vertical;
+      }
+
+      /* 4. BUTTONS (Stolen from classicPage .btn-outline) */
+      .btn-row {
+          display: flex;
+          gap: 20px;
+          margin-top: 30px;
+      }
+
+      .btn-outline {
+          padding: 1rem 3rem;
+          border: 1px solid var(--text-primary);
+          background: transparent;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          cursor: pointer;
+          transition: all 0.3s;
+          font-weight: 500;
+          color: var(--text-primary);
+      }
+
+      .submit-btn:hover {
+          background-color: var(--text-primary);
+          color: #fff;
+      }
+
+      .reset-btn {
+          border-color: #ccc;
+          color: #777;
+      }
+
+      .reset-btn:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+      }
+
+      /* 5. CONTACT LIST (Socials) */
+      .reach-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 1.8rem;
+          margin: 50px 0 30px 0;
+          text-align: center;
+          font-style: italic;
+      }
+
+      .contact-list {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          flex-wrap: wrap;
+      }
+
+      .contact-list li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 13px;
+          color: var(--text-secondary);
+      }
+
+      .contact-list img {
+          opacity: 0.7;
+          transition: opacity 0.3s;
+      }
+
+      .contact-list a:hover {
+          color: var(--accent);
+          text-decoration: underline;
+      }
+
+      .back-home {
+          display: block;
+          text-align: center;
+          margin-top: 50px;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--text-primary);
+      }
+
+  </style>
 </head>
 <body>
+<header>
+        <div class="logo">Silent Stories</div>
+        <nav class="nav-links">
+            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+            <a href="ArtExhibitions.html">Exhibitions</a>
+            <a href="classicPage.html">Classic</a>
+            <a href="modernPage.html">Modern</a>
+            <a href="ArtistsPage.html">Artists</a>
+            <a href="Contact.html">Contact</a>
+            
+            <span class="auth-links">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </span>
+        </nav>
+    </header>
 
-<section id="contact" class="contact-section">
-  <h2 class="contact-title">Contact Us</h2>
+<section id="contact">
+  
+  <div class="hero-classic">
+      <h1>
+          <span>Get In Touch</span>
+          Start a Conversation
+      </h1>
+      <p>
+          Whether you have questions about the collection, feedback on the curation, or ideas for collaboration, we welcome your correspondence.
+      </p>
+  </div>
 
   <main class="contact-container">
-    <p class="contact-desc">
-      If you have any questions, feedback, or collaboration ideas, feel free to contact us below:
-    </p>
-
+    
     <form id="contactForm" class="contact-form" action="contact.php" method="POST">
       <div class="form-group">
-        <label for="contactName">Name:</label>
-        <input type="text" id="contactName" name="name" required>
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="name" >
       </div>
 
       <div class="form-group">
-        <label for="contactEmail">Email:</label>
-        <input type="email" id="contactEmail" name="email" required>
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="email">
       </div>
 
       <div class="form-group">
-        <label for="contactMessage">Message:</label>
+        <label for="contactMessage">Message</label>
         <textarea id="contactMessage" name="message" maxlength="300"
-                  placeholder="Any notes or questions (max 300 chars)" required></textarea>
+                  placeholder="Share your thoughts..." required></textarea>
       </div>
 
       <div class="btn-row">
-        <input type="submit" value="Send" class="btn submit-btn">
-        <input type="reset" value="Clear" class="btn reset-btn">
+        <input type="submit" value="Send Message" class="btn-outline submit-btn">
+        <input type="reset" value="Clear" class="btn-outline reset-btn">
       </div>
     </form>
 
-    <p class="reach-title">Or reach us through:</p>
+    <p class="reach-title">Alternative Correspondence</p>
 
     <ul class="contact-list">
       <li>
-        <img src="email.png" alt="email" width="30" height="20">
-        Email: SilentStoriestr@gmail.com
+        <img src="email.png" alt="email" width="20" height="15">
+        SilentStoriestr@gmail.com
       </li>
       <li>
-        <img src="x.png" alt="X" width="30" height="30">
-        Twitter: <a href="https://x.com/TalesInColor">@SilentStoriest</a>
+        <img src="x.png" alt="X" width="20" height="20">
+        <a href="https://x.com/TalesInColor">@SilentStoriest</a>
       </li>
       <li>
-        <img src="Instagram.webp" alt="Instagram" width="30" height="30">
-        Instagram: <a href="https://www.instagram.com/tales_in_color">@SilentStoriest</a>
+        <img src="Instagram.webp" alt="Instagram" width="20" height="20">
+        <a href="https://www.instagram.com/tales_in_color">@SilentStoriest</a>
       </li>
     </ul>
 
-    <a href="Silent storiest home.html" class="back-home">Back to Home</a>
+    <a href="Silent storiest home.html" class="back-home">Return to Gallery</a>
   </main>
 </section>
-
 <footer>
-  <p>© 2025 Silent Storiest. All rights reserved.</p>
-  <p class="in1">
-      <a href="aboutPage.html">About</a> | 
-      <a href="Contact.html">Contact us</a> | 
-      <a href="ArtistsPage.html">Artists Page</a>|
-  </p>
-</footer>
+        <p>© 2025 Silent Stories. All rights reserved.</p>
+        <p class="in1">
+            <a href="aboutPage.html">About</a> |
+            <a href="Contact.html">Contact</a> |
+            <a href="ArtistsPage.html">Artists</a>
+        </p>
+    </footer>
 
 <script src="JS.js"></script>
 </body>
 </html>
-
-
-
-
-
