@@ -4,56 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artwork Details</title>
-    <style>
-        body { font-family: Arial; margin: 40px; }
-        img { width: 500px; border-radius: 10px; }
-        .back { display: inline-block; margin-top: 20px; }
-    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="details.css.css">
 </head>
+
 <body>
 
-    <div id="details-container"></div>
+<header>
+    <div class="logo">Silent Stories</div>
+    <nav class="nav-links">
+        <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+        <a href="ArtExhibitions.html">Exhibitions</a>
+        <a href="classicPage.html">Classic</a>
+        <a href="modernPage.html">Modern</a>
+        <a href="ArtistsPage.html">Artists</a>
+        <a href="Contact.html">Contact</a>
 
-    <a href="classicPage.html" class="back">← Back to Gallery</a>
+        <span class="auth-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </span>
+    </nav>
+</header>
 
-    <script>
-       
-        const params = new URLSearchParams(window.location.search);
-        const artId = params.get('art');
+<div id="details-container"></div>
 
-        const artworks = {
-            almond: {
-                title: "Almond Blossom",
-                artist: "Vincent van Gogh",
-                year: "1890",
-                description: "Painted to celebrate the birth of his nephew. It captures the fragile beauty of flowering almond branches against a vivid blue sky.",
-                image: "images/almond blossom.jpg"
-            },
-            art2: { title: "The Swing", artist: "Jean-Honoré Fragonard", year: "1767", description: "A Rococo masterpiece known for its lightness and playful elegance.", image: "art2.jpg" },
-            art3: { title: "Girl with a Pearl Earring", artist: "Johannes Vermeer", year: "1665", description: "Famous portrait representing serene beauty and mystery.", image: "art3.jpg" },
-            art4: { title: "The Birth of Venus", artist: "Sandro Botticelli", year: "1486", description: "Depicts the goddess Venus emerging from the sea on a shell.", image: "art4.jpg" },
-            art5: { title: "The Hay Wain", artist: "John Constable", year: "1821", description: "A pastoral landscape that captures the English countryside.", image: "art5.jpg" },
-            art6: { title: "The Night Watch", artist: "Rembrandt van Rijn", year: "1642", description: "A grand group portrait that revolutionized Baroque painting.", image: "art6.jpg" },
-            art7: { title: "The Last Supper", artist: "Leonardo da Vinci", year: "1498", description: "A depiction of Christ’s final meal with his apostles.", image: "art7.jpg" },
-            art8: { title: "Oath of the Horatii", artist: "Jacques-Louis David", year: "1784", description: "An icon of Neoclassical art emphasizing duty and sacrifice.", image: "art8.jpg" },
-            art9: { title: "School of Athens", artist: "Raphael", year: "1511", description: "Celebrates philosophy through classical figures in perspective.", image: "art9.jpg" },
-            art10: { title: "The Kiss", artist: "Gustav Klimt", year: "1908", description: "A symbolist masterpiece representing love and intimacy.", image: "art10.jpg" }
-        };
+<a href="classicPage.html" class="back">← Back to Gallery</a>
 
-        const art = artworks[artId];
+<footer>
+    <p>©️ 2025 Silent Stories. All rights reserved.</p>
+    <p class="in1">
+        <a href="aboutPage.html">About</a> |
+        <a href="Contact.html">Contact</a> |
+        <a href="ArtistsPage.html">Artists</a>
+    </p>
+</footer>
 
-        if (art) {
-            document.getElementById("details-container").innerHTML = `
-                <h1>${art.title}</h1>
-                <h3>${art.artist} (${art.year})</h3>
-                <img src="${art.image}" alt="${art.title}">
-                <p>${art.description}</p>
-            `;
-        } else {
-            document.getElementById("details-container").innerHTML = `<p>Artwork not found.</p>`;
-        }
-    </script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const artId = params.get('art');
+
+const artworks = {
+    art1: {
+        title: "Autumn Landscape",
+        artist: "Theodore Ralli",
+        year: "c. 1890",
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/03/Autumn_Landscape_%28Ralli%29.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        Autumn Landscape reflects Theodore Ralli’s strong academic background combined with a poetic and atmospheric vision of nature.
+        Rather than focusing on dramatic action, the painting emphasizes calmness, balance, and seasonal change.
+        The landscape appears quiet and undisturbed, inviting the viewer into a moment of peaceful observation.
+        </p>
+
+        <h4>Style and Technique</h4>
+        <p>
+        Ralli employs a carefully structured composition, using natural elements to guide the viewer’s eye into the distance.
+        Warm autumnal tones dominate the scene, creating a sense of warmth and subtle melancholy.
+        Soft and controlled brushwork enhances realism while maintaining an expressive quality.
+        Light is diffused gently across the surface, reinforcing the tranquil mood of the painting.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        Although Ralli is best known for his Orientalist paintings, this landscape highlights his artistic range.
+        The work demonstrates his sensitivity to mood and atmosphere rather than narrative detail.
+        Autumn Landscape celebrates nature as an emotional and reflective subject, aligning with late 19th-century artistic interests.
+        </p>
+        `
+    },
+
+    art3: {
+        title: "Girl with a Pearl Earring",
+        artist: "Johannes Vermeer",
+        year: "1665",
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        Girl with a Pearl Earring is one of the most admired portraits in Western art.
+        The painting captures a young girl turning toward the viewer, creating an intimate and immediate connection.
+        Her expression appears calm yet mysterious, suggesting a moment frozen in time.
+        </p>
+
+        <h4>Light and Composition</h4>
+        <p>
+        Vermeer’s masterful use of light softly illuminates the girl’s face against a dark, undefined background.
+        This contrast enhances the three-dimensional quality of the figure.
+        The pearl earring reflects light delicately, acting as a visual anchor within the composition.
+        The limited color palette contributes to the painting’s timeless elegance.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        Rather than a formal portrait, the work is often described as a “tronie,” a study of expression and character.
+        Its emotional subtlety and technical perfection have made it an enduring symbol of the Dutch Golden Age.
+        The painting continues to captivate viewers with its quiet mystery.
+        </p>
+        `
+    },
+
+    art4: {
+        title: "Still Life with Earthenware and Bottles",
+        artist: "Vincent van Gogh",
+        year: "1885",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Stilleven_met_aardewerk_en_flessen_-_s0138V1962_-_Van_Gogh_Museum.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        This still life belongs to Van Gogh’s early artistic period, before his use of bright colors.
+        The composition focuses on simple domestic objects arranged with care and structure.
+        The painting conveys seriousness and introspection rather than decorative beauty.
+        </p>
+
+        <h4>Style and Mood</h4>
+        <p>
+        Van Gogh applies thick, heavy brushstrokes to emphasize texture and form.
+        Dark browns, greens, and muted yellows dominate the palette, creating a grounded and somber mood.
+        The objects appear solid and weighty, reflecting the artist’s interest in physical reality.
+        Light is used sparingly to define shape rather than to dramatize the scene.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        This work reveals Van Gogh’s early struggle to express emotion through ordinary subjects.
+        Although stylistically different from his later works, it shows the foundation of his expressive approach.
+        The painting marks an important stage in his artistic development.
+        </p>
+        `
+    },
+
+    art5: {
+        title: "The Hay Wain",
+        artist: "John Constable",
+        year: "1821",
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        The Hay Wain presents an idealized view of rural life in early 19th-century England.
+        The scene is inspired by Constable’s childhood memories and personal experiences.
+        Human activity and nature exist in harmony within the composition.
+        </p>
+
+        <h4>Composition and Atmosphere</h4>
+        <p>
+        The slow-moving wagon, calm water, and surrounding greenery establish a peaceful rhythm.
+        Constable gives special attention to the sky, carefully observing clouds and weather conditions.
+        Natural light enhances the sense of freshness and realism throughout the landscape.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        The painting is considered a masterpiece of Romantic landscape painting.
+        It emphasizes emotional connection to nature rather than dramatic storytelling.
+        The Hay Wain remains one of Constable’s most celebrated works.
+        </p>
+        `
+    },
+
+    art6: {
+        title: "Still Life with Apples",
+        artist: "Gustave Courbet",
+        year: "1872",
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/23/Gustave_Courbet_-_Still_Life_with_Apples_-_Mesdag_Collection.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        This still life reflects Courbet’s belief in portraying reality without idealization.
+        The apples are depicted with a sense of weight, texture, and physical presence.
+        The composition is simple yet powerful.
+        </p>
+
+        <h4>Style and Technique</h4>
+        <p>
+        Courbet uses earthy tones and strong forms to reinforce realism.
+        The brushwork is direct and confident, emphasizing materiality.
+        Light is soft and natural, allowing the objects to appear honest and unembellished.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        By focusing on everyday objects, Courbet challenged traditional artistic hierarchies.
+        The painting represents realism’s emphasis on truth, material reality, and ordinary life.
+        It stands as a clear example of Courbet’s artistic philosophy.
+        </p>
+        `
+    },
+
+    art7: {
+        title: "Dedham Vale",
+        artist: "John Constable",
+        year: "1802",
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e7/John_Constable_-_Dedham_Vale_-_WGA5183.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        Dedham Vale captures the gentle beauty of the English countryside.
+        The scene feels open, calm, and naturally balanced.
+        It reflects Constable’s deep emotional attachment to the landscape.
+        </p>
+
+        <h4>Light and Space</h4>
+        <p>
+        Constable carefully studies clouds, vegetation, and natural light.
+        These elements create depth and realism within the scene.
+        The wide spatial composition invites the viewer into the landscape.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        This painting represents an important step in Constable’s early career.
+        It laid the foundation for his later achievements in Romantic landscape painting.
+        The work demonstrates his lifelong dedication to nature.
+        </p>
+        `
+    },
+
+    art8: {
+        title: "The Night Watch",
+        artist: "Rembrandt van Rijn",
+        year: "1642",
+        image: "https://images.unsplash.com/photo-1584727638096-0422450499b7?q=80&w=1200",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        The Night Watch is a large-scale group portrait filled with energy and movement.
+        Unlike traditional portraits, the figures appear active and engaged.
+        The scene feels dynamic and theatrical.
+        </p>
+
+        <h4>Light and Drama</h4>
+        <p>
+        Rembrandt masterfully uses light and shadow to guide the viewer’s attention.
+        Key figures are highlighted while others recede into darkness.
+        This dramatic contrast enhances depth, tension, and emotional impact.
+        </p>
+
+        <h4>Artistic Significance</h4>
+        <p>
+        The painting revolutionized Baroque portraiture and narrative composition.
+        It challenged conventions and redefined group portrait painting.
+        Today, it stands as one of the most influential works in Western art history.
+        </p>
+        `
+    }
+};
+
+const art = artworks[artId];
+
+document.getElementById("details-container").innerHTML = art ? `
+    <h1>${art.title}</h1>
+    <h3>${art.artist} (${art.year})</h3>
+    <img src="${art.image}" alt="${art.title}">
+    ${art.description}
+` : "<p>Artwork not found.</p>";
+</script>
+
 </body>
 </html>
-
-
