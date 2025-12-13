@@ -4,32 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Artwork Details</title>
-    <style>
-        body { font-family: Arial; margin: 40px; }
-        img { width: 500px; border-radius: 10px; }
-        .back { display: inline-block; margin-top: 20px; }
-    </style>
+     
+       <link rel="stylesheet" href="details.css.css"> 
+    
 </head>
 <body>
 
     <div id="details-container"></div>
 
     <a href="modernPage.html" class="back">← Back to Modern Gallery</a>
+<header>
+    <div class="logo">Silent Stories</div>
+    <nav class="nav-links">
+        <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+        <a href="ArtExhibitions.html">Exhibitions</a>
+        <a href="classicPage.html">Classic</a>
+        <a href="modernPage.html">Modern</a>
+        <a href="ArtistsPage.html">Artists</a>
+        <a href="Contact.html">Contact</a>
+
+        <span class="auth-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </span>
+    </nav>
+</header>
+
+<div id="details-container"></div>
+
+
+<footer>
+    <p>©️ 2025 Silent Stories. All rights reserved.</p>
+    <p class="in1">
+        <a href="aboutPage.html">About</a> |
+        <a href="Contact.html">Contact</a> |
+        <a href="ArtistsPage.html">Artists</a>
+    </p>
+</footer>
 
     <script>
         const params = new URLSearchParams(window.location.search);
         const artId = params.get('art');
 
         const artworks = {
-            scream: {
-                title: "The Scream",
-                artist: "Edvard Munch",
-                year: "1893",
-                description: "Munch’s expression of existential angst, symbolizing the anxiety of the modern human experience.",
-                image: "images/The scream.jpg"
-            },
-            art2: { title: "Marilyn Diptych", artist: "Andy Warhol", year: "1962", description: "An iconic Pop Art piece that captures celebrity culture and consumerism.", image: "art2.jpg" },
-            art3: { title: "No.5, 1948", artist: "Jackson Pollock", year: "1948", description: "A masterpiece of Abstract Expressionism showcasing Pollock’s signature drip style.", image: "art3.jpg" },
+    scream: {
+        title: "New Beginning",
+        artist: "Schagen Vita",
+        year: "2024",
+        image: "https://media.artsper.com/artwork/2285774_1_m.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        This contemporary work reflects the emotional tension and uncertainty of modern life.
+        The composition suggests an inner transformation, balancing vulnerability with hope.
+        Rather than depicting a literal scene, the painting focuses on psychological experience.
+        </p>
+        <h4>Style and Expression</h4>
+        <p>
+        Bold colors and expressive forms dominate the surface, creating visual intensity.
+        Loose brushwork enhances emotional immediacy rather than realism.
+        The contrast between light and dark areas reinforces feelings of conflict and renewal.
+        </p>
+        <h4>Artistic Significance</h4>
+        <p>
+        The artwork represents a modern continuation of expressionist traditions.
+        It emphasizes personal emotion as a central subject.
+        The painting invites viewers to reflect on change, resilience, and self-discovery.
+        </p>
+        `
+    },
+    art2: {
+        title: "Light at the North Sea ",
+        artist: "Irina Laube",
+        year: "2025",
+        image: "https://www.artsolitaire.arsmundi.de/thumbnails/fb/25/9a/1745322811/1_f376cb1f627f4c1c73a032db1dd9b33f_20250422135330_x.jpg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        Light at the North Sea captures a contemplative moment between sea and sky.
+        The painting emphasizes atmosphere over detail, focusing on mood and light.
+        It evokes calmness and quiet reflection.
+        </p>
+        <h4>Style and Technique</h4>
+        <p>
+        Soft color transitions and subtle textures define the composition.
+        The artist uses light as the main visual element rather than form.
+        The horizon creates balance and spatial depth.
+        </p>
+        <h4>Artistic Significance</h4>
+        <p>
+        This work reflects contemporary landscape painting’s shift toward emotion and perception.
+        Nature becomes a space for meditation rather than documentation.
+        The painting highlights the expressive power of light.
+        </p>
+        `
+    },
+    art3: {
+        title: "GOOD BY",
+        artist: "Monika Luniak",
+        year: "2024",
+        image: "https://www.singulart.com/images/artworks/v2/cropped/2401/main/base/2208057_4575b8e826906fbac76e9337845eb50b.jpeg",
+        description: `
+        <h4>Overview</h4>
+        <p>
+        GOOD BY is an abstract composition exploring themes of departure and transition.
+        The painting avoids literal imagery, relying instead on movement and rhythm.
+        It suggests emotional release and transformation.
+        </p>
+        <h4>Style and Movement</h4>
+        <p>
+        Dynamic brushstrokes and layered textures create a sense of motion.
+        Colors interact freely, emphasizing spontaneity.
+        The absence of fixed forms allows open interpretation.
+        </p>
+        <h4>Artistic Significance</h4>
+        <p>
+        The work aligns with contemporary abstract expressionism.
+        It prioritizes emotion and gesture over representation.
+        The painting encourages personal emotional engagement.
+        </p>
+        `
+    },
             art4: { title: "Untitled", artist: "Donald Judd", year: "1969", description: "A leading example of Minimalism, emphasizing form and material over expression.", image: "art4.jpg" },
             art5: { title: "One and Three Chairs", artist: "Joseph Kosuth", year: "1965", description: "A conceptual piece exploring representation, meaning, and perception.", image: "art5.jpg" },
             art6: { title: "Refik Anadol - Machine Hallucinations", artist: "Refik Anadol", year: "2020", description: "A digital art project using AI to visualize collective human memories.", image: "art6.jpg" },
