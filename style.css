@@ -63,6 +63,25 @@ header {
     letter-spacing: 0.5px;
 }
 
+.nav-links {
+    display: flex;          /* Forces all children (links + auth group) into a row */
+    align-items: center;    /* Vertically centers them */
+}
+
+/* 2. Align the Login/Signup group */
+.auth-links {
+    display: flex;          /* Forces Login and Signup to sit side-by-side */
+    align-items: center;    /* Vertically centers them */
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    margin-left: 20px;
+    height: 100%;           /* Ensures the border matches the height */
+}
+
+/* 3. Ensure no unwanted wrapping occurs */
+.nav-links a {
+    white-space: nowrap;    /* Prevents text from breaking into new lines */
+}
 .nav-links a {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -113,12 +132,14 @@ header {
     position: relative;
     z-index: 1;
     padding: 0 20px;
+    color: var(--text-primary);
 }
 
 .hero-content h1 {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     letter-spacing: -2px;
     margin: 0;
+   color: var(--text-primary);
 }
 /* --- APPEND TO style.css --- */
 
