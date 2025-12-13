@@ -1,77 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Silent Stories - The Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Silent Stories | The Gallery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- COPIED VARIABLES FROM MODERN/CLASSIC PAGES --- */
+        :root {
+            --bg-body: #F2F0EB;      
+            --text-primary: #3b3937; 
+            --text-secondary: #555;  
+            --accent: #b07c55;       
+        }
+
+        /* --- 1. GENERAL STYLES --- */
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-primary);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: var(--accent); }
+
+        /* --- 2. HEADER --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 20px;
+        }
+
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10rem 1rem 4rem 1rem; 
+            position: relative;
+            overflow: hidden;
+        }
+
+       .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This is the direct link for the image 'nN1HSDtKdlw' */
+    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35; 
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.2em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 span::before, .hero h1 span::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--accent);
+        }
+
+        /* --- 4. CONTENT SECTIONS --- */
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 80px;
+            font-weight: 300;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission-text strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* --- 5. TEAM GRID (4 IN A ROW) --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .team-grid {
+            display: grid;
+            /* Forces 4 equal columns in one line */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent);
+        }
+
+        .team-role {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .team-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            margin-bottom: 0;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        /* --- 6. NAV CARDS --- */
+        .nav-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--text-primary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s;
+        }
+
+        .btn-outline:hover {
+            color: #fff;
+            background-color: var(--text-primary);
+        }
+
+        /* --- 7. FOOTER --- */
+        footer {
+            text-align: center; 
+            padding: 50px 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 80px;
+        }
+        footer p { font-size: 0.9rem; color: var(--text-secondary); }
+        footer a { color: var(--text-primary); margin: 0 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
+        footer a:hover { color: var(--accent); }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; } 
+        }
+
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .team-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div>
-            <a href="classics.html">Silent Stories</a>
-            <button id="menu-toggle" aria-label="Toggle navigation">Menu</button>
-        </div>
+        <div class="logo">Silent Stories</div>
+        <nav class="nav-links">
+            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+            <a href="ArtExhibitions.html">Exhibitions</a>
+            <a href="classicPage.html">Classic</a>
+            <a href="modernPage.html">Modern</a>
+            <a href="ArtistsPage.html">Artists</a>
+            <a href="Contact.html">Contact</a>
+            
+            <span class="auth-links">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </span>
+        </nav>
     </header>
 
-    <div>
-        <div>
-            <h4>Gallery Navigation</h4>
-            <p>
-                This menu provides navigation across our limited sections.
-            </p>
-             <ul>
-                <li><a href="classicPage.html"target="_blank">Classic Collection</a></li>
-                <li><a href="modernPage.html"target="_blank">Modern Collection</a></li>
-                <li><a href="contact.html"target="_blank">Contact & Inquiries</a></li>
-            </ul>
-        </div>
-    </div>
 
     <main>
-        <div>
-            <h1>Our Mission: The Story Behind Silent Stories</h1>
+        <section class="hero">
+            <h1>
+                <span>Our Mission</span>
+                The Story Behind<br>Silent Stories
+            </h1>
+        </section>
 
-            <p>
-                **Silent Stories** is born from the belief that art, whether a Renaissance masterpiece or a modern digital sketch, holds a **universal, untold narrative**. We created this digital space to actively **blend the history of classic art with the future of contemporary expression**. Here, the profound technical mastery of the past coexists with the bold new voices of today's artists, offering a unified, inspiring environment for discovery.
-            </p>
+        <div class="content-container">
             
-            <h2>The Curatorial Team</h2>
+            <div class="mission-text">
+                <p>
+                    <strong>Silent Stories</strong> is born from the belief that art, whether a Renaissance masterpiece or a modern digital sketch, holds a <strong>universal, untold narrative</strong>. We created this digital space to actively <strong>blend the history of classic art with the future of contemporary expression</strong>. Here, the profound technical mastery of the past coexists with the bold new voices of today's artists, offering a unified, inspiring environment for discovery.
+                </p>
+            </div>
 
-            <p>
+            <h2 class="section-title">The Curatorial Team</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto;">
                 Our gallery is maintained by a dedicated group focused on bringing both established history and emerging talent into the spotlight.
             </p>
 
-            <div>
-                <div>
-                    <div>Basmah Y. Al Sulaimani</div>
-                    <div>Style & Design Lead</div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <span class="team-role">Team leader & Interface specialist</span>
+                    <h3 class="team-name">Esraa Abduraheem</h3>
                 </div>
-                <div>
-                    <div>Shaima F. Saeed</div>
-                    <div>Database Architect</div>
+
+                <div class="team-card">
+                    <span class="team-role">Style & Design </span>
+                    <h3 class="team-name">Basmah Y. Al Sulaimani</h3>
                 </div>
-                <div>
-                    <div>Esraa Abdurahim</div>
-                    <div>Interface & UX Specialist</div>
+
+                <div class="team-card">
+                    <span class="team-role">Database Architect</span>
+                    <h3 class="team-name">Shaima F. Saeed</h3>
                 </div>
-                <div>
-                    <div>Taef A. Abdullah</div>
-                    <div>Forms & Submissions Lead</div>
+
+
+                <div class="team-card">
+                    <span class="team-role">Forms & Submissions Lead</span>
+                    <h3 class="team-name">Taef A. Abdullah</h3>
                 </div>
             </div>
+
+            <div style="margin-top: 100px; text-align: center;">
+                <h4 style="margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase;">Explore the Collections and Art Exhibtion</h4>
+                <div class="nav-grid">
+                    
+                    <a href="classicPage.html" class="btn-outline">Classic Collection</a>
+                    <a href="modernPage.html" class="btn-outline">Modern Collection</a>
+                    <a href="ArtExhibitions.html" class="btn-outline">Art Exhibition</a>
+                </div>
+            </div>
+
         </div>
     </main>
- <a href="Silent storiest home.html" class="back-home">Back to Home</a>
 
-</section>
-<footer>
-    <p>© 2025 Silent storiest. All rights reserved.</p>
-     <p>
-<a href="aboutPage">About</a> | 
-      <a href="ArtistsPage.html">Artists</a> | 
-      <a href="Contact.html">Contact us</a> | 
-    </p>
-  </footer>
+    <footer>
+        <a href="Silent storiest home.html" class="back-home">Back to Home</a>
+        <br><br>
+        <p>© 2025 Silent Stories. All rights reserved.</p>
+        <p>
+            <a href="aboutPage.html">About</a> | 
+            <a href="Contact.html">Contact us</a>
+            
+        </p>
+    </footer>
+
 </body>
 </html>

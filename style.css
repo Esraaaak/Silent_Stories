@@ -1,0 +1,342 @@
+/* --- style.css --- */
+
+/* 1. THEME VARIABLES */
+:root {
+    --bg-body: #F2F0EB;
+    --text-primary: #2c2a29;   /* Dark grey/black for main text */
+    --text-secondary: #4a4a4a; /* Softer grey for paragraphs */
+    --accent: #b07c55;         /* Terracotta accent color */
+    --white-trans: rgba(255, 255, 255, 0.98);
+}
+
+/* 2. GLOBAL RESET & TYPOGRAPHY */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-body);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* 3. HEADER & NAVIGATION */
+header {
+    background-color: var(--white-trans);
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.auth-links {
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+@media (max-width: 900px) {
+    .nav-links { display: none; } 
+}
+
+/* 4. HERO BANNER */
+.hero-banner {
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(242, 240, 235, 0.85);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    letter-spacing: -2px;
+    margin: 0;
+}
+/* --- APPEND TO style.css --- */
+
+/* 9. GALLERY PAGE HERO STYLES */
+/* This handles the decorative lines in the h1 */
+.hero-gallery h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.hero-gallery h1 span {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.18em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-gallery h1 span::before, 
+.hero-gallery h1 span::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* 10. GALLERY CARD SPECIFICS */
+.card-details {
+    text-align: left;
+    padding-right: 10px;
+}
+
+.era-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.artist-name {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.card-links {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #ddd; 
+    padding-top: 10px;
+}
+
+.text-link {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.text-link:hover { color: var(--accent); }
+
+/* 5. SECTIONS & LAYOUT */
+section {
+    max-width: 1300px; 
+    margin: 0 auto 80px auto;
+    padding: 0 30px;
+}
+
+#article {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+}
+
+/* Text Styling */
+.intro-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 50px;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent);
+    margin: 0 auto 50px auto;
+}
+
+.content-block {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-block h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.content-block p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* 6. GRID LAYOUT (The 4 Items) */
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.art-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.art-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+}
+
+.art-item img:hover {
+    transform: scale(1.02);
+}
+
+.art-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.art-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 7. CREATE SECTION */
+.create {
+    text-align: center;
+    background-color: #fff;
+    padding: 80px 20px;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 0;
+    max-width: 100%;
+}
+
+.create-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--text-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    margin-top: 30px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: var(--text-primary);
+    color: #fff;
+}
+
+/* 8. FOOTER */
+footer {
+    background-color: var(--bg-body);
+    border-top: 1px solid #dcdcdc;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+footer .in1 a {
+    margin: 0 10px;
+    font-weight: 500;
+}

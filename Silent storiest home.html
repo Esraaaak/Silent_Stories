@@ -3,116 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silent Storiest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="homecss.css">
+    <title>Silent Stories | Home</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">.
 </head>
 
 <body>
 
     <header>
-        <h1>Silent Storiest</h1>
+        <div class="logo">Silent Stories</div>
+        <nav class="nav-links">
+            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+            <a href="ArtExhibitions.html">Exhibitions</a>
+            <a href="classicPage.html">Classic</a>
+            <a href="modernPage.html">Modern</a>
+            <a href="ArtistsPage.html">Artists</a>
+            <a href="Contact.html">Contact</a>
+            
+            <span class="auth-links">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </span>
+        </nav>
     </header>
 
-    <div class="d1">
-        <a href="login.html">Login</a> |
-        <a href="signup.html">Sign Up</a>
-    </div>
-
-
-
-<div class="controls">
-        <button id="toggle-aside" type="button">Toggle Sidebar</button>
-        <button id="font-inc" type="button">A+</button>
-        <button id="font-dec" type="button">A-</button>
-        <button id="toggle-highlight" type="button">Toggle Highlight</button>
-        <button id="change-title-color" type="button">Change Title Color</button>
-    </div>
-
-    <ul class="menu">
-        <li>
-            Famous Paintings
-            <ul class="submenu">
-                <li><a href="classicPage.html">Classic Art</a></li>
-                <li><a href="modernPage.html">Modern Art</a></li>
-            </ul>
-        </li>
-
-        <li>
-            Artists Stories
-            <ul class="submenu">
-                <li><a href="ArtistsPage.html">Artists Page</a></li>
-                <li><a href="Van.html">Vincent van Gogh</a></li>
-            </ul>
-        </li>
-
-        <li><a href="ArtExhibitions.html">Art Exhibitions</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-    </ul>
-
-
-
-    <section id="article">
-        <p class="p1">
-            Welcome to <strong>Silent Storiest</strong> — a digital space where timeless masterpieces meet modern creativity.
-            Explore classic paintings with their stories, dive into artists’ lives, and share your own visual tales with the 
-        </p>
-
-        <h2>About Silent Storiest</h2>
-        <p>
-            Every painting tells a story — a whisper of emotion, a glimpse into the artist’s soul, and a reflection of time itself.
-            At <strong class="highlight">Silent Storiest</strong>, we bring those stories to life.
-            From Renaissance icons to contemporary digital art, you can discover the colors behind the tales that shaped them.
-            <br><br>
-            Registered users can create personal profiles, upload their own artworks, and share the meaning behind their creations.
-            Whether you're an art lover or an artist yourself, this platform connects passion, imagination, and storytelling in one vibrant community.
-        </p>
-    </section>
-
-    <section id="explore">
-        <h2>Featured Artworks</h2>
-
-        <div class="art-gallery">
-            <div class="art-item">
-                <img src="images/Woman Holding a Balance.jpg" alt="Classic Art">
-                <h3>Classic Art</h3>
-                <p>Timeless elegance and refined technique—classic art captures the beauty and balance of centuries past.</p>
-            </div>
-
-            <div class="art-item">
-                <img src="images/mod.webp" alt="Modern Art">
-                <h3>Modern Art</h3>
-                <p>Bold, expressive, and <i>boundary breaking modern</i> art reflects the spirit of our time through fresh perspectives.</p>
-            </div>
-
-            <div class="art-item">
-                <img src="images/van.jpg" alt="Artists Stories">
-                <h3>Artists Stories</h3>
-                <p>Behind every masterpiece lies a journey—discover the lives and inspirations of the artists who shaped them.</p>
+    <main>
+        <div class="hero-banner">
+            <div class="hero-content">
+                <h1>Silent Stories</h1>
             </div>
         </div>
-    </section>
 
-    <section class="create">
-        <h2>Join & Create</h2>
-        <p class="p2">
-            Do you have a story to tell through your art?
-            <br>
-            Create your own gallery, describe your inspiration, and let others connect with your artistic journey.
-        </p>
-        <a href="signup.html" class="btn">Start Creating</a>
-    </section>
+        <section id="article">
+            <p class="intro-lead">
+                Welcome to <strong>Silent Stories</strong>—a digital sanctuary where timeless masterpieces converge with modern creativity.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="content-block">
+                <h2>Our Vision</h2>
+                <p>
+                    Every canvas holds a narrative—a whisper of emotion, a window into the artist’s soul, and a reflection of the era that forged it. At <strong class="highlight">Silent Stories</strong>, we bring these narratives to light. From the icons of the Renaissance to the boundary-pushing visions of the digital age, discover the colors and contexts that define art history.
+                </p>
+                <p>
+                    Registered members can curate personal profiles, upload original artworks, and articulate the meaning behind their creations. Whether you are an art historian, an enthusiast, or a creator, this platform bridges passion, imagination, and storytelling.
+                </p>
+            </div>
+        </section>
+
+        <section id="explore">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Curated Collections</h2>
+            </div>
+
+            <div class="art-gallery">
+                
+                <div class="art-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg" alt="Classic Art">
+                    <h3>The Classic Era</h3>
+                    <p>Timeless elegance and refined technique from the Old Masters.</p>
+                </div>
+
+                <div class="art-item">
+                    <img src="https://uploads3.wikiart.org/images/giorgio-morandi/natura-morta-1955.jpg" alt="Modern Art">
+                    <h3>Modern Views</h3>
+                    <p>Bold, expressive art that reflects the shifting spirit of the contemporary world.</p>
+                </div>
+
+                <div class="art-item">
+                    <img src="https://images.unsplash.com/photo-1518998053901-5348d3969105?q=80&w=600" alt="Exhibitions">
+                    <h3>Exhibitions</h3>
+                    <p>Explore current and past showcases from galleries around the world.</p>
+                </div>
+
+                <div class="art-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg" alt="Artists Stories">
+                    <h3>Artist Bios</h3>
+                    <p>Uncover the lives, struggles, and inspirations of the visionaries.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="create">
+            <div class="create-inner">
+                <h2>Curate Your Legacy</h2>
+                <p style="color: #555; margin-bottom: 20px;">
+                    Do you have a story to tell? Create your personal gallery, articulate your inspiration, and connect with a community of enthusiasts and creators.
+                </p>
+                <a href="signup.html" class="btn">Start Creating</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Silent Storiest. All rights reserved.</p>
+        <p>© 2025 Silent Stories. All rights reserved.</p>
         <p class="in1">
             <a href="aboutPage.html">About</a> |
-            <a href="Contact.html">Contact us</a> |
-            <a href="ArtistsPage.html">Artists Page</a> |
+            <a href="Contact.html">Contact</a> |
+            <a href="ArtistsPage.html">Artists</a>
         </p>
     </footer>
 
     <script src="homejs.js"></script>
 </body>
 </html>
-
