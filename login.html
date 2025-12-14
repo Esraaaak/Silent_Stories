@@ -1,86 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Silent Storiest</title>
-    <link rel="stylesheet" href="lscss.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patron Access | Silent Stories</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+      /* --- CLASSIC LOGIN SPECIFIC STYLES --- */
+
+      /* 1. HEADER OVERRIDE */
+    
+
+     
+      /* 2. HERO SECTION */
+
+       .hero {
+            min-height: 90vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Added padding-top to ensure content is below fixed header */
+            padding: 10rem 1rem 4rem 1rem; 
+            position: relative;
+            overflow: hidden;
+        }
+     .hero::before {
+            content: '';
+            position: fixed;
+            top: 100;
+            left: 100;
+            width: 100%;
+            height: 100%;
+            /* Subtle background effect */
+            background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
+            background-size:auto;
+            background-position: center;
+            opacity: 0.08; 
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.15em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 span::before, .hero h1 span::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 550px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+        }
+
+      /* 3. LOGIN CONTAINER (Narrower than Contact) */
+      .login-container {
+          max-width: 500px; /* Narrow width for focus */
+          margin: 0 auto 80px auto;
+          padding: 0 20px;
+      }
+
+      .login-box {
+          background-color: #fff;
+          padding: 50px 40px;
+          border: 1px solid #e0e0e0;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+          text-align: center;
+      }
+
+      .form-group {
+          margin-bottom: 25px;
+          text-align: left;
+      }
+
+      /* Labels styled as Era Tags */
+      label {
+          display: block;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--accent);
+          font-weight: bold;
+          margin-bottom: 8px;
+      }
+
+      /* Elegant Inputs */
+      input[type="email"],
+      input[type="password"] {
+          width: 100%;
+          padding: 15px;
+          border: 1px solid #ccc;
+          background-color: #fafafa;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 1.2rem;
+          color: var(--text-primary);
+          transition: border-color 0.3s, background-color 0.3s;
+      }
+
+      input:focus {
+          outline: none;
+          border-color: var(--accent);
+          background-color: #fff;
+      }
+
+      /* 4. BUTTONS & LINKS */
+      .btn-outline {
+          width: 100%;
+          padding: 1.2rem;
+          border: 1px solid var(--text-primary);
+          background: transparent;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          cursor: pointer;
+          transition: all 0.3s;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-top: 10px;
+      }
+
+      .btn-outline:hover {
+          background-color: var(--text-primary);
+          color: #fff;
+      }
+
+      .auth-links {
+          margin-top: 30px;
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          font-family: 'Montserrat', sans-serif;
+      }
+
+      .auth-links a {
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.3s, color 0.3s;
+      }
+
+      .auth-links a:hover {
+          color: var(--accent);
+          border-bottom-color: var(--accent);
+      }
+
+      .back-home {
+          margin-top: 40px;
+          display: inline-block;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+      }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Login Silent Storiest</h1>
-</header>
+        <div class="logo">Silent Stories</div>
+        <nav class="nav-links">
+            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+            <a href="ArtExhibitions.html">Exhibitions</a>
+            <a href="classicPage.html">Classic</a>
+            <a href="modernPage.html">Modern</a>
+            <a href="ArtistsPage.html">Artists</a>
+            <a href="Contact.html">Contact</a>
+            
+            <span class="auth-links">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </span>
+        </nav>
+    </header>
 
-<div class="form-container">
-    <form id="loginForm" action="login.php" method="POST">  
-        <fieldset>
-            <legend><h2>Login to Your Account</h2></legend>
+<section id="login-page">
+  
+  <div class="hero">
+      <h1>
+          <span>Member Access</span>
+          Log in
+      </h1>
+  </div>
 
-            <label for="loginEmail">Email:</label>
-            <input type="email" id="loginEmail" name="email" required>
 
-            <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" name="password" required>
+  <main class="login-container">
+    <div class="login-box">
+        
+      <form id="loginForm" action="login.php" method="POST">
+        
+        <div class="form-group">
+          <label for="loginEmail">Registered Email</label>
+          <input type="email" id="loginEmail" name="email" required placeholder="name@example.com">
+        </div>
 
-            <button type="submit" class="btn">Login</button>
+        <div class="form-group">
+          <label for="loginPassword">Passkey</label>
+          <input type="password" id="loginPassword" name="password" required placeholder="••••••••">
+        </div>
 
-            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
-            <a href="Silent storiest home.html" class="back-home">Back to Home</a>
-        </fieldset>
-    </form>
-</div>
+        <button type="submit" class="btn-outline">Enter Gallery</button>
+
+        <div class="auth-links">
+            <span>New to the collection? <a href="signup.html">Request Membership</a></span>
+            <a href="Silent storiest home.html" class="back-home">Return to Home</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</section>
 
 <footer>
-    <p>© 2025 Silent Storiest. All rights reserved.</p>
-    <p class="in1">
-        <a href="aboutPage.html">About</a> | 
-        <a href="Contact.html">Contact us</a> | 
-        <a href="ArtistsPage.html">Artists Page</a>|
-    </p>
-</footer>
+        <p>© 2025 Silent Stories. All rights reserved.</p>
+        <p class="in1">
+            <a href="aboutPage.html">About</a> |
+            <a href="Contact.html">Contact</a> |
+            <a href="ArtistsPage.html">Artists</a>
+        </p>
+    </footer>
 
-<script>
-    // دالة حفظ الإيميل المسجل (مماثلة في signup.html)
-    function saveEmailOnLogin(email) {
-        let registeredEmails = new Set();
-        const storedEmails = localStorage.getItem('registeredEmails');
-        if (storedEmails) {
-            registeredEmails = new Set(JSON.parse(storedEmails));
-        }
-        if (!registeredEmails.has(email)) {
-             registeredEmails.add(email);
-             localStorage.setItem('registeredEmails', JSON.stringify(Array.from(registeredEmails)));
-        }
-    }
-
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        
-        // *** محاكاة نجاح تسجيل الدخول ***
-        const email = document.getElementById('loginEmail').value;
-        
-        saveEmailOnLogin(email); // نضمن حفظ الإيميل كمسجل
-
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userName', 'LoggedIn User'); 
-        localStorage.setItem('userEmail', email); 
-
-        // 🎯 التوجيه المشروط (تم تصحيح أسماء الملفات بناءً على توضيحك)
-        const pendingEvent = localStorage.getItem('pendingRegistrationEvent');
-        let redirectURL;
-        
-        if (pendingEvent) {
-            // إذا كان هناك طلب معلق، عد إلى صفحة المعارض (ArtExhibitions.html)
-            redirectURL = 'ArtExhibitions.html'; 
-        } else {
-            // إذا لم يكن هناك طلب معلق، عد إلى الصفحة الرئيسية (Silent storiest home.html)
-            redirectURL = 'Silent storiest home.html';
-        }
-
-        window.location.href = redirectURL;
-    });
-</script>
-
+<script src="JS.js"></script>
 </body>
 </html>

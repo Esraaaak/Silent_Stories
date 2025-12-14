@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    
+
       /* 1. HEADER OVERRIDES */
       header {
           background-color: rgba(255, 255, 255, 0.95);
@@ -18,71 +18,72 @@
       }
 
       /* 2. HERO SECTION (Adapted for Contact) */
-      .hero-classic {
-          min-height: 50vh; /* Shorter than the gallery home so form is visible */
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          padding: 8rem 1rem 3rem 1rem; 
-          position: relative;
-          overflow: hidden;
-          margin-bottom: 3rem;
-      }
+      .hero {
+            min-height: 90vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Added padding-top to ensure content is below fixed header */
+            padding: 10rem 1rem 4rem 1rem; 
+            position: relative;
+            overflow: hidden;
+        }
 
-      .hero-classic::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; width: 100%; height: 100%;
-          /* Same background texture as Classic Page */
+        .hero::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Subtle background effect */
           background-image: url('https://images.unsplash.com/photo-1710162734135-8dc148f53abe?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-          background-size: cover;
-          background-position: center;
-          opacity: 0.3; 
-          z-index: -1;
-      }
+            background-size: cover;
+            background-position: center;
+            opacity: 0.20; 
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
 
-      .hero-classic h1 {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: clamp(3rem, 6vw, 5rem);
-          line-height: 0.9;
-          margin-bottom: 1.5rem;
-          letter-spacing: -1px;
-          color: var(--text-primary);
-      }
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
 
-      .hero-classic h1 span {
-          display: flex;
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 300;
-          font-size: 0.18em;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          color: var(--accent);
-          margin-bottom: 15px;
-          align-items: center;
-          justify-content: center;
-          gap: 15px;
-      }
+        .hero h1 span {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.15em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
 
-      /* Decorative lines next to "Get in Touch" */
-      .hero-classic h1 span::before, 
-      .hero-classic h1 span::after {
-          content: '';
-          display: block;
-          width: 30px;
-          height: 1px;
-          background-color: var(--accent);
-      }
+        .hero h1 span::before, .hero h1 span::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--accent);
+        }
 
-      .hero-classic p {
-          max-width: 600px;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1rem;
-          color: var(--text-secondary);
-          font-weight: 300;
-      }
+        .hero p {
+            max-width: 550px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+        }
 
       /* 3. FORM STYLING (To match the Classic Aesthetic) */
       .contact-container {
@@ -245,7 +246,7 @@
 
 <section id="contact">
   
-  <div class="hero-classic">
+  <div class="hero">
       <h1>
           <span>Get In Touch</span>
           Start a Conversation
