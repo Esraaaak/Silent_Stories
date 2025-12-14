@@ -3,81 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silent Stories | Home</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">.
-    <style>
-         .hero {
-            min-height: 90vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            /* Added padding-top to ensure content is below fixed header */
-            padding: 10rem 1rem 4rem 1rem; 
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Subtle background effect */
-            background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.20; 
-            z-index: -1;
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 span {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 0.15em;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .hero h1 span::before, .hero h1 span::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            background-color: var(--accent);
-        }
-
-        .hero p {
-            max-width: 550px;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3.5rem;
-            font-weight: 300;
-        }
-
-    </style>
+    <title>Silent Storiest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="homecss.css">
 </head>
+
 
 <body>
 
@@ -90,9 +20,8 @@
             <a href="modernPage.html">Modern</a>
             <a href="ArtistsPage.html">Artists</a>
             <a href="SubmitArtworkPage.html">Submit</a>
-             <a href="aboutPage.html">About</a>
+            <a href="aboutPage.html">About</a>
             <a href="Contact.html">Contact</a>
-            
             
             <span class="auth-links">
                 <a href="login.html">Login</a>
@@ -146,7 +75,7 @@
                 </div>
 
                 <div class="art-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mining_exhibition_at_the_Museum_of_the_Atacama_Desert_%28mda_exhibition-2%29.jpg/960px-Mining_exhibition_at_the_Museum_of_the_Atacama_Desert_%28mda_exhibition-2%29.jpg?20250728181433" alt="Exhibitions">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mining_exhibition_at_the_Museum_of_the_Atacama_Desert_%28mda_exhibition-2%29.jpg/960px-Mining_exhibition_at_the_Museum_of_the_Atacama_Desert_%28mda_exhibition-2%29.jpg" alt="Exhibitions">
                     <h3>Exhibitions</h3>
                     <p>Explore current and past showcases from galleries around the world.</p>
                 </div>
@@ -163,7 +92,7 @@
         <section class="create">
             <div class="create-inner">
                 <h2>Curate Your Legacy</h2>
-                <p style="color: #555; margin-bottom: 20px;">
+                <p>
                     Do you have a story to tell? Create your personal gallery, articulate your inspiration, and connect with a community of enthusiasts and creators.
                 </p>
                 <a href="signup.html" class="btn">Start Creating</a>
