@@ -19,36 +19,77 @@
         
         body { font-family: 'Montserrat', sans-serif; margin: 0; padding-top: 60px; background-color: var(--bg-body); color: var(--text-primary); }
         
-        header { 
-            background: var(--white-trans); 
-            padding: 10px 20px; 
-            border-bottom: 1px solid #ddd; 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 10;
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-        }
-        header .nav-left a { text-decoration: none; font-weight: bold; color: var(--accent); }
-        
-        /* أنماط أزرار الـ Header */
-        #logoutBtn {
-            background-color: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        #logoutBtn:hover {
-            background-color: var(--accent);
-            color: white;
-        }
-        
+header {
+ position: fixed;
+ top: 0;
+ width: 100%;
+padding: 18px 40px; 
+ background: var(--white-trans);
+ border-bottom: 1px solid #e6e6e6;
+ z-index: 1000;
+ 
+ display: flex;
+ align-items: center;
+justify-content: space-between;
+}
+
+/* Logo */
+header .logo {
+ font-family: 'Cormorant Garamond', serif;
+/* حجم الخط يبدو أكبر قليلاً في الصورة */
+ font-size: 26px; 
+ font-weight: 600;
+ color: var(--text-primary);
+letter-spacing: 0.5px;
+}
+
+/* Navigation Container */
+.nav-links {
+ display: flex;
+ align-items: center;
+ gap: 20px; 
+}
+
+/* Navigation Links Style (TEXT) */
+.nav-links a {
+ font-family: 'Montserrat', sans-serif;
+font-size: 11px; 
+text-transform: uppercase;
+* التباعد بين الحروف أقل قليلاً */
+letter-spacing: 1.5px; 
+ font-weight: 500;
+
+ color: var(--text-primary);
+text-decoration: none;
+
+ transition: color 0.3s ease;
+}
+
+/* Hover line effect - قمنا بإزالتها لأنها غير موجودة في الصورة الأولى */
+.nav-links a::after {
+ display: none !important;
+}
+
+.nav-links a:hover {
+color: var(--accent);
+}
+
+/* Auth links (LOGIN SIGN UP) - لجعلها على اليمين كما في الصورة */
+.auth-links {
+    /* إضافة خط فاصل خفيف قبل Login */
+border-left: 1px solid #ccc; 
+ padding-left: 20px;
+ margin-left: 5px;
+}
+
+.auth-links a {
+ /* جعل الـ Sign Up أغمق كما في الصورة */
+ font-weight: 600; 
+ letter-spacing: 2px;
+}
+
+/* إزالة ستايل الأزرار لأننا نستخدم الروابط بدلاً منها */
+
         #wishlistBtn {
             background-color: var(--text-primary);
             color: white;
@@ -82,9 +123,24 @@
 <body>
 <header>
     <div class="nav-left">
-        <a href="Silent storiest home.html">The Gallery Collection</a>
     </div>
-    
+     <div class="logo">Silent Stories</div> 
+        <nav class="nav-links"> 
+            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a> 
+            <a href="ArtExhibitions.html">Exhibitions</a> 
+            <a href="classicPage.html">Classic</a> 
+            <a href="modernPage.html">Modern</a> 
+            <a href="ArtistsPage.html">Artists</a> 
+            <a href="SubmitArtworkPage.html">Submit</a> 
+             <a href="aboutPage.html">About</a> 
+            <a href="Contact.html">Contact</a> 
+             
+             
+            <span class="auth-links"> 
+                <a href="login.html">Login</a> 
+                <a href="signup.html">Sign Up</a> 
+            </span> 
+        </nav> 
     <div>
         <button id="wishlistBtn" onclick="showWishlistModal()">My Wishlist (0)</button>
         <button id="logoutBtn" onclick="logout()">Logout</button>
