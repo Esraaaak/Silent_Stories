@@ -12,7 +12,7 @@
 <header>
   <div class="logo">Silent Stories</div>
   <nav class="nav-links">
-    <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+    <a href="Silent storiest home.html">Home</a>
     <a href="ArtExhibitions.html">Exhibitions</a>
     <a href="classicPage.html">Classic</a>
     <a href="modernPage.html">Modern</a>
@@ -38,7 +38,8 @@
 
   <main class="signup-container">
     <div class="signup-box">
-      <form action="singup.php" method="POST">
+
+<form id="signupForm" action="signupPHP.php" method="POST">
         <div class="form-group">
           <label for="signupName">Full Name</label>
           <input type="text" id="signupName" name="name"  placeholder="e.g.name"  required>
@@ -75,6 +76,9 @@
   </main>
 </section>
 
+<p id="Message"></p>
+
+
 <footer>
   <p>© 2025 Silent Stories. All rights reserved.</p>
   <p class="in1">
@@ -83,5 +87,7 @@
     <a href="ArtistsPage.html">Artists</a>
   </p>
 </footer>
+<script src="JS.js"></script>
+
 </body>
 </html>
