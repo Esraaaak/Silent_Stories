@@ -1,12 +1,5 @@
-/* =========================================================
-   SILENT STORIES — AUTH & CONTACT (CLEAN & ORGANIZED)
-   Based strictly on current HTML structure
-   Pages: login.html | signup.html | contact.html
-   ========================================================= */
 
-/* ---------------------------------------------------------
-   1. THEME VARIABLES
---------------------------------------------------------- */
+/*   1. THEME VARIABLES */
 :root {
     --bg-body: #F2F0EB;
     --white: #ffffff;
@@ -15,9 +8,7 @@
     --accent: #b07c55;
 }
 
-/* ---------------------------------------------------------
-   2. GLOBAL RESET & BODY
---------------------------------------------------------- */
+/*    2. GLOBAL RESET & BODY  */
 * {
     box-sizing: border-box;
 }
@@ -31,9 +22,7 @@ body {
     line-height: 1.7;
 }
 
-/* ---------------------------------------------------------
-   3. HEADER & NAVIGATION
---------------------------------------------------------- */
+/*    3. HEADER & NAVIGATION  */
 header {
     position: fixed;
     top: 0;
@@ -92,9 +81,7 @@ header {
     color: var(--accent);
 }
 
-/* ---------------------------------------------------------
-   4. HERO SECTION (ALL PAGES)
---------------------------------------------------------- */
+/*   4. HERO SECTION (ALL PAGES)  */
 .hero {
     min-height: 90vh;
     padding: 14rem 1rem 4rem;
@@ -153,9 +140,7 @@ header {
     color: var(--text-secondary);
 }
 
-/* ---------------------------------------------------------
-   5. PAGE CONTAINERS
---------------------------------------------------------- */
+/*    5. PAGE CONTAINERS  */
 .login-container,
 .signup-container,
 .contact-container {
@@ -173,9 +158,7 @@ header {
     text-align: center;
 }
 
-/* ---------------------------------------------------------
-   6. FORM ELEMENTS
---------------------------------------------------------- */
+/*   6. FORM ELEMENTS  */
 .form-group {
     margin-bottom: 25px;
     text-align: left;
@@ -213,9 +196,7 @@ textarea:focus {
     background-color: #fff;
 }
 
-/* ---------------------------------------------------------
-   7. BUTTONS
---------------------------------------------------------- */
+/*    7. BUTTONS  */
 .btn-outline {
     width: 100%;
     padding: 18px 0;
@@ -240,9 +221,7 @@ textarea:focus {
     margin-top: 20px;
 }
 
-/* ---------------------------------------------------------
-   8. FORM LINKS (LOGIN & SIGNUP)
---------------------------------------------------------- */
+/*    8. FORM LINKS (LOGIN & SIGNUP)  */
 .form-links {
     margin-top: 35px;
     display: flex;
@@ -282,9 +261,7 @@ textarea:focus {
 }
 
 
-/* ---------------------------------------------------------
-   9. CONTACT — EXTRA CONTENT
---------------------------------------------------------- */
+/*  9. CONTACT — EXTRA CONTENT  */
 .reach-title {
     margin: 60px 0 30px;
     text-align: center;
@@ -313,9 +290,7 @@ textarea:focus {
     color: #999;
 }
 
-/* ---------------------------------------------------------
-   10. FOOTER
---------------------------------------------------------- */
+/*   10. FOOTER   */
 footer {
     background-color: var(--bg-body);
     border-top: 1px solid #ddd;
@@ -337,19 +312,3 @@ footer .in1 a {
 footer .in1 a:hover {
     text-decoration: underline;
 }
-
-#Message {
-    margin-bottom: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-
-#Message.success {
-    color: green;
-}
-
-#Message.error {
-    color: red;
-}
-
-
