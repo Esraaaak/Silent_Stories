@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(message);
   }
 
+  const passwordRegex = /^[A-Z][a-zA-Z\d/*\-?!@#\.]{7,}$/;
+  const messageBox = document.getElementById("Message");
+
+  /* =========================
+     PASSWORD LIVE CHECK (SIGNUP)
+     ========================= */
+  const passwordInput = document.getElementById("signupPassword");
+
+  if (passwordInput && messageBox) {
+    passwordInput.addEventListener("input", () => {
+      if (!passwordRegex.test(passwordInput.value)) {
+        messageBox.textContent =
+          "Password must start with an uppercase letter, be at least 8 characters, and contain a symbol.";
+        messageBox.className = "error";
+      } else {
+        messageBox.textContent = "Strong password ✔";
+        messageBox.className = "success";
+      }
+    });
+  }
+
   /* =========================
      LOGIN
      ========================= */
@@ -26,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then(res => res.text())
         .then(response => {
-
           if (response.startsWith("Login successful")) {
             const name = response.split("|")[1] || "";
             showAlert("Welcome back, " + name + " 🎉");
@@ -34,11 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             showAlert(response);
           }
-
         })
-        .catch(() => {
-          showAlert("Something went wrong. Please try again.");
-        });
+        .catch(() => showAlert("Something went wrong."));
     });
   }
 
@@ -50,13 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     signupForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const name = document.getElementById("signupName").value.trim();
-      const email = document.getElementById("signupEmail").value.trim();
       const password = document.getElementById("signupPassword").value.trim();
-      const phone = document.getElementById("signupPhone").value.trim();
 
-      if (!name || !email || !password || !phone) {
-        showAlert("All fields are required.");
+      if (!passwordRegex.test(password)) {
+        showAlert("Please enter a valid password.");
         return;
       }
 
@@ -66,18 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then(res => res.text())
         .then(response => {
-
           if (response.startsWith("Signup successful")) {
-            showAlert("Account created successfully. Welcome, " + name + " 🎉");
+            showAlert("Account created successfully 🎉");
             window.location.href = "SubmitArtworkPage.html";
           } else {
             showAlert(response);
           }
-
         })
-        .catch(() => {
-          showAlert("Something went wrong. Please try again.");
-        });
+        .catch(() => showAlert("Something went wrong."));
     });
   }
 
@@ -89,35 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const name = document.getElementById("contactName").value.trim();
-      const email = document.getElementById("contactEmail").value.trim();
-      const message = document.getElementById("contactMessage").value.trim();
-
-      if (!name || !email || !message) {
-        showAlert("All fields are required.");
-        return;
-      }
-
       fetch("contactPHP.php", {
         method: "POST",
         body: new FormData(contactForm)
       })
         .then(res => res.text())
         .then(response => {
-
+          showAlert(response);
           if (response.startsWith("Message sent")) {
-            showAlert(response);
             window.location.href = "Silent storiest home.html";
-          } else {
-            showAlert(response);
           }
-
         })
-        .catch(() => {
-          showAlert("Something went wrong. Please try again.");
-        });
+        .catch(() => showAlert("Something went wrong."));
     });
   }
 
 });
-
