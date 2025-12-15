@@ -12,6 +12,10 @@ if (!$name || !$email || !$phone || !$password) {
     echo "All fields are required.";
     exit;
 }
+if (!preg_match('/^[A-Z][a-zA-Z\d\/\*\-\?\!@#\.]{7,}$/', $password)) {
+    echo "Password does not meet the required criteria.";
+    exit;
+}
 
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
