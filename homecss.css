@@ -1,11 +1,17 @@
+/* ===============================
+   1. THEME VARIABLES
+================================ */
 :root {
-    --bg-body: #F2F0EB;    
+    --bg-body: #F2F0EB;      /* البيج */
     --white: #ffffff;
     --text-primary: #2c2a29;
     --text-secondary: #4a4a4a;
     --accent: #b07c55;
 }
 
+/* ===============================
+   2. GLOBAL
+================================ */
 * {
     box-sizing: border-box;
 }
@@ -19,6 +25,9 @@ body {
     padding-top: 100px;
 }
 
+/* ===============================
+   3. HEADER
+================================ */
 header {
     background-color: var(--white);
     position: fixed;
@@ -65,6 +74,9 @@ header {
     margin-left: 20px;
 }
 
+/* ===============================
+   4. HERO (TITLE WITH IMAGE)
+================================ */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -93,7 +105,9 @@ header {
     margin: 0;
 }
 
-
+/* ===============================
+   5. ARTICLE (BIJ)
+================================ */
 #article {
     max-width: 900px;
     margin: 80px auto;
@@ -126,7 +140,9 @@ header {
     color: var(--text-secondary);
 }
 
-
+/* ===============================
+   6. CURATED COLLECTIONS (BEIGE)
+================================ */
 #explore {
     background-color: var(--bg-body);
     padding: 80px 20px;
@@ -171,6 +187,9 @@ header {
     color: var(--text-secondary);
 }
 
+/* ===============================
+   7. CURATE YOUR LEGACY (WHITE)
+================================ */
 .create {
     background-color: var(--white);
     padding: 100px 20px;
@@ -188,6 +207,7 @@ header {
     color: var(--text-secondary);
 }
 
+/* Button */
 .btn {
     display: inline-block;
     padding: 15px 35px;
@@ -207,6 +227,9 @@ header {
     color: #fff;
 }
 
+/* ===============================
+   8. FOOTER (BEIGE)
+================================ */
 footer {
     background-color: var(--bg-body);
     border-top: 1px solid #dcdcdc;
