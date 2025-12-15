@@ -1,274 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Modern Collection | Gallery</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* --- COPYING VARIABLES FROM CLASSIC PAGE FOR CONSISTENCY --- */
-        :root {
-            --bg-body: #F2F0EB;      /* The same Antique Beige */
-            --text-primary: #3b3937; /* The same Dark Grey */
-            --text-secondary: #555;  /* The same Medium Grey */
-            --accent: #b07c55;       /* The same Bronze/Brown Accent */
-        }
+    <link rel="stylesheet" href="gallery.css">
 
-        /* --- 1. GENERAL STYLES (Identical to Classic Page) --- */
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-body);
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-primary);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* --- 2. HEADER (Identical to Classic Page) --- */
-       /* --- HEADER STYLES --- *
-
-        /* The Logo Text (Serif font) */
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            font-weight: 600;
-            color: #3b3937;
-            letter-spacing: 0.5px;
-        }
-
-        /* The Navigation Links (Sans-serif, Uppercase) */
-        .nav-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            text-transform: uppercase; /* Forces all text to be CAPITALS */
-            letter-spacing: 1.5px;
-            margin-left: 25px; /* Spacing between links */
-            color: #3b3937;
-            font-weight: 500;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent); /* Changes color on hover */
-        }
-
-        /* Hide nav links on small mobile screens */
-        @media (max-width: 768px) {
-            .nav-links { display: none; } 
-        }
-
-        /* --- 3. HERO SECTION (Identical Layout) --- */
-        .hero {
-            min-height: 90vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 10rem 1rem 4rem 1rem; 
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Using a Modern Abstract background but keeping the low opacity/style of the Classic page */
-             background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08; 
-            z-index: -1;
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 span {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 0.15em;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .hero h1 span::before, .hero h1 span::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            background-color: var(--accent);
-        }
-
-        .hero p {
-            max-width: 550px;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3.5rem;
-            font-weight: 300;
-        }
-
-        .btn-outline {
-            display: inline-block;
-            padding: 1.2rem 3.5rem;
-            border: 1px solid var(--text-primary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-outline:hover {
-            color: #fff;
-            background-color: var(--text-primary);
-        }
-
-        /* --- 4. GALLERY LAYOUT --- */
-        .gallery-section {
-            max-width: 1200px;
-            margin: 60px auto 60px auto; 
-            padding: 0 20px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 60px 40px; 
-        }
-
-        /* --- 5. ART CARD DESIGN --- */
-        .art-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .image-container {
-            width: 100%;
-            padding-bottom: 125%; 
-            position: relative; 
-            overflow: hidden;
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-        }
-
-        .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s; 
-        }
-
-        .image-container:hover img {
-            transform: scale(1.05); 
-        }
-
-        /* DETAILS SECTION */
-        .card-details {
-            text-align: left;
-            padding-right: 10px;
-        }
-
-        .era-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .art-title {
-            font-size: 26px;
-            line-height: 1.1;
-            margin-bottom: 5px;
-        }
-
-        .artist-name {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 20px;
-            border-top: 1px solid #ddd; 
-            padding-top: 10px;
-        }
-
-        .text-link {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-
-        .text-link:hover {
-            color: var(--accent);
-        }
-        
-        /* FOOTER (Matched style) */
-        footer {
-            text-align: center; 
-            padding: 50px 20px;
-            border-top: 1px solid #ddd;
-            margin-top: 80px;
-        }
-        footer p { font-size: 0.9rem; color: var(--text-secondary); }
-        footer a { color: var(--text-primary); margin: 0 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
-        footer a:hover { color: var(--accent); }
-
-        /* --- 6. RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
+
 <body>
- <header>
+    <header>
         <div class="logo">Silent Stories</div>
         <nav class="nav-links">
             <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
@@ -277,10 +24,10 @@
             <a href="modernPage.html">Modern</a>
             <a href="ArtistsPage.html">Artists</a>
             <a href="SubmitArtworkPage.html">Submit</a>
-             <a href="aboutPage.html">About</a>
+            <a href="aboutPage.html">About</a>
             <a href="Contact.html">Contact</a>
-            
-            
+
+
             <span class="auth-links">
                 <a href="login.html">Login</a>
                 <a href="signup.html">Sign Up</a>
@@ -294,31 +41,33 @@
                 <span>Contemporary Era</span>
                 Pioneers of the<br>Modern Age
             </h1>
-            <p>Discover groundbreaking works from movements like Abstract Expressionism, Pop Art, and Minimalism. These pieces tell a story of innovation, concept, and cultural reflection.</p>
+            <p>Discover groundbreaking works from movements like Abstract Expressionism, Pop Art, and Minimalism. These
+                pieces tell a story of innovation, concept, and cultural reflection.</p>
             <a href="#gallery" class="btn-outline">View Collection</a>
         </section>
 
         <section id="gallery" class="gallery-section">
             <div class="grid">
 
-              <div class="art-card">
-    <div class="image-container">
-        <img src="https://media.artsper.com/artwork/2285774_1_m.jpg" alt="New Beginning">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Contemporary Art</span>
-        <h3 class="art-title">New Beginning</h3>
-        <div class="artist-name">Schagen Vita, 2024</div>
-        <div class="card-links">
-            <a href="detailsModern.html?art=scream" class="text-link">Details</a>
-            <a href="vita-bio.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://media.artsper.com/artwork/2285774_1_m.jpg" alt="New Beginning">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Contemporary Art</span>
+                        <h3 class="art-title">New Beginning</h3>
+                        <div class="artist-name">Schagen Vita, 2024</div>
+                        <div class="card-links">
+                            <a href="detailsModern.html?art=scream" class="text-link">Details</a>
+                            <a href="vita-bio.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="art-card">
                     <div class="image-container">
-                        <img src="https://www.artsolitaire.arsmundi.de/thumbnails/fb/25/9a/1745322811/1_f376cb1f627f4c1c73a032db1dd9b33f_20250422135330_x.jpg" alt="Light at the North Sea">
+                        <img src="https://www.artsolitaire.arsmundi.de/thumbnails/fb/25/9a/1745322811/1_f376cb1f627f4c1c73a032db1dd9b33f_20250422135330_x.jpg"
+                            alt="Light at the North Sea">
                     </div>
                     <div class="card-details">
                         <span class="era-tag">1960s Pop Art</span>
@@ -326,25 +75,12 @@
                         <div class="artist-name">Irina Laube ,2025</div>
                         <div class="card-links">
                             <a href="detailsModern.html?art=art2" class="text-link">Details</a>
-                            <a href="#" class="text-link">Artist Bio</a>
+                            <a href="Irina Laube.html" class="text-link">Artist Bio</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://www.singulart.com/images/artworks/v2/cropped/2401/main/base/2208057_4575b8e826906fbac76e9337845eb50b.jpeg" alt="Abstract">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Abstract Exp.</span>
-                        <h3 class="art-title">GOOD BY</h3>
-                        <div class="artist-name">Monika Luniak ,2024</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art3" class="text-link">Details</a>
-                            <a href="#" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="art-card">
                     <div class="image-container">
@@ -356,7 +92,7 @@
                         <div class="artist-name">Dmitrij Danilov ,2024</div>
                         <div class="card-links">
                             <a href="detailsModern.html?art=art4" class="text-link">Details</a>
-                            <a href="#" class="text-link">Artist Bio</a>
+                            <a href="Dmitrij Danilov.html" class="text-link">Artist Bio</a>
                         </div>
                     </div>
                 </div>
@@ -371,7 +107,23 @@
                         <div class="artist-name">Claude Carvin ,2022</div>
                         <div class="card-links">
                             <a href="detailsModern.html?art=art5" class="text-link">Details</a>
-                            <a href="#" class="text-link">Artist Bio</a>
+                            <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://www.singulart.com/images/artworks/v2/cropped/2401/main/base/2208057_4575b8e826906fbac76e9337845eb50b.jpeg"
+                            alt="Abstract">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Abstract Exp.</span>
+                        <h3 class="art-title">GOOD BY</h3>
+                        <div class="artist-name">Monika Luniak ,2024</div>
+                        <div class="card-links">
+                            <a href="detailsModern.html?art=art3" class="text-link">Details</a>
+                            <a href="Monika Luniak.html" class="text-link">Artist Bio</a>
                         </div>
                     </div>
                 </div>
@@ -383,10 +135,10 @@
                     <div class="card-details">
                         <span class="era-tag">Digital Medium</span>
                         <h3 class="art-title">Pixels in Motion</h3>
-                        <div class="artist-name">Digital Artist, 2020</div>
+                        <div class="artist-name">Claude Carvin ,2022</div>
                         <div class="card-links">
                             <a href="detailsModern.html?art=art6" class="text-link">Details</a>
-                            <a href="#" class="text-link">Artist Bio</a>
+                            <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
                         </div>
                     </div>
                 </div>
@@ -398,8 +150,8 @@
     <footer>
         <p>© 2025 Silent Storiest. All rights reserved.</p>
         <p>
-            <a href="aboutPage.html">About</a> | 
-            <a href="ArtistsPage.html">Artists</a> | 
+            <a href="aboutPage.html">About</a> |
+            <a href="ArtistsPage.html">Artists</a> |
             <a href="Contact.html">Contact us</a>
         </p>
     </footer>
@@ -410,4 +162,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -1,0 +1,164 @@
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10rem 1rem 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+
+
+/* --- 4. CONTENT SECTIONS --- */
+.content-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.mission-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 80px;
+    font-weight: 300;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-text strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* --- 5. TEAM GRID (4 IN A ROW) --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.team-grid {
+    display: grid;
+    /* Forces 4 equal columns in one line */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent);
+}
+
+.team-role {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    margin-bottom: 0;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* --- 6. NAV CARDS --- */
+
+/* --- 7. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 80px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+footer a {
+    color: var(--text-primary);
+    margin: 0 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: 20px;
+    }
+}

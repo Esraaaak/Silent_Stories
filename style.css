@@ -1,15 +1,13 @@
-/* --- style.css --- */
-
-/* 1. THEME VARIABLES */
+/* . THEME VARIABLES */
 :root {
     --bg-body: #F2F0EB;
-    --text-primary: #2c2a29;   /* Dark grey/black for main text */
-    --text-secondary: #4a4a4a; /* Softer grey for paragraphs */
-    --accent: #b07c55;         /* Terracotta accent color */
+    --text-primary: #2c2a29;
+    --text-secondary: #4a4a4a;
+    --accent: #b07c55;
     --white-trans: rgba(255, 255, 255, 0.98);
 }
 
-/* 2. GLOBAL RESET & TYPOGRAPHY */
+/*GLOBAL RESET & TYPOGRAPHY */
 * {
     box-sizing: border-box;
 }
@@ -23,7 +21,9 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     margin: 0;
@@ -40,7 +40,7 @@ a:hover {
     color: var(--accent);
 }
 
-/* 3. HEADER & NAVIGATION */
+/* HEADER & NAVIGATION */
 header {
     background-color: var(--white-trans);
     padding: 15px 40px;
@@ -53,35 +53,42 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 3000;
     letter-spacing: 0.5px;
 }
 
 .nav-links {
-    display: flex;          /* Forces all children (links + auth group) into a row */
-    align-items: center;    /* Vertically centers them */
+    display: flex;
+
+    align-items: center;
+
 }
 
-/* 2. Align the Login/Signup group */
+/* Align the Login/Signup group */
 .auth-links {
-    display: flex;          /* Forces Login and Signup to sit side-by-side */
-    align-items: center;    /* Vertically centers them */
+    display: flex;
+
+    align-items: center;
+
     border-left: 1px solid #ccc;
     padding-left: 20px;
     margin-left: 20px;
-    height: 100%;           /* Ensures the border matches the height */
+    height: 100%;
+
 }
 
-/* 3. Ensure no unwanted wrapping occurs */
+/* Ensure no unwanted wrapping occurs */
 .nav-links a {
-    white-space: nowrap;    /* Prevents text from breaking into new lines */
+    white-space: nowrap;
+
 }
+
 .nav-links a {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -103,7 +110,9 @@ header {
 }
 
 @media (max-width: 900px) {
-    .nav-links { display: none; } 
+    .nav-links {
+        display: none;
+    }
 }
 
 /* 4. HERO BANNER */
@@ -121,10 +130,28 @@ header {
     background-position: center;
 }
 
+.hero h1 span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.2em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
 .hero-banner::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(242, 240, 235, 0.85);
 }
 
@@ -139,83 +166,13 @@ header {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     letter-spacing: -2px;
     margin: 0;
-   color: var(--text-primary);
-}
-/* --- APPEND TO style.css --- */
-
-/* 9. GALLERY PAGE HERO STYLES */
-/* This handles the decorative lines in the h1 */
-.hero-gallery h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    letter-spacing: -2px;
+    color: var(--text-primary);
 }
 
-.hero-gallery h1 span {
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 0.18em;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 15px;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.hero-gallery h1 span::before, 
-.hero-gallery h1 span::after {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 1px;
-    background-color: var(--accent);
-}
-
-/* 10. GALLERY CARD SPECIFICS */
-.card-details {
-    text-align: left;
-    padding-right: 10px;
-}
-
-.era-tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.artist-name {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
-.card-links {
-    display: flex;
-    gap: 20px;
-    border-top: 1px solid #ddd; 
-    padding-top: 10px;
-}
-
-.text-link {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-.text-link:hover { color: var(--accent); }
 
 /* 5. SECTIONS & LAYOUT */
 section {
-    max-width: 1300px; 
+    max-width: 1300px;
     margin: 0 auto 80px auto;
     padding: 0 30px;
 }
@@ -291,7 +248,7 @@ section {
     height: 280px;
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease;
 }
 
@@ -325,23 +282,29 @@ section {
     margin: 0 auto;
 }
 
-.btn {
-    display: inline-block;
-    padding: 1rem 3rem;
-    border: 1px solid var(--text-primary);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s;
-    margin-top: 30px;
-    color: var(--text-primary);
-    font-weight: 500;
+btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 60px;
 }
 
-.btn:hover {
-    background-color: var(--text-primary);
-    color: #fff;
+.btn-outline {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid var(--text-primary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s;
 }
+
+.btn-outline:hover {
+    color: #fff;
+    background-color: var(--text-primary);
+}
+
 
 /* 8. FOOTER */
 footer {

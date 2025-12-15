@@ -1,252 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Classic Collection | Gallery</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">.
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">.
+    <link rel="stylesheet" href="gallery.css">
     <style>
-        
-        /* Define common variables for better readability, even if simplified */
-        :root {
-            --bg-body: #F2F0EB;
-            --text-primary: #3b3937;
-            --text-secondary: #555;
-            --accent: #b07c55; 
-        }
-
-        /* --- 1. GENERAL STYLES --- */
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-body);
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-primary);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* --- 2. HEADER (Fixed Position) --- */
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px 40px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* --- 3. HERO SECTION (Banner) --- */
-        .hero {
-            min-height: 90vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            /* Added padding-top to ensure content is below fixed header */
-            padding: 10rem 1rem 4rem 1rem; 
-            position: relative;
-            overflow: hidden;
-        }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Subtle background effect */
-            background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08; 
-            z-index: -1;
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
 
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 span {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 0.15em;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .hero h1 span::before, .hero h1 span::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            background-color: var(--accent);
-        }
-
-        .hero p {
-            max-width: 550px;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3.5rem;
-            font-weight: 300;
-        }
-
-        .btn-outline {
-            display: inline-block;
-            padding: 1.2rem 3.5rem;
-            border: 1px solid var(--text-primary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-outline:hover {
-            color: #fff;
-            background-color: var(--text-primary);
-        }
-
-        /* --- 4. GALLERY LAYOUT (Gives the cards space) --- */
-        .gallery-section {
-            /* Fixes overlap from fixed header and centers content */
-            max-width: 1200px;
-            margin: 60px auto 60px auto; 
-            padding: 0 20px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 60px 40px; /* **This gap provides the space between cards** */
-        }
-
-        /* --- 5. ART CARD DESIGN (Removing the "Frame" look) --- */
-        .art-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .image-container {
-            width: 100%;
-            /* Removed fixed height. Use padding for 4:5 aspect ratio */
-            padding-bottom: 125%; 
-            position: relative; /* Needed for absolute positioning of image */
-            overflow: hidden;
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-        }
-
-        .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s; 
-        }
-
-        .image-container:hover img {
-            transform: scale(1.05); 
-        }
-
-        /* DETAILS SECTION */
-        .card-details {
-            text-align: left;
-            padding-right: 10px;
-        }
-
-        .era-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .art-title {
-            font-size: 26px;
-            line-height: 1.1;
-            margin-bottom: 5px;
-        }
-
-        .artist-name {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 20px;
-            border-top: 1px solid #ddd; 
-            padding-top: 10px;
-        }
-
-        .text-link {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-
-        .text-link:hover {
-            color: var(--accent);
-        }
-
-        /* --- 6. RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+            background-image: url('https://images.unsplash.com/photo-1578926372062-6ddf6fc55e0e?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            opacity: 0.15;
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -258,10 +31,10 @@
             <a href="modernPage.html">Modern</a>
             <a href="ArtistsPage.html">Artists</a>
             <a href="SubmitArtworkPage.html">Submit</a>
-             <a href="aboutPage.html">About</a>
+            <a href="aboutPage.html">About</a>
             <a href="Contact.html">Contact</a>
-            
-            
+
+
             <span class="auth-links">
                 <a href="login.html">Login</a>
                 <a href="signup.html">Sign Up</a>
@@ -274,110 +47,118 @@
                 <span>Curated Exhibition</span>
                 Masters of the<br>Classic Era
             </h1>
-            <p>A digital retrospective of European masters from the Renaissance to the late Romantic periods. Witness history, craft, and enduring beauty.</p>
+            <p>A digital retrospective of European masters from the Renaissance to the late Romantic periods. Witness
+                history, craft, and enduring beauty.</p>
             <a href="#gallery" class="btn-outline">View Collection</a>
         </section>
 
-       <section id="gallery" class="gallery-section">
-            
+        <section id="gallery" class="gallery-section">
+
             <div class="grid">
                 <div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Autumn_Landscape_%28Ralli%29.jpg" alt="Autumn Landscape by Theodore Ralli">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Academic Realism</span>
-        <h3 class="art-title">Autumn Landscape</h3>
-        <div class="artist-name">Theodore Ralli, c. 1890</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art1" class="text-link">Analysis</a>
-            <a href="Ralli.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
-<div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg" alt="Girl with a Pearl Earring by Vermeer">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Dutch Golden Age</span>
-        <h3 class="art-title">Girl with a Pearl Earring</h3>
-        <div class="artist-name">Johannes Vermeer, 1665</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art3" class="text-link">Analysis</a>
-            <a href="Vermeer.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Autumn_Landscape_%28Ralli%29.jpg"
+                            alt="Autumn Landscape by Theodore Ralli">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Academic Realism</span>
+                        <h3 class="art-title">Autumn Landscape</h3>
+                        <div class="artist-name">Theodore Ralli, c. 1890</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art1" class="text-link">Analysis</a>
+                            <a href="Ralli.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg"
+                            alt="Girl with a Pearl Earring by Vermeer">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Dutch Golden Age</span>
+                        <h3 class="art-title">Girl with a Pearl Earring</h3>
+                        <div class="artist-name">Johannes Vermeer, 1665</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art3" class="text-link">Analysis</a>
+                            <a href="Vermeer.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
 
-<div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Stilleven_met_aardewerk_en_flessen_-_s0138V1962_-_Van_Gogh_Museum.jpg" alt="Still Life with Earthenware and Bottles by Van Gogh">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Realism</span>
-        <h3 class="art-title">Still Life with Earthenware and Bottles</h3>
-        <div class="artist-name">Vincent van Gogh, 1885</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art4" class="text-link">Analysis</a>
-            <a href="Van.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Stilleven_met_aardewerk_en_flessen_-_s0138V1962_-_Van_Gogh_Museum.jpg"
+                            alt="Still Life with Earthenware and Bottles by Van Gogh">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Realism</span>
+                        <h3 class="art-title">Still Life with Earthenware and Bottles</h3>
+                        <div class="artist-name">Vincent van Gogh, 1885</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art4" class="text-link">Analysis</a>
+                            <a href="Van.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
 
-<div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg" alt="The Hay Wain by John Constable">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Romanticism</span>
-        <h3 class="art-title">The Hay Wain</h3>
-        <div class="artist-name">John Constable, 1821</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art5" class="text-link">Analysis</a>
-            <a href="Constable.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg"
+                            alt="The Hay Wain by John Constable">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Romanticism</span>
+                        <h3 class="art-title">The Hay Wain</h3>
+                        <div class="artist-name">John Constable, 1821</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art5" class="text-link">Analysis</a>
+                            <a href="Constable.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
 
-<div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Gustave_Courbet_-_Still_Life_with_Apples_-_Mesdag_Collection.jpg" alt="Still Life with Apples by Gustave Courbet">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Realism</span>
-        <h3 class="art-title">Still Life with Apples</h3>
-        <div class="artist-name">Gustave Courbet, 1872</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art6" class="text-link">Analysis</a>
-            <a href="Courbet.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
-<div class="art-card">
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/John_Constable_-_Dedham_Vale_-_WGA5183.jpg" alt="Dedham Vale by John Constable">
-    </div>
-    <div class="card-details">
-        <span class="era-tag">Romanticism</span>
-        <h3 class="art-title">Dedham Vale</h3>
-        <div class="artist-name">John Constable, 1802</div>
-        <div class="card-links">
-            <a href="detailsClassic.html?art=art7" class="text-link">Analysis</a>
-            <a href="Constable.html" class="text-link">Artist Bio</a>
-        </div>
-    </div>
-</div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Gustave_Courbet_-_Still_Life_with_Apples_-_Mesdag_Collection.jpg"
+                            alt="Still Life with Apples by Gustave Courbet">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Realism</span>
+                        <h3 class="art-title">Still Life with Apples</h3>
+                        <div class="artist-name">Gustave Courbet, 1872</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art6" class="text-link">Analysis</a>
+                            <a href="Courbet.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/John_Constable_-_Dedham_Vale_-_WGA5183.jpg"
+                            alt="Dedham Vale by John Constable">
+                    </div>
+                    <div class="card-details">
+                        <span class="era-tag">Romanticism</span>
+                        <h3 class="art-title">Dedham Vale</h3>
+                        <div class="artist-name">John Constable, 1802</div>
+                        <div class="card-links">
+                            <a href="detailsClassic.html?art=art7" class="text-link">Analysis</a>
+                            <a href="Constable.html" class="text-link">Artist Bio</a>
+                        </div>
+                    </div>
+                </div>
 
         </section>
     </main>
-     <footer>
+    <footer>
         <p>© 2025 Silent Storiest. All rights reserved.</p>
         <p>
-            <a href="aboutPage.html">About</a> | 
-            <a href="ArtistsPage.html">Artists</a> | 
+            <a href="aboutPage.html">About</a> |
+            <a href="ArtistsPage.html">Artists</a> |
             <a href="Contact.html">Contact us</a>
         </p>
     </footer>
 </body>
+
 </html>
