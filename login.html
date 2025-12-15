@@ -38,15 +38,16 @@
 
   <main class="login-container">
     <div class="login-box">
-      <form action="login.php" method="POST">
+      
+      <form id="loginForm" action="login.php" method="POST">
         <div class="form-group">
           <label>Registered Email</label>
-          <input type="email" placeholder="name@example.com" required>
+          <input id="loginEmail" type="email" placeholder="name@example.com" required>
         </div>
 
         <div class="form-group">
           <label>Passkey</label>
-          <input type="password" placeholder="••••••••" required>
+          <input id="loginPassword" type="password" placeholder="••••••••" required>
         </div>
 
         <button class="btn-outline">Enter Gallery</button>
@@ -70,3 +71,4 @@
 </footer>
 </body>
 </html>
+
