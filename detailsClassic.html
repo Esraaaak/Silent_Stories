@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artwork Details</title>
+        <!-- Google Fonts -->
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-
+<!-- Header / Navigation -->
 <header>
     <div class="logo">Silent Stories</div>
     <nav class="nav-links">
@@ -23,7 +24,7 @@
             <a href="SubmitArtworkPage.html">Submit</a> 
              <a href="aboutPage.html">About</a> 
             <a href="Contact.html">Contact</a> 
-             
+             <!-- Container to display artwork details dynamically -->
 
         <span class="auth-links">
             <a href="login.html">Login</a>
@@ -46,9 +47,16 @@
 </footer>
 
 <script>
+    // ---------------------------
+// Get artwork ID from URL query string
+// Example URL: details.html?art=art1
+// ---------------------------
 const params = new URLSearchParams(window.location.search);
 const artId = params.get('art');
-
+//---------------------------
+// Artwork data object
+// Stores all artworks with title, artist, year, image, and description
+// ------
 const artworks = {
     art1: {
         title: "Autumn Landscape",
@@ -257,8 +265,15 @@ const artworks = {
     }
 };
 
+// ---------------------------
+// Select the artwork based on ID
+// ---------------------------
 const art = artworks[artId];
 
+// ---------------------------
+// Insert the artwork details into the page
+// If the artwork ID is invalid, show an error message
+// ---------------------------
 document.getElementById("details-container").innerHTML = art ? `
     <h1>${art.title}</h1>
     <h3>${art.artist} (${art.year})</h3>

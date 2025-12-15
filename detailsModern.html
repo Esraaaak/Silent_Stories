@@ -48,7 +48,10 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const artId = params.get('art');
-
+//---------------------------
+// Artwork data object
+// Stores all artworks with title, artist, year, image, and description
+// ------
         const artworks = {
     scream: {
         title: "New Beginning",
@@ -215,7 +218,10 @@ art6: {
     `
 }
         };
-
+// ---------------------------
+// Insert the artwork details into the page
+// If the artwork ID is invalid, show an error message
+// ---------------------------
         const art = artworks[artId];
 
         if (art) {
@@ -231,5 +237,4 @@ art6: {
     </script>
 </body>
 </html>
-
 
