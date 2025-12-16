@@ -28,7 +28,6 @@
             background-color: var(--text-secondary);
         }
         
-        /* أنماط الـ Modals والـ Footer كما هي */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
         .modal-content { background-color: var(--bg-body); padding: 30px; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.4); text-align: center; position: relative; color: var(--text-primary); max-width: 450px; }
         .close-modal { color: var(--text-secondary); font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 10px; right: 15px; }
@@ -44,6 +43,7 @@
     </style>
 </head>
 <body>
+    <!-- Fixed header containing logo, navigation links, and user actions -->
 <header>
     <div class="nav-left">
     </div>
@@ -58,18 +58,19 @@
              <a href="aboutPage.html">About</a> 
             <a href="Contact.html">Contact</a> 
              
-             
+             <!-- Authentication links (Login / Sign Up) -->
             <span class="auth-links"> 
                 <a href="login.html">Login</a> 
                 <a href="signup.html">Sign Up</a> 
             </span> 
         </nav> 
     <div>
+        <!-- Wishlist and logout buttons -->
         <button id="wishlistBtn" onclick="showWishlistModal()">My Wishlist (0)</button>
         <button id="logoutBtn" onclick="logout()">Logout</button>
     </div>
 </header>
-
+<!-- Hero section introducing the exhibitions -->
 <div class="hero-section">
     <span class="sub-headline">CURATED EXHIBITION</span>
     <h1>Upcoming Events & Workshops</h1>
@@ -78,12 +79,14 @@
 </div>
 
 <div id="gallery">
-
+<!-- Individual event card -->
     <div class="art-card event-type">
         <div class="image-container">
             <img src="images/Drop-in Drawing.png" alt="Drop-in Drawing">
             <span class="like-btn" onclick="toggleLike(this)">♡</span>
         </div>
+        
+    <!-- Event details -->
         <div class="card-details">
             <h2>Drop-in Drawing</h2>
             <p class="event-date">December 10, 2025 — City Art Center</p>
@@ -145,7 +148,7 @@
     </div>
     
 </div>
-
+<!-- Modal shown when login or signup is required -->
 <div id="choiceModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeChoiceModal()">✕</span>
@@ -196,10 +199,11 @@
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
 <script>
+    // Check if the user is logged in using localStorage
     function checkLoginStatus() {
         return localStorage.getItem('isLoggedIn') === 'true';
     }
-    
+    // Log out the user and clear stored data
     function logout() {
         localStorage.removeItem('isLoggedIn');
         localStorage.removeItem('userName');
@@ -266,7 +270,9 @@
         wishlistContent.innerHTML = html;
         document.getElementById("wishlistModal").style.display = "flex";
     }
-
+// Handle event registration
+// If user is logged in, show confirmation modal
+// Otherwise, prompt login or signup
     function registerForEvent(eventTitle, eventDate) {
         if (checkLoginStatus()) {
             const name = localStorage.getItem('userName') || 'Gallery Member';
@@ -335,7 +341,6 @@
         });
     }
 
-    // وظيفة onload للتحقق عند تحميل الصفحة
     window.onload = function() {
         updateHeaderButtons(); 
         initializeLikes();   
@@ -390,7 +395,7 @@
         }
     }
 
-
+// Smooth scroll back to top
     const scrollBtn = document.getElementById("scrollTopBtn");
 
     window.onscroll = function() {
@@ -405,7 +410,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 </script>
-
+<!-- Website footer -->
 <footer>
     <p>© 2025 Silent Stories. All rights reserved.</p>
     <p>
@@ -416,4 +421,5 @@
 </footer>
 
 </body>
+
 </html>
