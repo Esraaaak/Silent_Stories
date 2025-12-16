@@ -2,23 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Page meta & styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up Silent Storiest</title>
-
-  <!-- Global styles + auth page styles -->
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="lscss.css">
 </head>
 
 <body>
-
-<!-- ================= HEADER ================= -->
-<!-- Logo + main navigation -->
 <header>
   <div class="logo">Silent Stories</div>
-
   <nav class="nav-links">
     <a href="Silent storiest home.html">Home</a>
     <a href="ArtExhibitions.html">Exhibitions</a>
@@ -29,7 +21,6 @@
     <a href="aboutPage.html">About</a>
     <a href="Contact.html">Contact</a>
 
-    <!-- Login / Signup links -->
     <span class="auth-links">
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
@@ -37,81 +28,54 @@
   </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<!-- Page intro / title section -->
-<div class="hero-content">
-  <h1>
-    <span>Become a Patron</span>
-    Create Account
-  </h1>
-</div>
+<section id="signup-page">
+  <div class="hero">
+    <h1>
+      <span>Become a Patron</span>
+      Create Account
+    </h1>
+  </div>
 
-<!-- ================= SIGNUP PAGE ================= -->
-<!-- Wrapper for signup page content -->
-<section id="singup-page">
-
-  <!-- ================= MAIN ================= -->
-  <!-- Centers the signup form -->
   <main class="signup-container">
-
-    <!-- Signup form box -->
     <div class="signup-box">
 
-      <!-- ================= FORM ================= -->
-      <!-- User registration form -->
-      <form id="signupForm" action="signupPHP.php" method="POST">
-
-        <!-- Full name -->
+<form id="signupForm" action="signupPHP.php" method="POST">
         <div class="form-group">
           <label for="signupName">Full Name</label>
-          <input type="text" id="signupName" name="name" placeholder="e.g.name" required>
+          <input type="text" id="signupName" name="name"  placeholder="e.g.name"  required>
         </div>
 
-        <!-- Email -->
         <div class="form-group">
           <label for="signupEmail">Email Address</label>
-          <input type="email" id="signupEmail" name="email"
-                 placeholder="e.g. name@gmail.com" required>
+          <input type="email" id="signupEmail" name="email" required placeholder="e.g. name@gmail.com" required>
         </div>
 
-        <!-- Saudi mobile number -->
         <div class="form-group">
           <label for="signupPhone">Mobile Number (SA)</label>
-          <input type="tel" id="signupPhone" name="phone"
-                 placeholder="05XXXXXXXX"
-                 pattern="^05\d{8}$"
-                 title="Must start with 05 and contain exactly 10 digits"
-                 required>
+          <input type="tel" id="signupPhone" name="phone" placeholder="05XXXXXXXX" 
+                 pattern="^05\d{8}$" 
+                 title="Must start with 05 and contain exactly 10 digits" required>
         </div>
 
-        <!-- Password -->
         <div class="form-group">
           <label for="signupPassword">Create Password</label>
-          <input type="password" id="signupPassword" name="password"
-                 placeholder="Min 8 chars, 1 Uppercase, 1 Symbol (?/*-?!@#)"
+          <input type="password" id="signupPassword" name="password" placeholder="Min 8 chars, 1 Uppercase, 1 Symbol (?/*-?!@#)"
                  pattern="^[A-Z][a-zA-Z\d/*\-?!@#\.]{7,}$"
                  title="Minimum of 8 characters. Begins with an uppercase letter. Includes lowercase letters. Contains at least one symbol from ?/*-?!@#."
                  required>
         </div>
 
-        <!-- Submit button -->
         <button class="btn-outline">Register Membership</button>
 
-        <!-- Extra links -->
         <div class="form-links">
           <span>Already a patron? <a href="login.html">Access Account</a></span>
           <a href="Silent storiest home.html" class="back-home">Return to Home</a>
         </div>
-
       </form>
-      <!-- ================= END FORM ================= -->
-
     </div>
   </main>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<!-- Footer info & quick links -->
 <footer>
   <p>© 2025 Silent Stories. All rights reserved.</p>
   <p class="in1">
@@ -120,9 +84,8 @@
     <a href="ArtistsPage.html">Artists</a>
   </p>
 </footer>
-
-<!-- Page scripts -->
 <script src="JS.js"></script>
 
 </body>
 </html>
+
