@@ -1,15 +1,16 @@
 <?php
-
+// 1. بدء الجلسة والاتصال بقاعدة البيانات
 session_start();
-include 'DB.php';
+include 'DB.php';// يجب أن يكون ملف DB.php معدلاً لدعم utf8mb4
 
-// Check if the user is logged in
+// 2. تحديد حالة المستخدم ومتغيراته
 $is_logged_in = isset($_SESSION['user_id']);
 $user_id = $is_logged_in ? $_SESSION['user_id'] : 0;
-$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest'; // Store user information or default guest values
+$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest';
+// إضافة متغير البريد الإلكتروني من الجلسة (مفيد للجافاسكريبت)
 $user_email = $is_logged_in ? $_SESSION['user_email'] : 'N/A';
 
-// Fetch wishlist event IDs for the logged-in user
+// 3. جلب قائمة الأمنيات للمستخدم الحالي
 $wishlist_events_ids = [];
 if ($is_logged_in) {
  $sql_wishlist = "SELECT event_id FROM wishlist WHERE user_id = ?";
@@ -24,11 +25,11 @@ while($row = $result_wishlist->fetch_assoc()) {
 }
 $wishlist_count = count($wishlist_events_ids);
 
-// Fetch all events from the database
+// 4. جلب جميع بيانات الفعاليات (للعرض)
 $sql_events = "SELECT id, title, event_date, location, description, image_url FROM events ORDER BY id ASC";
 $result_events = $conn->query($sql_events);
-// Store events in an array
-$events = []; 
+
+$events = []; // مصفوفة لحفظ بيانات الفعاليات
 if ($result_events && $result_events->num_rows > 0) {
  while($row = $result_events->fetch_assoc()) {
  $events[] = $row;
@@ -99,7 +100,7 @@ text-decoration: none;
 transition: color 0.3s ease;
 }
 
-/* Hover line effect */
+/* Hover line effect - قمنا بإزالتها لأنها غير موجودة في الصورة الأولى */
 .nav-links a::after {
 display: none !important;
 }
@@ -108,9 +109,9 @@ display: none !important;
 color: var(--accent);
 }
 
-/* Auth links (LOGIN SIGN UP)*/
+/* Auth links (LOGIN SIGN UP) - لجعلها على اليمين كما في الصورة */
 .auth-links {
-
+/* إضافة خط فاصل خفيف قبل Login */
 border-left: 1px solid #ccc;
 padding-left: 20px;
 margin-left: 5px;
@@ -122,7 +123,7 @@ font-weight: 600;
 letter-spacing: 2px;
 }
 
-
+/* إزالة ستايل الأزرار لأننا نستخدم الروابط بدلاً منها */
 
 #wishlistBtn {
 background-color: var(--text-primary);
@@ -153,7 +154,6 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 </style>
 </head>
 <body>
- <!-- Fixed header navigation bar -->
 <header>
 <div class="nav-left">
 </div>
@@ -167,7 +167,6 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <a href="SubmitArtworkPage.html">Submit</a>
 <a href="aboutPage.html">About</a>
 <a href="Contact.html">Contact</a>
- <!-- Display welcome message if user is logged in -->
 <?php if ($is_logged_in): ?>
 <span class="auth-links" style="font-weight: 600; color: var(--accent);">Welcome, <?php echo htmlspecialchars($user_name); ?></span>
 <?php else: ?>
@@ -190,7 +189,7 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <p>Explore our schedule of public events, special tours, and hands-on workshops designed for art lovers of all ages.</p>
 <button class="view-collection-btn">VIEW SCHEDULE</button>
 </div>
-<!-- Loop through all events and display them as cards -->
+
 <div id="gallery">
 <?php foreach ($events as $event):
 $event_id = $event['id'];
@@ -245,7 +244,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 </div>
 </div>
 </div>
-<!-- Modal shown when user must login or signup -->
+
 <div id="wishlistModal" class="modal">
 <div class="modal-content" style="max-width: 600px;">
 <span class="close-modal" onclick="closeWishlistModal()">✕</span>
@@ -260,10 +259,10 @@ $like_icon = $is_liked ? "❤️" : "♡";
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
 <script>
-// Store login status and user info from PHP
+
  const IS_LOGGED_IN = <?php echo json_encode($is_logged_in); ?>;
  const USER_NAME = <?php echo json_encode($user_name); ?>;
- const USER_EMAIL = <?php echo json_encode($user_email); ?>; 
+ const USER_EMAIL = <?php echo json_encode($user_email); ?>; // تم تحديث جلب القيمة في PHP
 
  function closeFancyModal() {
 document.getElementById("fancyModal").style.display = "none";
@@ -325,7 +324,7 @@ wishlistContent.innerHTML = `<p style="text-align: center; color: red;">Error: $
  wishlistContent.innerHTML = `<p style="text-align: center; color: red;">Connection error.</p>`;
  });
  }
-// Register the logged-in user for an event
+
  function registerForEvent(eventTitle, eventDate, event_id) {
  if (IS_LOGGED_IN) {
 
@@ -355,14 +354,14 @@ document.getElementById("successName").textContent = USER_NAME;
  localStorage.setItem('pending_action', JSON.stringify({
 action: 'register',
  event_id: event_id,
-                eventTitle: eventTitle, 
+                eventTitle: eventTitle, // إضافة البيانات الإضافية للتأكيد بعد الدخول
                 eventDate: eventDate
  }));
  document.getElementById("choiceEventTitle").textContent = eventTitle;
  document.getElementById("choiceModal").style.display = "flex";
  }
  }
- // Toggle wishlist status (add/remove event)
+ 
 function toggleLike(iconElement, event_id) {
  if (!IS_LOGGED_IN) {
  alert("Please log in to add items to your wishlist.");
@@ -376,7 +375,7 @@ function toggleLike(iconElement, event_id) {
 return;
  }
 
-
+// تنفيذ طلب AJAX
  fetch('process_action.php', {
  method: 'POST',
 headers: {
@@ -392,7 +391,7 @@ if (data.success) {
  } else {
  iconElement.textContent = '♡';
  }
- window.location.reload(); 
+ window.location.reload(); // تحديث العداد
  } else {
 alert(data.message);
  }
@@ -403,7 +402,9 @@ alert(data.message);
  });
  }
 
-// Check if there is a pending action saved before login
+ // ************************************************
+// ** 3. الدالة المسؤولة عن تنفيذ الإجراء المعلق (التي تعمل عند العودة) **
+// ************************************************
  function checkPendingAction() {
  if (!IS_LOGGED_IN) return;
 
@@ -413,13 +414,13 @@ if (pendingAction) {
 
  try {
                 const data = JSON.parse(pendingAction);
-                localStorage.removeItem('pending_action'); 
-   
+                localStorage.removeItem('pending_action'); // الحذف بعد القراءة بنجاح
+      // تنفيذ دالة التسجيل
                 if (data.action === 'register') {
-                   
+                    // نستخدم البيانات المخزنة لإعادة تشغيل registerForEvent
                     registerForEvent(data.eventTitle, data.eventDate, data.event_id);
  } else if (data.action === 'toggle_wishlist') {
-
+// البحث عن عنصر القلب لتشغيل دالة الإعجاب
  const eventElement = document.querySelector(`[data-event-id="${data.event_id}"]`);
  const iconElement = eventElement ? eventElement.querySelector('.like-btn') : null;
                     
@@ -428,7 +429,7 @@ if (pendingAction) {
  }
  }
             } catch (e) {
-              
+                // في حالة فشل التحليل (Parsing)
                 console.error("Error parsing pending action from localStorage:", e);
                 localStorage.removeItem('pending_action');
             }
@@ -437,9 +438,9 @@ if (pendingAction) {
 
 
  window.onload = function() {
- checkPendingAction(); 
+ checkPendingAction(); // تشغيل دالة التحقق من الإجراء المعلق
 
-      
+        // كود زر Scroll (موجود مسبقاً)
  const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function() {
@@ -455,7 +456,7 @@ window.onscroll = function() {
 };
  };
 </script>
-<!-- Website footer -->
+
 <footer>
 <p>© 2025 Silent Stories. All rights reserved.</p>
 <p>
@@ -464,6 +465,6 @@ window.onscroll = function() {
 <a href="Contact.html">Contact us</a>
 </p>
 </footer>
-<?php $conn->close();?>
+<?php $conn->close(); // إغلاق اتصال قاعدة البيانات ?>
 </body>
 </html>
