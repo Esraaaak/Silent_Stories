@@ -104,9 +104,16 @@ $result = $conn->query($sql);
 <!-- ===== MAIN ===== -->
 <main>
   
-  <h1>
-    User Artwork
-  </h1>
+  <h1 style="
+    font-family: 'Cormorant Garamond', serif;   /* Elegant font for a classic look */
+    font-size: 4rem;                             /* Very large size for page title */
+    color: #2c2a29;                              /* Dark color for strong visibility */
+    text-align: center;                           /* Center the title on the page */
+    margin: 60px 0 30px 0;                        /* Top and bottom spacing */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.15);  /* Light shadow for depth */
+">
+    User Artworks
+</h1>
 
     <div class="artworks-container">
         <?php
@@ -147,6 +154,7 @@ $result = $conn->query($sql);
 </html>
 
 <?php $conn->close(); ?>
+
 
 
 
