@@ -163,7 +163,7 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <a href="classicPage.html">Classic</a>
 <a href="modernPage.html">Modern</a>
 <a href="ArtistsPage.html">Artists</a>
-<a href="SubmitArtworkPage.html">Submit</a>
+<a href="SubmitArtworkPage.php">Submit</a>
 <a href="aboutPage.html">About</a>
 <a href="Contact.html">Contact</a>
 <!-- Display welcome message if user is logged in -->
