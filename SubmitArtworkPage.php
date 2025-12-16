@@ -134,7 +134,7 @@ form button { padding:10px 25px; background:#a06645; color:#fff; border:none; bo
 <img id="preview" src="" alt="Artwork Preview">
 
 <div class="action-buttons">
-    <a href="Silent stories home.html" class="soft-btn">Back to Home</a>
+    <a href="Silent storiest home.html" class="soft-btn">Back to Home</a>
 
     <a href="UserArtworksPage.php" class="soft-btn">View User Artworks</a>
 
@@ -160,4 +160,3 @@ document.getElementById('artworkFile').onchange = function() {
 </script>
 </body>
 </html>
-
