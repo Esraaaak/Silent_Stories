@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => {
           if (response.startsWith("Login successful")) {
            
-            window.location.replace('ArtExhibitions.php');
+            window.location.replace('/silent_stories/ArtExhibitions.php');
           } else {
             showAlert(response);
           }
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => {
           if (response.startsWith("Signup successful")) {
        
-            window.location.replace('ArtExhibitions.php');
+            window.location.replace('/silent_stories/ArtExhibitions.php');
           } else {
             showAlert(response);
           }

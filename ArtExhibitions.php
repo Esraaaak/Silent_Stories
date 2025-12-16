@@ -6,9 +6,9 @@ include 'DB.php';
 // Check if the user is logged in
 $is_logged_in = isset($_SESSION['user_id']);
 $user_id = $is_logged_in ? $_SESSION['user_id'] : 0;
-$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest'; // Store user information or default guest values
+$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest';
+// Store user information or default guest values
 $user_email = $is_logged_in ? $_SESSION['user_email'] : 'N/A';
-
 // Fetch wishlist event IDs for the logged-in user
 $wishlist_events_ids = [];
 if ($is_logged_in) {
@@ -24,11 +24,11 @@ while($row = $result_wishlist->fetch_assoc()) {
 }
 $wishlist_count = count($wishlist_events_ids);
 
-// Fetch all events from the database
+// 4. جلب جميع بيانات الفعاليات (للعرض)
 $sql_events = "SELECT id, title, event_date, location, description, image_url FROM events ORDER BY id ASC";
 $result_events = $conn->query($sql_events);
-// Store events in an array
-$events = []; 
+
+$events = []; // مصفوفة لحفظ بيانات الفعاليات
 if ($result_events && $result_events->num_rows > 0) {
  while($row = $result_events->fetch_assoc()) {
  $events[] = $row;
@@ -99,7 +99,6 @@ text-decoration: none;
 transition: color 0.3s ease;
 }
 
-/* Hover line effect */
 .nav-links a::after {
 display: none !important;
 }
@@ -108,7 +107,7 @@ display: none !important;
 color: var(--accent);
 }
 
-/* Auth links (LOGIN SIGN UP)*/
+/* Auth links (LOGIN SIGN UP) */
 .auth-links {
 
 border-left: 1px solid #ccc;
@@ -153,10 +152,10 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 </style>
 </head>
 <body>
- <!-- Fixed header navigation bar -->
 <header>
 <div class="nav-left">
 </div>
+ <!-- Fixed header navigation bar -->
 <div class="logo">Silent Stories</div>
 <nav class="nav-links">
 <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
@@ -167,10 +166,11 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <a href="SubmitArtworkPage.html">Submit</a>
 <a href="aboutPage.html">About</a>
 <a href="Contact.html">Contact</a>
- <!-- Display welcome message if user is logged in -->
+<!-- Display welcome message if user is logged in -->
 <?php if ($is_logged_in): ?>
 <span class="auth-links" style="font-weight: 600; color: var(--accent);">Welcome, <?php echo htmlspecialchars($user_name); ?></span>
 <?php else: ?>
+
 <span class="auth-links">
 <a href="login.html">Login</a>
 <a href="signup.html">Sign Up</a>
@@ -214,7 +214,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 </div>
 <?php endforeach; ?>
 </div>
-
+<!-- Modal shown when user must login or signup -->
 <div id="choiceModal" class="modal">
 <div class="modal-content">
 <span class="close-modal" onclick="closeChoiceModal()">✕</span>
@@ -223,7 +223,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 <h3 id="choiceEventTitle" style="margin-bottom: 25px; color: var(--text-primary);"></h3>
 <p style="font-size: 1.1rem; font-weight: bold;">Do you already have an account?</p>
 
- <button class="modal-btn" onclick="redirectToLoginChoice()">Yes, Log In</button>
+<button class="modal-btn" onclick="redirectToLoginChoice()">Yes, Log In</button>
 <button class="modal-btn" style="background-color: #555;" onclick="redirectToSignupChoice()">No, Sign Up</button>
 </div>
 </div>
@@ -245,7 +245,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 </div>
 </div>
 </div>
-<!-- Modal shown when user must login or signup -->
+
 <div id="wishlistModal" class="modal">
 <div class="modal-content" style="max-width: 600px;">
 <span class="close-modal" onclick="closeWishlistModal()">✕</span>
@@ -260,7 +260,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
 <script>
-// Store login status and user info from PHP
+
  const IS_LOGGED_IN = <?php echo json_encode($is_logged_in); ?>;
  const USER_NAME = <?php echo json_encode($user_name); ?>;
  const USER_EMAIL = <?php echo json_encode($user_email); ?>; 
@@ -286,7 +286,7 @@ function closeWishlistModal() {
  closeChoiceModal();
 window.location.href = 'signup.html';
  }
-
+ // Toggle wishlist status (add/remove event)
  function showWishlistModal() {
  if (!IS_LOGGED_IN) {
  alert("Please log in to view your wishlist.");
@@ -362,7 +362,7 @@ action: 'register',
  document.getElementById("choiceModal").style.display = "flex";
  }
  }
- // Toggle wishlist status (add/remove event)
+ 
 function toggleLike(iconElement, event_id) {
  if (!IS_LOGGED_IN) {
  alert("Please log in to add items to your wishlist.");
@@ -376,7 +376,7 @@ function toggleLike(iconElement, event_id) {
 return;
  }
 
-
+// تنفيذ طلب AJAX
  fetch('process_action.php', {
  method: 'POST',
 headers: {
@@ -392,7 +392,7 @@ if (data.success) {
  } else {
  iconElement.textContent = '♡';
  }
- window.location.reload(); 
+ window.location.reload(); // تحديث العداد
  } else {
 alert(data.message);
  }
@@ -403,7 +403,7 @@ alert(data.message);
  });
  }
 
-// Check if there is a pending action saved before login
+ 
  function checkPendingAction() {
  if (!IS_LOGGED_IN) return;
 
@@ -414,9 +414,9 @@ if (pendingAction) {
  try {
                 const data = JSON.parse(pendingAction);
                 localStorage.removeItem('pending_action'); 
-   
+     
                 if (data.action === 'register') {
-                   
+                    // registerForEvent
                     registerForEvent(data.eventTitle, data.eventDate, data.event_id);
  } else if (data.action === 'toggle_wishlist') {
 
@@ -428,7 +428,7 @@ if (pendingAction) {
  }
  }
             } catch (e) {
-              
+                
                 console.error("Error parsing pending action from localStorage:", e);
                 localStorage.removeItem('pending_action');
             }
@@ -438,8 +438,7 @@ if (pendingAction) {
 
  window.onload = function() {
  checkPendingAction(); 
-
-      
+       
  const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function() {
@@ -464,6 +463,6 @@ window.onscroll = function() {
 <a href="Contact.html">Contact us</a>
 </p>
 </footer>
-<?php $conn->close();?>
+<?php $conn->close(); ?>
 </body>
 </html>

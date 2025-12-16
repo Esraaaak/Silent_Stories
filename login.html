@@ -2,15 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Page meta & styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Silent Storiest</title>
+
+  <!-- Global styles + auth page styles -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="lscss.css">
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
+<!-- Site logo + main navigation -->
 <header>
   <div class="logo">Silent Stories</div>
+
   <nav class="nav-links">
     <a href="Silent storiest home.html">Home</a>
     <a href="ArtExhibitions.html">Exhibitions</a>
@@ -21,6 +29,7 @@
     <a href="aboutPage.html">About</a>
     <a href="Contact.html">Contact</a>
 
+    <!-- Login / Signup links -->
     <span class="auth-links">
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
@@ -28,41 +37,71 @@
   </nav>
 </header>
 
-<section id="login-page">
-  <div class="hero">
-    <h1>
-      <span>Member Access</span>
-      Log in
-    </h1>
-  </div>
+<!-- ================= HERO ================= -->
+<!-- Page title / intro section -->
+<div class="hero-content">
+  <h1>
+    <span>Member Access</span>
+    Log in
+  </h1>
+</div>
 
+<!-- ================= LOGIN PAGE ================= -->
+<!-- Wrapper for login page content -->
+<section id="login-page">
+
+  <!-- ================= MAIN ================= -->
+  <!-- Centers the login form on the page -->
   <main class="login-container">
+
+    <!-- Login form box -->
     <div class="login-box">
 
+      <!-- ================= FORM ================= -->
+      <!-- User login form -->
       <form id="loginForm" action="loginPHP.php" method="POST">
+
+        <!-- Email input -->
         <div class="form-group">
           <label>Registered Email</label>
-          <input id="loginEmail" name="email" type="email" placeholder="name@example.com" required>
+          <input id="loginEmail"
+                 name="email"
+                 type="email"
+                 placeholder="name@example.com"
+                 required>
         </div>
 
+        <!-- Password input -->
         <div class="form-group">
           <label>Passkey</label>
-          <input id="loginPassword" name="password" type="password" placeholder="••••••••" required>
+          <input id="loginPassword"
+                 name="password"
+                 type="password"
+                 placeholder="••••••••"
+                 required>
         </div>
 
+        <!-- Submit button -->
         <button class="btn-outline">Enter Gallery</button>
 
+        <!-- Extra links -->
         <div class="form-links">
           <span>New to the collection? <a href="signup.html">Request Membership</a></span>
           <a href="Silent storiest home.html" class="back-home">Return to Home</a>
         </div>
-          </form>
+
+        <!-- Login status message -->
+        <p id="Message"></p>
+
+      </form>
+      <!-- ================= END FORM ================= -->
+
     </div>
   </main>
 </section>
 
-
-
+<!-- ================= FOOTER ================= -->
+<!-- Footer info & quick links -->
 <footer>
   <p>© 2025 Silent Stories. All rights reserved.</p>
   <p class="in1">
@@ -71,8 +110,9 @@
     <a href="ArtistsPage.html">Artists</a>
   </p>
 </footer>
+
+<!-- Page scripts -->
 <script src="JS.js"></script>
 
 </body>
 </html>
-
