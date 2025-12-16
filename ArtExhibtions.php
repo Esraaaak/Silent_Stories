@@ -3,12 +3,13 @@
 session_start();
 include 'DB.php';
 
+// Check if the user is logged in
 $is_logged_in = isset($_SESSION['user_id']);
 $user_id = $is_logged_in ? $_SESSION['user_id'] : 0;
-$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest';
+$user_name = $is_logged_in ? $_SESSION['user_name'] : 'Gallery Guest'; // Store user information or default guest values
 $user_email = $is_logged_in ? $_SESSION['user_email'] : 'N/A';
 
-
+// Fetch wishlist event IDs for the logged-in user
 $wishlist_events_ids = [];
 if ($is_logged_in) {
  $sql_wishlist = "SELECT event_id FROM wishlist WHERE user_id = ?";
@@ -23,10 +24,10 @@ while($row = $result_wishlist->fetch_assoc()) {
 }
 $wishlist_count = count($wishlist_events_ids);
 
-
+// Fetch all events from the database
 $sql_events = "SELECT id, title, event_date, location, description, image_url FROM events ORDER BY id ASC";
 $result_events = $conn->query($sql_events);
-
+// Store events in an array
 $events = []; 
 if ($result_events && $result_events->num_rows > 0) {
  while($row = $result_events->fetch_assoc()) {
@@ -152,6 +153,7 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 </style>
 </head>
 <body>
+ <!-- Fixed header navigation bar -->
 <header>
 <div class="nav-left">
 </div>
@@ -165,6 +167,7 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <a href="SubmitArtworkPage.html">Submit</a>
 <a href="aboutPage.html">About</a>
 <a href="Contact.html">Contact</a>
+ <!-- Display welcome message if user is logged in -->
 <?php if ($is_logged_in): ?>
 <span class="auth-links" style="font-weight: 600; color: var(--accent);">Welcome, <?php echo htmlspecialchars($user_name); ?></span>
 <?php else: ?>
@@ -187,7 +190,7 @@ footer a { color: var(--text-secondary); text-decoration: none; margin: 0 5px; }
 <p>Explore our schedule of public events, special tours, and hands-on workshops designed for art lovers of all ages.</p>
 <button class="view-collection-btn">VIEW SCHEDULE</button>
 </div>
-
+<!-- Loop through all events and display them as cards -->
 <div id="gallery">
 <?php foreach ($events as $event):
 $event_id = $event['id'];
@@ -242,7 +245,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 </div>
 </div>
 </div>
-
+<!-- Modal shown when user must login or signup -->
 <div id="wishlistModal" class="modal">
 <div class="modal-content" style="max-width: 600px;">
 <span class="close-modal" onclick="closeWishlistModal()">✕</span>
@@ -257,7 +260,7 @@ $like_icon = $is_liked ? "❤️" : "♡";
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
 <script>
-
+// Store login status and user info from PHP
  const IS_LOGGED_IN = <?php echo json_encode($is_logged_in); ?>;
  const USER_NAME = <?php echo json_encode($user_name); ?>;
  const USER_EMAIL = <?php echo json_encode($user_email); ?>; 
@@ -322,7 +325,7 @@ wishlistContent.innerHTML = `<p style="text-align: center; color: red;">Error: $
  wishlistContent.innerHTML = `<p style="text-align: center; color: red;">Connection error.</p>`;
  });
  }
-
+// Register the logged-in user for an event
  function registerForEvent(eventTitle, eventDate, event_id) {
  if (IS_LOGGED_IN) {
 
@@ -359,7 +362,7 @@ action: 'register',
  document.getElementById("choiceModal").style.display = "flex";
  }
  }
- 
+ // Toggle wishlist status (add/remove event)
 function toggleLike(iconElement, event_id) {
  if (!IS_LOGGED_IN) {
  alert("Please log in to add items to your wishlist.");
@@ -400,7 +403,7 @@ alert(data.message);
  });
  }
 
-
+// Check if there is a pending action saved before login
  function checkPendingAction() {
  if (!IS_LOGGED_IN) return;
 
@@ -452,7 +455,7 @@ window.onscroll = function() {
 };
  };
 </script>
-
+<!-- Website footer -->
 <footer>
 <p>© 2025 Silent Stories. All rights reserved.</p>
 <p>
