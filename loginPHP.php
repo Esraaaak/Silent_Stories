@@ -24,6 +24,7 @@ if ($result->num_rows === 1) {
 
     if (password_verify($password, $row["password"])) {
         
+        // 🚨 التعديل: التحقق من وجود المفاتيح قبل استخدامها
         if (isset($row["id"]) && isset($row["name"]) && isset($row["email"])) {
             
             $_SESSION['user_id'] = $row["id"];
