@@ -2,25 +2,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Page meta & styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Silent Stories</title>
+
+  <!-- Global styles + auth/contact styles -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="lscss.css">
 </head>
 
-
-
 <body>
+
+<!-- ================= HEADER ================= -->
+<!-- Site logo + main navigation -->
 <header>
   <div class="logo">Silent Stories</div>
+
   <nav class="nav-links">
     <a href="Silent storiest home.html">Home</a>
     <a href="ArtExhibitions.html">Exhibitions</a>
     <a href="classicPage.html">Classic</a>
     <a href="modernPage.html">Modern</a>
     <a href="ArtistsPage.html">Artists</a>
+    <a href="SubmitArtworkPage.html">Submit</a>
+    <a href="aboutPage.html">About</a>
     <a href="Contact.html">Contact</a>
 
+    <!-- Login / Signup links -->
     <span class="auth-links">
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
@@ -28,43 +37,87 @@
   </nav>
 </header>
 
-<section id="contact">
-  <div class="hero">
-    <h1>
-      <span>Get In Touch</span>
-      Start a Conversation
-    </h1>
-    <p>
-      Whether you have questions about the collection, feedback on the curation, or ideas for collaboration, we welcome your correspondence.
-    </p>
-  </div>
+<!-- ================= HERO ================= -->
+<!-- Page title + short introduction text -->
+<div class="hero-content">
+  <h1>
+    <span>Get In Touch</span>
+    Start a Conversation
+  </h1>
 
+  <!-- Hero description -->
+  <p>
+    Whether you have questions about the collection, feedback on the curation,
+    or ideas for collaboration, we welcome your correspondence.
+  </p>
+</div>
+
+<!-- ================= CONTACT PAGE ================= -->
+<!-- Wrapper for contact page content -->
+<section id="contact">
+
+  <!-- ================= MAIN ================= -->
+  <!-- Centers the contact form and related info -->
   <main class="contact-container">
-    <form id="contactForm" class="contact-form" action="contactPHP.php" method="POST">
+
+    <!-- ================= CONTACT FORM ================= -->
+    <!-- Main contact form -->
+    <form id="contactForm"
+          class="contact-form"
+          action="contactPHP.php"
+          method="POST">
+
+      <!-- Name input -->
       <div class="form-group">
         <label for="contactName">Name</label>
-        <input type="text" id="contactName" name="name"  placeholder="e.g.name" required>
+        <input type="text"
+               id="contactName"
+               name="name"
+               placeholder="e.g.name"
+               required>
       </div>
 
+      <!-- Email input -->
       <div class="form-group">
         <label for="contactEmail">Email</label>
-        <input type="email" id="contactEmail" name="email"placeholder="e.g. name@gmail.com" required >
+        <input type="email"
+               id="contactEmail"
+               name="email"
+               placeholder="e.g. name@gmail.com"
+               required>
       </div>
 
+      <!-- Message textarea -->
       <div class="form-group">
         <label for="contactMessage">Message</label>
-        <textarea id="contactMessage" name="message" maxlength="300" placeholder="Share your thoughts..." required></textarea>
+        <textarea id="contactMessage"
+                  name="message"
+                  maxlength="300"
+                  placeholder="Share your thoughts..."
+                  required></textarea>
       </div>
 
+      <!-- Submit & reset buttons -->
       <div class="btn-row">
-        <input type="submit" value="Send Message" class="btn-outline submit-btn">
-        <input type="reset" value="Clear" class="btn-outline reset-btn">
+        <input type="submit"
+               value="Send Message"
+               class="btn-outline submit-btn">
+
+        <input type="reset"
+               value="Clear"
+               class="btn-outline reset-btn">
       </div>
 
-      <a href="Silent storiest home.html" class="back-home">Return to Home</a>
+      <!-- Back to home link -->
+      <a href="Silent storiest home.html" class="back-home">
+        Return to Home
+      </a>
 
     </form>
+    <!-- ================= END CONTACT FORM ================= -->
 
+    <!-- ================= ALTERNATIVE CONTACT ================= -->
+    <!-- Extra contact methods -->
     <p class="reach-title">Alternative Correspondence</p>
 
     <ul class="contact-list">
@@ -72,10 +125,12 @@
         <img src="images/email.png" width="20" height="15">
         SilentStoriestr@gmail.com
       </li>
+
       <li>
         <img src="images/x.png" width="20" height="20">
         <a href="https://x.com/TalesInColor">@SilentStoriest</a>
       </li>
+
       <li>
         <img src="images/Instagram.webp" width="20" height="20">
         <a href="https://www.instagram.com/tales_in_color">@SilentStoriest</a>
@@ -85,6 +140,12 @@
   </main>
 </section>
 
+<!-- ================= STATUS MESSAGE ================= -->
+<!-- Used to show form feedback -->
+<p id="Message"></p>
+
+<!-- ================= FOOTER ================= -->
+<!-- Footer info & quick links -->
 <footer>
   <p>© 2025 Silent Stories. All rights reserved.</p>
   <p class="in1">
@@ -94,7 +155,8 @@
   </p>
 </footer>
 
+<!-- Page scripts -->
 <script src="JS.js"></script>
+
 </body>
 </html>
-

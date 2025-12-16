@@ -1,176 +1,176 @@
+/* =========================================================
+   SILENT STORIES — LOGIN / SIGNUP / CONTACT ONLY
+   This stylesheet is used only for Login, Signup, and Contact pages
+   Depends on the global styles in style.css
+   ========================================================= */
 
-/*   1. THEME VARIABLES */
-:root {
-    --bg-body: #F2F0EB;
-    --white: #ffffff;
-    --text-primary: #1f1f1f;
-    --text-secondary: #555;
-    --accent: #b07c55;
-}
 
-/*    2. GLOBAL RESET & BODY  */
-* {
-    box-sizing: border-box;
-}
+/* =========================================================
+   1. AUTH HERO SECTION
+   Hero area used in Login, Signup, and Contact pages
+   ========================================================= */
 
-body {
-    margin: 0;
-    padding-top: 110px;
-    background-color: var(--bg-body);
-    color: var(--text-primary);
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.7;
-}
+.hero-content {
+    height: 70vh;                 /* Hero height relative to viewport */
+    min-height: 400px;            /* Prevent hero from becoming too small */
+    max-width: none;              /* Remove width limitation */
 
-/*    3. HEADER & NAVIGATION  */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    background-color: rgba(255,255,255,0.98);
-    border-bottom: 1px solid #e5e5e5;
-    padding: 18px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    margin-left: 22px;
-    font-size: 11px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-.auth-links {
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding-left: 25px;
-    border-left: 1px solid #ccc;
-}
-
-.auth-links a {
-    margin-left: 18px;
-    font-size: 11px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.auth-links a:hover {
-    color: var(--accent);
-}
-
-/*   4. HERO SECTION (ALL PAGES)  */
-.hero {
-    min-height: 90vh;
-    padding: 14rem 1rem 4rem;
-    display: flex;
+    display: flex;                /* Use flexbox for centering content */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    position: relative;
+
+    text-align: center;           /* Center text */
+    padding: 0 30;                /* Horizontal padding */
+    position: relative;           /* Required for background overlay */
+    overflow: hidden;             /* Hide overflow */
 }
 
-.hero::before {
+/* Background image for hero section */
+.hero-content::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
     background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: -1;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    background-size: cover;       /* Cover entire hero area */
+    background-position: center;  /* Center the image */
+
+    opacity: 0.15;                /* Light transparency */
+    z-index: -1;                  /* Place behind content */
+
+    /* Gradient mask to fade the image at the bottom */
+    mask-image: linear-gradient(
+        to bottom,
+        black 50%,
+        transparent 100%
+    );
 }
 
-.hero h1 {
+
+/* =========================================================
+   2. HERO TEXT STYLES
+   Typography inside hero section
+   ========================================================= */
+
+.hero-content h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-size: clamp(3.5rem, 8vw, 7rem); /* Responsive heading size */
     line-height: 0.9;
     margin-bottom: 2rem;
+    letter-spacing: -2px;
+    font-weight: 100;                 /* Thin font weight */
 }
 
-.hero h1 span {
+/* Small subtitle above main heading */
+.hero-content h1 span {
+    display: block;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 0.15em;
+
+    letter-spacing: 6px;              /* Wide letter spacing */
+    text-transform: uppercase;
+    color: var(--accent);
+
+    margin-bottom: 15px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.15em;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent);
 }
 
-.hero h1 span::before,
-.hero h1 span::after {
+/* Decorative lines on both sides of subtitle */
+.hero-content h1 span::before,
+.hero-content h1 span::after {
     content: '';
-    width: 40px;
+    display: block;
+    width: 30px;
     height: 1px;
     background-color: var(--accent);
 }
 
-.hero p {
-    max-width: 550px;
+/* Description text under hero title */
+.hero-content p {
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
+
+    max-width: 550px;
+    font-size: 1.1rem;
     color: var(--text-secondary);
+
+    margin-bottom: 3.5rem;
+    font-weight: 300;
 }
 
-/*    5. PAGE CONTAINERS  */
+
+/* =========================================================
+   3. PAGE POSITIONING
+   Pull form containers upward over hero section
+   ========================================================= */
+
+#login-page,
+#singup-page,
+#contact main {
+    margin-top: -120px;            /* Overlap hero section */
+    position: relative;
+    z-index: 2;                    /* Keep above background */
+}
+
+
+/* =========================================================
+   4. FORM CONTAINERS
+   Wrapper for login, signup, and contact forms
+   ========================================================= */
+
 .login-container,
 .signup-container,
 .contact-container {
     max-width: 600px;
-    margin: 0 auto 100px;
+    margin: 0 auto 100px;          /* Center horizontally with bottom spacing */
     padding: 0 20px;
 }
+
+
+/* =========================================================
+   5. FORM BOX STYLES
+   White card container for forms
+   ========================================================= */
 
 .login-box,
 .signup-box,
 .contact-form {
-    background-color: var(--white);
+    background-color: #fff;
     padding: 55px 45px;
     border: 1px solid #e2e2e2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
-/*   6. FORM ELEMENTS  */
+
+/* =========================================================
+   6. FORM ELEMENTS
+   Input fields and labels
+   ========================================================= */
+
 .form-group {
     margin-bottom: 25px;
     text-align: left;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
 }
 
 input,
@@ -179,6 +179,7 @@ textarea {
     padding: 16px;
     border: 1px solid #ccc;
     background-color: #fafafa;
+
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem;
 }
@@ -196,75 +197,37 @@ textarea:focus {
     background-color: #fff;
 }
 
-/*    7. BUTTONS  */
-.btn-outline {
-    width: 100%;
-    padding: 18px 0;
-    margin-top: 10px;
-    border: 2px solid #000;
-    background: transparent;
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-}
 
-.btn-outline:hover {
-    background-color: #000;
-    color: #fff;
-}
+/* =========================================================
+   7. FORM LINKS
+   Links displayed under the form
+   ========================================================= */
 
-.btn-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-/*    8. FORM LINKS (LOGIN & SIGNUP)  */
 .form-links {
     margin-top: 35px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 14px;
+    align-items: center;
 }
 
-.form-links span {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.form-links a {
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.form-links a:hover {
-    color: var(--accent);
-}
-
+.form-links span,
 .back-home {
-    margin-top: 18px;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--text-primary);
-    text-decoration: none;
-    text-align: center;
-}
-
-.back-home:hover {
-    color: var(--accent);
-    text-decoration: underline;
 }
 
 
-/*  9. CONTACT — EXTRA CONTENT  */
+/* =========================================================
+   8. CONTACT PAGE EXTRAS
+   Additional styles for contact page
+   ========================================================= */
+
 .reach-title {
     margin: 60px 0 30px;
     text-align: center;
+
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     font-style: italic;
@@ -290,25 +253,36 @@ textarea:focus {
     color: #999;
 }
 
-/*   10. FOOTER   */
-footer {
-    background-color: var(--bg-body);
-    border-top: 1px solid #ddd;
-    padding: 40px 20px;
-    text-align: center;
-}
 
-footer p {
+/* =========================================================
+   9. BUTTON STYLES
+   Outline buttons used in forms
+   ========================================================= */
+
+.btn-outline {
+    width: 100%;
+    padding: 18px 0;
+    margin-top: 10px;
+
+    border: 1px solid #000;
+    background: transparent;
+
     font-size: 12px;
-    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 100;
+
+    cursor: pointer;
 }
 
-footer .in1 a {
-    margin: 0 10px;
-    color: var(--accent);
-    text-decoration: none;
+.btn-outline:hover {
+    background-color: #000;
+    color: #fff;
 }
 
-footer .in1 a:hover {
-    text-decoration: underline;
+.btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
 }
+

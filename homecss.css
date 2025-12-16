@@ -1,253 +1,63 @@
-/* ===============================
-   1. THEME VARIABLES
-================================ */
-:root {
-    --bg-body: #F2F0EB;      /* البيج */
-    --white: #ffffff;
-    --text-primary: #2c2a29;
-    --text-secondary: #4a4a4a;
-    --accent: #b07c55;
-}
+/* =========================================================
+   HOME PAGE ONLY STYLES
+   هذا الملف خاص بالصفحة الرئيسية فقط
+   يعتمد على المتغيرات والتنسيقات العامة في style.css
+   ========================================================= */
 
-/* ===============================
-   2. GLOBAL
-================================ */
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    background-color: var(--bg-body);
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text-primary);
-    line-height: 1.6;
-    padding-top: 100px;
-}
+/* =========================================================
+   1. HERO SECTION
+   - القسم العلوي (الصورة الكبيرة)
+   - ممتد بعرض الشاشة كامل
+   ========================================================= */
 
-/* ===============================
-   3. HEADER
-================================ */
-header {
-    background-color: var(--white);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    z-index: 100;
-}
-
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-left: 25px;
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-.auth-links {
-    display: flex;
-    align-items: center;
-    border-left: 1px solid #000;
-    padding-left: 20px;
-    margin-left: 20px;
-}
-
-/* ===============================
-   4. HERO (TITLE WITH IMAGE)
-================================ */
 .hero {
-    min-height: 90vh;
-    display: flex;
+    height: 70vh;              /* ارتفاع نسبي حسب الشاشة */
+    min-height: 400px;         /* أقل ارتفاع لضمان شكل جميل */
+    max-width: none;           /* إلغاء أي تقييد عرض من style.css */
+
+    display: flex;             /* توسيط المحتوى */
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    position: relative;        /* مرجع للـ ::before */
+    overflow: hidden;          /* منع أي تجاوز للخلفية */
 }
 
+/* الخلفية (الصورة) للـ hero */
 .hero::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: -1;
-}
+    top: 0;
+    left: 0;
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    letter-spacing: -2px;
-    margin: 0;
-}
-
-/* ===============================
-   5. ARTICLE (BIJ)
-================================ */
-#article {
-    max-width: 900px;
-    margin: 80px auto;
-    text-align: center;
-}
-
-.intro-lead {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-}
-
-.divider {
-    width: 60px;
-    height: 1px;
-    background-color: var(--accent);
-    margin: 40px auto;
-}
-
-.content-block h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-}
-
-.content-block p {
-    max-width: 700px;
-    margin: 0 auto 25px;
-    color: var(--text-secondary);
-}
-
-/* ===============================
-   6. CURATED COLLECTIONS (BEIGE)
-================================ */
-#explore {
-    background-color: var(--bg-body);
-    padding: 80px 20px;
-    text-align: center;
-}
-
-#explore h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-}
-
-.art-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.art-item {
-    max-width: 250px;
-}
-
-.art-item img {
     width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    height: 100%;
+
+    background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;    /* تغطية كاملة بدون تشويه */
+    background-position: center;
+
+    opacity: 0.15;             /* شفافية  */
+    z-index: -1;               /* خلف المحتوى */
+
+    /* عشان تدمج الصورة مع الصفحة */
+    mask-image: linear-gradient(
+        to bottom,
+        black 50%,
+        transparent 100%
+    );
 }
 
-.art-item img:hover {
-    transform: scale(1.05);
-}
 
-.art-item h3 {
-    font-family: 'Cormorant Garamond', serif;
-    margin-top: 15px;
-}
+/* =========================================================
+   2. EXPLORE SECTION
+   - قسم عرض المحتوى / الكروت
+   ========================================================= */
 
-.art-item p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-/* ===============================
-   7. CURATE YOUR LEGACY (WHITE)
-================================ */
-.create {
-    background-color: var(--white);
-    padding: 100px 20px;
+#explore {
+    background-color: var(--bg-body); /* نفس خلفية الموقع */
+    padding: 80px 20px;               /* فراغ من فوق وتحت  */
     text-align: center;
-}
-
-.create h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-}
-
-.create p {
-    max-width: 600px;
-    margin: 20px auto 40px;
-    color: var(--text-secondary);
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    border: 2px solid #000;
-    background: transparent;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-/* ===============================
-   8. FOOTER (BEIGE)
-================================ */
-footer {
-    background-color: var(--bg-body);
-    border-top: 1px solid #dcdcdc;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-footer p {
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-footer .in1 a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: var(--text-secondary);
-}
-
-footer .in1 a:hover {
-    color: var(--accent);
 }

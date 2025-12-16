@@ -55,18 +55,58 @@ form { display:flex; flex-direction:column; align-items:center; gap:15px; max-wi
 form input, form textarea { width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:5px; }
 form button { padding:10px 25px; background:#a06645; color:#fff; border:none; border-radius:5px; cursor:pointer; }
 #preview { display:block; max-width:300px; margin:20px auto; }
-.back-home { display:inline-block; margin-bottom:50px; text-decoration:none; color:#a06645; }
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.soft-btn {
+    display: inline-block;
+    padding: 9px 24px;
+    background-color: #e6dfd6;        /* slightly darker beige */
+    color: #4a3f36;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    border: 1px solid #c9bfb4;        /* soft border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.soft-btn:hover {
+    background-color: #d8cec3;
+    color: #2f2620;
+    border-color: #b8ab9d;
+}
+
+
+
+
 </style>
-</head>
-<body>
+
 <header>
-<div class="logo">Silent Stories</div>
-<nav class="nav-links">
-<a href="SilentStoriesHome.html" style="color:#a06645;">Home</a>
-<a href="ArtistsPage.html">Artists</a>
-<a href="SubmitArtworkPage.php">Submit</a>
-</nav>
+    <div class="logo">Silent Stories</div>
+    <nav class="nav-links">
+        <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+        <a href="ArtExhibitions.html">Exhibitions</a>
+        <a href="classicPage.html">Classic</a>
+        <a href="modernPage.html">Modern</a>
+        <a href="ArtistsPage.html">Artists</a>
+        <a href="SubmitArtworkPage.php">Submit</a>
+        <a href="aboutPage.html">About</a>
+        <a href="Contact.html">Contact</a>
+
+        <span class="auth-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </span>
+    </nav>
 </header>
+
+
 <main>
 <h1>Submit Your Artwork</h1>
 
@@ -93,7 +133,14 @@ form button { padding:10px 25px; background:#a06645; color:#fff; border:none; bo
 
 <img id="preview" src="" alt="Artwork Preview">
 
-<a href="SilentStoriesHome.html" class="back-home">Back to Home</a>
+<div class="action-buttons">
+    <a href="SilentStoriesHome.html" class="soft-btn">Back to Home</a>
+
+    <a href="UserArtworksPage.php" class="soft-btn">View User Artworks</a>
+
+    </a>
+</div>
+
 </main>
 
 <footer>

@@ -74,3 +74,21 @@ CREATE TABLE wishlist (
     FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE,
     UNIQUE KEY user_wishlist_unique (user_id, event_id) -- Prevent duplicate wishlist entries
 );
+
+-- ---------------------------------------------
+-- 6. Artworks table: stores artworks submitted by users
+--    Includes artist information, artwork details,
+--    uploaded image file, and submission date
+-- ---------------------------------------------
+
+CREATE TABLE artworks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    artist_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    artwork_title VARCHAR(150) NOT NULL,
+    description TEXT NOT NULL,
+    artwork_file VARCHAR(255) NOT NULL,
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+

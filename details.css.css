@@ -19,7 +19,7 @@
             font-family: 'Montserrat', sans-serif; 
             color: var(--text-primary);
             line-height: 1.6;
-            /* مسافة علوية لتجنب تداخل المحتوى مع الـ Header الثابت */
+           
             padding-top: 100px; 
         }
 
@@ -176,3 +176,4 @@
         footer .in1 a:hover {
             color: var(--accent);
         }
+
