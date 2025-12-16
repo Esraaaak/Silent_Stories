@@ -106,7 +106,6 @@ $result = $conn->query($sql);
 <main>
    <section class="hero">
   <h1>
-    <span></span>
     User Artwork
   </h1>
 </section>
@@ -150,5 +149,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php $conn->close(); ?>
+
 
 
