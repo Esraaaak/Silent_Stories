@@ -1,15 +1,15 @@
 <?php
 session_start();
 include 'DB.php';
+// Set response type to JSON for AJAX requests
+header('Content-Type: application/json'); 
 
-header('Content-Type: application/json'); // إرجاع البيانات بصيغة JSON
-
-// التأكد من أن المستخدم مسجل دخوله قبل أي عملية
+// Check if the user is logged in before any action
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'message' => 'User not logged in. Please log in to proceed.']);
     exit;
 }
-
+// Store user session data
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
 $user_email = $_SESSION['user_email'];
@@ -17,11 +17,11 @@ $user_email = $_SESSION['user_email'];
 $action = $_POST['action'] ?? '';
 $event_id = $_POST['event_id'] ?? 0;
 
-// ---------------------------------------------
-// 1. معالجة التسجيل في الفعالية (action=register)
-// ---------------------------------------------
+// -------------------------------------------------
+// 1. Event Registration (action = register)
+// -------------------------------------------------
 if ($action === 'register') {
-    $check_sql = "SELECT id FROM registrations WHERE user_id = ? AND event_id = ?";
+    $check_sql = "SELECT id FROM registrations WHERE user_id = ? AND event_id = ?";  // Check if the user is already registered for the event
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("ii", $user_id, $event_id);
     $check_stmt->execute();
@@ -30,7 +30,7 @@ if ($action === 'register') {
     if ($check_result->num_rows > 0) {
         echo json_encode(['success' => false, 'message' => 'You are already registered for this event.']);
     } else {
-        $insert_sql = "INSERT INTO registrations (user_id, event_id, user_name, user_email) VALUES (?, ?, ?, ?)";
+        $insert_sql = "INSERT INTO registrations (user_id, event_id, user_name, user_email) VALUES (?, ?, ?, ?)";     // Insert new registration record
         $insert_stmt = $conn->prepare($insert_sql);
         $insert_stmt->bind_param("iiss", $user_id, $event_id, $user_name, $user_email);
 
@@ -44,9 +44,10 @@ if ($action === 'register') {
     $check_stmt->close();
 }
 
-// ------------------------------------------------
-// 2. معالجة قائمة الأمنيات (action=toggle_wishlist)
-// ------------------------------------------------
+// -------------------------------------------------
+// 2. Wishlist Toggle (Add / Remove)
+// action = toggle_wishlist
+// -------------------------------------------------
 elseif ($action === 'toggle_wishlist') {
     $check_sql = "SELECT id FROM wishlist WHERE user_id = ? AND event_id = ?";
     $check_stmt = $conn->prepare($check_sql);
@@ -55,7 +56,7 @@ elseif ($action === 'toggle_wishlist') {
     $check_result = $check_stmt->get_result();
 
     if ($check_result->num_rows > 0) {
-        // إزالة من Wishlist
+         // Remove event from wishlist
         $delete_sql = "DELETE FROM wishlist WHERE user_id = ? AND event_id = ?";
         $delete_stmt = $conn->prepare($delete_sql);
         $delete_stmt->bind_param("ii", $user_id, $event_id);
@@ -64,7 +65,7 @@ elseif ($action === 'toggle_wishlist') {
         echo json_encode(['success' => true, 'status' => 'removed', 'message' => 'Removed from wishlist.']);
         $delete_stmt->close();
     } else {
-        // إضافة إلى Wishlist مع الاسم والإيميل
+       
         $insert_sql = "INSERT INTO wishlist (user_id, event_id, user_name, user_email) VALUES (?, ?, ?, ?)";
         $insert_stmt = $conn->prepare($insert_sql);
         $insert_stmt->bind_param("iiss", $user_id, $event_id, $user_name, $user_email);
@@ -76,9 +77,10 @@ elseif ($action === 'toggle_wishlist') {
     $check_stmt->close();
 }
 
-// ------------------------------------------------
-//
-// -------------------------------------------
+// -------------------------------------------------
+// 3. Fetch Wishlist Content
+// action = fetch_wishlist_content
+// -------------------------------------------------
 elseif ($action === 'fetch_wishlist_content') {
     $sql = "SELECT e.title, e.event_date, e.location, w.user_name, w.user_email
             FROM events e
@@ -101,3 +103,4 @@ elseif ($action === 'fetch_wishlist_content') {
 
 $conn->close();
 ?>
+
