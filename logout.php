@@ -5,6 +5,6 @@ session_unset();
 
 session_destroy();
 
-header("Location: ArtExhibitions.php"); 
+header("Location:/silent_stories/ArtExhibitions.php"); 
 exit;
 ?>
