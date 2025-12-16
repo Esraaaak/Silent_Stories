@@ -1,162 +1,183 @@
- .hero {
-     min-height: 90vh;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     padding: 10rem 1rem 4rem 1rem;
-     position: relative;
-     overflow: hidden;
- }
+/* =========================
+      Gallery Pages
+   ========================= */
 
- .hero::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
-     background-size: cover;
-     background-position: center;
-     opacity: 0.08;
-     z-index: -1;
-     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
- }
+.hero {
+  min-height: 90vh;                 /* Makes the hero nearly full screen height */
+  display: flex;                    /* Enables easy centering */
+  flex-direction: column;           /* Stack heading + text vertically */
+  justify-content: center;          /* Center content vertically */
+  align-items: center;              /* Center content horizontally */
+  text-align: center;               /* Center text */
+  padding: 10rem 1rem 4rem 1rem;    /* Extra top padding for spacious look */
+  position: relative;               /* Needed for the ::before background layer */
+  overflow: hidden;                 /* Keeps background effects inside hero */
+}
 
- .hero h1 {
-     font-size: clamp(3.5rem, 8vw, 7rem);
-     line-height: 0.9;
-     margin-bottom: 2rem;
-     letter-spacing: -2px;
- }
+.hero::before {
+  content: '';
+  position: absolute;               /* Places overlay behind content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;           /* Image covers the whole hero */
+  background-position: center;      /* Centers the image focus */
+  opacity: 0.08;                    /* Very light overlay */
+  z-index: -1;                      /* Sends overlay behind text */
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%); /* Fades out near bottom */
+}
 
- .hero h1 span {
-     display: block;
-     font-family: 'Montserrat', sans-serif;
-     font-weight: 300;
-     font-size: 0.15em;
-     letter-spacing: 4px;
-     text-transform: uppercase;
-     color: var(--accent);
-     margin-bottom: 15px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 15px;
- }
+.hero h1 {
+  font-size: clamp(3.5rem, 8vw, 7rem); /* Responsive heading size */
+  line-height: 0.9;                    /* Tight line spacing */
+  margin-bottom: 2rem;                 /* Space below heading */
+  letter-spacing: -2px;                /* Slightly condensed look */
+}
 
- .hero h1 span::before,
- .hero h1 span::after {
-     content: '';
-     display: block;
-     width: 30px;
-     height: 1px;
-     background-color: var(--accent);
- }
+/* Small label above the main title */
+.hero h1 span {
+  display: block;                    /* Places span on its own line */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 0.15em;                 /* Much smaller than the main title */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 15px;
 
- .hero p {
-     max-width: 550px;
-     font-size: 1.1rem;
-     color: var(--text-secondary);
-     margin-bottom: 3.5rem;
-     font-weight: 300;
- }
+  /* Center the label and add decorative lines */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
 
- /* --- . GALLERY LAYOUT --- */
- .gallery-section {
-     max-width: 1200px;
-     margin: 60px auto 60px auto;
-     padding: 0 20px;
- }
+/* Decorative lines on both sides of the label */
+.hero h1 span::before,
+.hero h1 span::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: var(--accent);
+}
 
- .grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-     gap: 60px 40px;
- }
+.hero p {
+  max-width: 550px;                 /* Limits line length for readability */
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;            /* Space before the button/next section */
+  font-weight: 300;
+}
 
- /* --- . ART CARD DESIGN --- */
- .art-card {
-     display: flex;
-     flex-direction: column;
- }
+/* =========================
+   GALLERY LAYOUT
+   ========================= */
 
- .image-container {
-     width: 100%;
-     padding-bottom: 125%;
-     position: relative;
-     overflow: hidden;
-     margin-bottom: 20px;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
- }
+.gallery-section {
+  max-width: 1200px;                /* Keeps content centered on large screens */
+  margin: 60px auto;                /* Vertical spacing + center horizontally */
+  padding: 0 20px;                  /* Side padding for small screens */
+}
 
- .image-container img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     transition: transform 0.5s;
- }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 60px 40px;                   /* Row gap then column gap */
+}
 
- .image-container:hover img {
-     transform: scale(1.05);
- }
+/* =========================
+   ART CARD DESIGN
+   ========================= */
 
- /* DETAILS SECTION */
- .card-details {
-     text-align: left;
-     padding-right: 10px;
- }
+.art-card {
+  display: flex;
+  flex-direction: column;           /* Image on top, details below */
+}
 
- .era-tag {
-     font-size: 11px;
-     text-transform: uppercase;
-     letter-spacing: 2px;
-     color: var(--accent);
-     font-weight: bold;
-     display: block;
-     margin-bottom: 5px;
- }
+.image-container {
+  width: 100%;
+  padding-bottom: 125%;             /* Creates a fixed aspect ratio box */
+  position: relative;               /* Needed for absolute-positioned img */
+  overflow: hidden;                 /* Crops image when zooming */
+  margin-bottom: 20px;              /* Space between image and details */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft depth */
+}
 
- .art-title {
-     font-size: 26px;
-     line-height: 1.1;
-     margin-bottom: 5px;
- }
+.image-container img {
+  position: absolute;               /* Fills the container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* Crops to fill without distortion */
+  transition: transform 0.5s;       /* Smooth zoom animation */
+}
 
- .artist-name {
-     font-size: 14px;
-     color: var(--text-secondary);
-     margin-bottom: 15px;
-     font-style: italic;
- }
+/* Zoom effect when hovering the image area */
+.image-container:hover img {
+  transform: scale(1.05);
+}
 
- .card-links {
-     display: flex;
-     gap: 20px;
-     border-top: 1px solid #ddd;
-     padding-top: 10px;
- }
+/* =========================
+   DETAILS SECTION
+   ========================= */
 
- .text-link {
-     font-size: 11px;
-     text-transform: uppercase;
-     letter-spacing: 1px;
-     font-weight: bold;
-     transition: color 0.2s;
- }
+.card-details {
+  text-align: left;                 /* Align text like a gallery label */
+  padding-right: 10px;
+}
 
- .text-link:hover {
-     color: var(--accent);
- }
+.era-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
 
- /* --- RESPONSIVE --- */
- @media (max-width: 768px) {
-     .grid {
-         grid-template-columns: 1fr;
-     }
- }
+.art-title {
+  font-size: 26px;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.artist-name {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.card-links {
+  display: flex;
+  gap: 20px;                        /* Space between the links */
+  border-top: 1px solid #ddd;       /* Divider line above links */
+  padding-top: 10px;
+}
+
+.text-link {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: color 0.2s;           /* Smooth hover color change */
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;     /* Single column on small screens */
+  }
+}

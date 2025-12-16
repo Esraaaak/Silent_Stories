@@ -1,166 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Modern Collection | Gallery</title>
+  <!-- Page metadata + responsive setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="gallery.css">
+  <!-- Browser tab title -->
+  <title>The Modern Collection | Gallery</title>
 
+  <!-- Google fonts used across the site -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared site styling -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-specific gallery styling -->
+  <link rel="stylesheet" href="gallery.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">Silent Stories</div>
-        <nav class="nav-links">
-            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
-            <a href="ArtExhibitions.html">Exhibitions</a>
-            <a href="classicPage.html">Classic</a>
-            <a href="modernPage.html">Modern</a>
-            <a href="ArtistsPage.html">Artists</a>
-            <a href="SubmitArtworkPage.html">Submit</a>
-            <a href="aboutPage.html">About</a>
-            <a href="Contact.html">Contact</a>
+  <!-- Top navigation/header -->
+  <header>
+    <!-- Site logo/brand -->
+    <div class="logo">Silent Stories</div>
 
+    <!-- Main navigation links -->
+    <nav class="nav-links">
+      <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+      <a href="ArtExhibitions.html">Exhibitions</a>
+      <a href="classicPage.html">Classic</a>
+      <a href="modernPage.html">Modern</a>
+      <a href="ArtistsPage.html">Artists</a>
+      <a href="SubmitArtworkPage.php">Submit</a>
+      <a href="aboutPage.html">About</a>
+      <a href="Contact.html">Contact</a>
 
-            <span class="auth-links">
-                <a href="login.html">Login</a>
-                <a href="signup.html">Sign Up</a>
-            </span>
-        </nav>
-    </header>
+      <!-- Login/Sign up section -->
+      <span class="auth-links">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </span>
+    </nav>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h1>
-                <span>Contemporary Era</span>
-                Pioneers of the<br>Modern Age
-            </h1>
-            <p>Discover groundbreaking works from movements like Abstract Expressionism, Pop Art, and Minimalism. These
-                pieces tell a story of innovation, concept, and cultural reflection.</p>
-            <a href="#gallery" class="btn-outline">View Collection</a>
-        </section>
+  <main>
+    <!-- Hero section: intro text + button -->
+    <section class="hero">
+      <h1>
+        <span>Contemporary Era</span>
+        Pioneers of the<br>Modern Age
+      </h1>
 
-        <section id="gallery" class="gallery-section">
-            <div class="grid">
+      <!-- Short description under the title -->
+      <p>
+        Discover groundbreaking works from movements like Abstract Expressionism, Pop Art, and Minimalism.
+        These pieces tell a story of innovation, concept, and cultural reflection.
+      </p>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://media.artsper.com/artwork/2285774_1_m.jpg" alt="New Beginning">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Contemporary Art</span>
-                        <h3 class="art-title">New Beginning</h3>
-                        <div class="artist-name">Schagen Vita, 2024</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=scream" class="text-link">Details</a>
-                            <a href="vita-bio.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+      <!-- Scrolls down to the gallery section -->
+      <a href="#gallery" class="btn-outline">View Collection</a>
+    </section>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://www.artsolitaire.arsmundi.de/thumbnails/fb/25/9a/1745322811/1_f376cb1f627f4c1c73a032db1dd9b33f_20250422135330_x.jpg"
-                            alt="Light at the North Sea">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">1960s Pop Art</span>
-                        <h3 class="art-title">Light at the North Sea</h3>
-                        <div class="artist-name">Irina Laube ,2025</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art2" class="text-link">Details</a>
-                            <a href="Irina Laube.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Gallery grid section -->
+    <section id="gallery" class="gallery-section">
+      <div class="grid">
 
+        <!-- Artwork card 1 -->
+        <div class="art-card">
+          <div class="image-container">
+            <!-- Artwork image -->
+            <img src="https://media.artsper.com/artwork/2285774_1_m.jpg" alt="New Beginning">
+          </div>
 
+          <div class="card-details">
+            <!-- Era/category label -->
+            <span class="era-tag">Contemporary Art</span>
+            <!-- Artwork title -->
+            <h3 class="art-title">New Beginning</h3>
+            <!-- Artist + year -->
+            <div class="artist-name">Schagen Vita, 2024</div>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="images/NATURE.JPG" alt="Minimalism">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Minimalism</span>
-                        <h3 class="art-title">NATURE</h3>
-                        <div class="artist-name">Dmitrij Danilov ,2024</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art4" class="text-link">Details</a>
-                            <a href="Dmitrij Danilov.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="images/LE-SENTIER-BLEU.JPG" alt="Conceptual">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Conceptual Art</span>
-                        <h3 class="art-title">LE SENTIER BLEU</h3>
-                        <div class="artist-name">Claude Carvin ,2022</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art5" class="text-link">Details</a>
-                            <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://www.singulart.com/images/artworks/v2/cropped/2401/main/base/2208057_4575b8e826906fbac76e9337845eb50b.jpeg"
-                            alt="Abstract">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Abstract Exp.</span>
-                        <h3 class="art-title">GOOD BY</h3>
-                        <div class="artist-name">Monika Luniak ,2024</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art3" class="text-link">Details</a>
-                            <a href="Monika Luniak.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="images/TROIS ARBRES.JPG" alt="Digital">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Digital Medium</span>
-                        <h3 class="art-title">Pixels in Motion</h3>
-                        <div class="artist-name">Claude Carvin ,2022</div>
-                        <div class="card-links">
-                            <a href="detailsModern.html?art=art6" class="text-link">Details</a>
-                            <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- Actions: details page + artist bio -->
+            <div class="card-links">
+              <a href="detailsModern.html?art=scream" class="text-link">Details</a>
+              <a href="vita-bio.html" class="text-link">Artist Bio</a>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
 
-    <footer>
-        <p>© 2025 Silent Storiest. All rights reserved.</p>
-        <p>
-            <a href="aboutPage.html">About</a> |
-            <a href="ArtistsPage.html">Artists</a> |
-            <a href="Contact.html">Contact us</a>
-        </p>
-    </footer>
+        <!-- Artwork card 2 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://www.artsolitaire.arsmundi.de/thumbnails/fb/25/9a/1745322811/1_f376cb1f627f4c1c73a032db1dd9b33f_20250422135330_x.jpg"
+              alt="Light at the North Sea"
+            >
+          </div>
 
-    <script>
-        function openDetails(id) {
-            window.location.href = `detailsModern.html?art=${id}`;
-        }
-    </script>
+          <div class="card-details">
+            <span class="era-tag">1960s Pop Art</span>
+            <h3 class="art-title">Light at the North Sea</h3>
+            <div class="artist-name">Irina Laube ,2025</div>
+
+            <div class="card-links">
+              <a href="detailsModern.html?art=art2" class="text-link">Details</a>
+              <a href="Irina Laube.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 3 -->
+        <div class="art-card">
+          <div class="image-container">
+            <!-- Local image from your project folder -->
+            <img src="images/NATURE.JPG" alt="Minimalism">
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Minimalism</span>
+            <h3 class="art-title">NATURE</h3>
+            <div class="artist-name">Dmitrij Danilov ,2024</div>
+
+            <div class="card-links">
+              <a href="detailsModern.html?art=art4" class="text-link">Details</a>
+              <a href="Dmitrij Danilov.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 4 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img src="images/LE-SENTIER-BLEU.JPG" alt="Conceptual">
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Conceptual Art</span>
+            <h3 class="art-title">LE SENTIER BLEU</h3>
+            <div class="artist-name">Claude Carvin ,2022</div>
+
+            <div class="card-links">
+              <a href="detailsModern.html?art=art5" class="text-link">Details</a>
+              <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 5 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://www.singulart.com/images/artworks/v2/cropped/2401/main/base/2208057_4575b8e826906fbac76e9337845eb50b.jpeg"
+              alt="Abstract"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Abstract Exp.</span>
+            <h3 class="art-title">GOOD BY</h3>
+            <div class="artist-name">Monika Luniak ,2024</div>
+
+            <div class="card-links">
+              <a href="detailsModern.html?art=art3" class="text-link">Details</a>
+              <a href="Monika Luniak.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 6 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img src="images/TROIS ARBRES.JPG" alt="Digital">
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Digital Medium</span>
+            <h3 class="art-title">Pixels in Motion</h3>
+            <div class="artist-name">Claude Carvin ,2022</div>
+
+            <div class="card-links">
+              <a href="detailsModern.html?art=art6" class="text-link">Details</a>
+              <a href="Claude Carvin.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with copyright + quick links -->
+  <footer>
+    <p>© 2025 Silent Storiest. All rights reserved.</p>
+    <p>
+      <a href="aboutPage.html">About</a> |
+      <a href="ArtistsPage.html">Artists</a> |
+      <a href="Contact.html">Contact us</a>
+    </p>
+  </footer>
+
+  <script>
+    // Redirects to the details page with the chosen artwork id
+    function openDetails(id) {
+      window.location.href = `detailsModern.html?art=${id}`;
+    }
+  </script>
 </body>
-
 </html>

@@ -1,112 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Silent Stories | The Gallery</title>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">.
-    <link rel="stylesheet" href="about.css">.
+  <!-- Browser tab title -->
+  <title>About Silent Stories | The Gallery</title>
 
+  <!-- Fonts used across the site -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main shared styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- About page specific styles -->
+  <link rel="stylesheet" href="about.css">
 </head>
 
 <body>
+  <!-- Header + navigation -->
+  <header>
+    <!-- Site logo -->
+    <div class="logo">Silent Stories</div>
 
-    <header>
-        <div class="logo">Silent Stories</div>
-        <nav class="nav-links">
-            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
-            <a href="ArtExhibitions.html">Exhibitions</a>
-            <a href="classicPage.html">Classic</a>
-            <a href="modernPage.html">Modern</a>
-            <a href="ArtistsPage.html">Artists</a>
-            <a href="SubmitArtworkPage.html">Submit</a>
-            <a href="aboutPage.html">About</a>
-            <a href="Contact.html">Contact</a>
+    <!-- Navigation links -->
+    <nav class="nav-links">
+      <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+      <a href="ArtExhibitions.html">Exhibitions</a>
+      <a href="classicPage.html">Classic</a>
+      <a href="modernPage.html">Modern</a>
+      <a href="ArtistsPage.html">Artists</a>
+      <a href="SubmitArtworkPage.php">Submit</a>
+      <a href="aboutPage.html">About</a>
+      <a href="Contact.html">Contact</a>
 
+      <!-- Login / Signup -->
+      <span class="auth-links">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </span>
+    </nav>
+  </header>
 
-            <span class="auth-links">
-                <a href="login.html">Login</a>
-                <a href="signup.html">Sign Up</a>
-            </span>
-        </nav>
-    </header>
+  <main>
+    <!-- Hero / page headline -->
+    <section class="hero">
+      <h1>
+        <span>Our Mission</span>
+        The Story Behind<br>Silent Stories
+      </h1>
+    </section>
 
+    <!-- Main content wrapper -->
+    <div class="content-container">
 
-    <main>
-        <section class="hero">
-            <h1>
-                <span>Our Mission</span>
-                The Story Behind<br>Silent Stories
-            </h1>
-        </section>
-
-        <div class="content-container">
-
-            <div class="mission-text">
-                <p>
-                    <strong>Silent Stories</strong> is where history meets the future. We believe every artwork holds an
-                    untold narrative. Our digital space unifies Renaissance masterpieces and modern digital sketches,
-                    celebrating both the technical mastery of the past and the bold, inspiring voices of today.
-                </p>
-            </div>
-
-            <h2 class="section-title">The Curatorial Team</h2>
-            <p
-                style="text-align: center; margin-bottom: 40px; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto;">
-                Our gallery is maintained by a dedicated group focused on bringing both established history and emerging
-                talent into the spotlight.
-            </p>
-
-            <div class="team-grid">
-                <div class="team-card">
-                    <span class="team-role">Team leader & Stylist </span>
-                    <h3 class="team-name">Esraa A.Abdulraheem</h3>
-                </div>
-
-                <div class="team-card">
-                    <span class="team-role">Style & backend </span>
-                    <h3 class="team-name">Basmah Y. Al Sulaimani</h3>
-                </div>
-
-                <div class="team-card">
-                    <span class="team-role">Database Architect</span>
-                    <h3 class="team-name">Shaima F. Saeed</h3>
-                </div>
-
-
-                <div class="team-card">
-                    <span class="team-role">Forms & Submissions Lead</span>
-                    <h3 class="team-name">Taef A. Abdullah</h3>
-                </div>
-            </div>
-
-            <div style="margin-top: 100px; text-align: center;">
-                <h4 style="margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase;">Explore the Collections
-                    and Art Exhibtion</h4>
-                <div class="nav-grid">
-
-                    <a href="classicPage.html" class="btn-outline">Classic Collection</a>
-                    <a href="modernPage.html" class="btn-outline">Modern Collection</a>
-                    <a href="ArtExhibitions.html" class="btn-outline">Art Exhibition</a>
-                </div>
-            </div>
-
-        </div>
-    </main>
-    <footer>
-        <p>© 2025 Silent Storiest. All rights reserved.</p>
+      <!-- Mission statement -->
+      <div class="mission-text">
         <p>
-            <a href="aboutPage.html">About</a> |
-            <a href="ArtistsPage.html">Artists</a> |
-            <a href="Contact.html">Contact us</a>
+          <strong>Silent Stories</strong> is where history meets the future. We believe every artwork holds an
+          untold narrative. Our digital space unifies Renaissance masterpieces and modern digital sketches,
+          celebrating both the technical mastery of the past and the bold, inspiring voices of today.
         </p>
-    </footer>
+      </div>
 
+      <!-- Team section title -->
+      <h2 class="section-title">The Curatorial Team</h2>
+
+      <!-- Team intro paragraph -->
+      <p style="text-align: center; margin-bottom: 40px; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto;">
+        Our gallery is maintained by a dedicated group focused on bringing both established history and emerging
+        talent into the spotlight.
+      </p>
+
+      <!-- Team members grid -->
+      <div class="team-grid">
+        <div class="team-card">
+          <span class="team-role">Team leader & Stylist</span>
+          <h3 class="team-name">Esraa A.Abdulraheem</h3>
+        </div>
+
+        <div class="team-card">
+          <span class="team-role">Style & backend</span>
+          <h3 class="team-name">Basmah Y. Al Sulaimani</h3>
+        </div>
+
+        <div class="team-card">
+          <span class="team-role">Database Architect</span>
+          <h3 class="team-name">Shaima F. Saeed</h3>
+        </div>
+
+        <div class="team-card">
+          <span class="team-role">Forms & Submissions Lead</span>
+          <h3 class="team-name">Taef A. Abdullah</h3>
+        </div>
+      </div>
+
+      <!-- Explore links section -->
+      <div style="margin-top: 100px; text-align: center;">
+        <!-- Call-to-action heading -->
+        <h4 style="margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase;">
+          Explore the Collections and Art Exhibtion
+        </h4>
+
+        <!-- Buttons grid -->
+        <div class="nav-grid">
+          <a href="classicPage.html" class="btn-outline">Classic Collection</a>
+          <a href="modernPage.html" class="btn-outline">Modern Collection</a>
+          <a href="ArtExhibitions.html" class="btn-outline">Art Exhibition</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Silent Storiest. All rights reserved.</p>
+    <p>
+      <a href="aboutPage.html">About</a> |
+      <a href="ArtistsPage.html">Artists</a> |
+      <a href="Contact.html">Contact us</a>
+    </p>
+  </footer>
 </body>
-
 </html>

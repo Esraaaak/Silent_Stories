@@ -1,164 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Classic Collection | Gallery</title>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">.
-    <link rel="stylesheet" href="gallery.css">
-    <style>
-        .hero::before {
+  <!-- Browser tab title -->
+  <title>The Classic Collection | Gallery</title>
 
-            background-image: url('https://images.unsplash.com/photo-1578926372062-6ddf6fc55e0e?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            opacity: 0.15;
-        }
-    </style>
+  <!-- Fonts used on the page -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Gallery layout styles -->
+  <link rel="stylesheet" href="gallery.css">
+
+  <style>
+    /* Hero background overlay image */
+    .hero::before {
+      background-image: url('https://images.unsplash.com/photo-1578926372062-6ddf6fc55e0e?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      opacity: 0.15; /* Makes the background image subtle */
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Top header/navigation -->
+  <header>
+    <!-- Site logo/brand -->
+    <div class="logo">Silent Stories</div>
 
-    <header>
-        <div class="logo">Silent Stories</div>
-        <nav class="nav-links">
-            <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
-            <a href="ArtExhibitions.html">Exhibitions</a>
-            <a href="classicPage.html">Classic</a>
-            <a href="modernPage.html">Modern</a>
-            <a href="ArtistsPage.html">Artists</a>
-            <a href="SubmitArtworkPage.html">Submit</a>
-            <a href="aboutPage.html">About</a>
-            <a href="Contact.html">Contact</a>
+    <!-- Main navigation links -->
+    <nav class="nav-links">
+      <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
+      <a href="ArtExhibitions.html">Exhibitions</a>
+      <a href="classicPage.html">Classic</a>
+      <a href="modernPage.html">Modern</a>
+      <a href="ArtistsPage.html">Artists</a>
+      <a href="SubmitArtworkPage.php">Submit</a>
+      <a href="aboutPage.html">About</a>
+      <a href="Contact.html">Contact</a>
 
+      <!-- Authentication links -->
+      <span class="auth-links">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </span>
+    </nav>
+  </header>
 
-            <span class="auth-links">
-                <a href="login.html">Login</a>
-                <a href="signup.html">Sign Up</a>
-            </span>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>
-                <span>Curated Exhibition</span>
-                Masters of the<br>Classic Era
-            </h1>
-            <p>A digital retrospective of European masters from the Renaissance to the late Romantic periods. Witness
-                history, craft, and enduring beauty.</p>
-            <a href="#gallery" class="btn-outline">View Collection</a>
-        </section>
+  <main>
+    <!-- Hero/intro section -->
+    <section class="hero">
+      <h1>
+        <span>Curated Exhibition</span>
+        Masters of the<br>Classic Era
+      </h1>
 
-        <section id="gallery" class="gallery-section">
+      <!-- Short intro text -->
+      <p>
+        A digital retrospective of European masters from the Renaissance to the late Romantic periods.
+        Witness history, craft, and enduring beauty.
+      </p>
 
-            <div class="grid">
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Autumn_Landscape_%28Ralli%29.jpg"
-                            alt="Autumn Landscape by Theodore Ralli">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Academic Realism</span>
-                        <h3 class="art-title">Autumn Landscape</h3>
-                        <div class="artist-name">Theodore Ralli, c. 1890</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art1" class="text-link">Analysis</a>
-                            <a href="Ralli.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg"
-                            alt="Girl with a Pearl Earring by Vermeer">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Dutch Golden Age</span>
-                        <h3 class="art-title">Girl with a Pearl Earring</h3>
-                        <div class="artist-name">Johannes Vermeer, 1665</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art3" class="text-link">Analysis</a>
-                            <a href="Vermeer.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+      <!-- Jumps to the gallery section -->
+      <a href="#gallery" class="btn-outline">View Collection</a>
+    </section>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Stilleven_met_aardewerk_en_flessen_-_s0138V1962_-_Van_Gogh_Museum.jpg"
-                            alt="Still Life with Earthenware and Bottles by Van Gogh">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Realism</span>
-                        <h3 class="art-title">Still Life with Earthenware and Bottles</h3>
-                        <div class="artist-name">Vincent van Gogh, 1885</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art4" class="text-link">Analysis</a>
-                            <a href="Van.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Gallery section -->
+    <section id="gallery" class="gallery-section">
+      <!-- Grid wrapper for all art cards -->
+      <div class="grid">
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg"
-                            alt="The Hay Wain by John Constable">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Romanticism</span>
-                        <h3 class="art-title">The Hay Wain</h3>
-                        <div class="artist-name">John Constable, 1821</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art5" class="text-link">Analysis</a>
-                            <a href="Constable.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Artwork card 1 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/03/Autumn_Landscape_%28Ralli%29.jpg"
+              alt="Autumn Landscape by Theodore Ralli"
+            >
+          </div>
 
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Gustave_Courbet_-_Still_Life_with_Apples_-_Mesdag_Collection.jpg"
-                            alt="Still Life with Apples by Gustave Courbet">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Realism</span>
-                        <h3 class="art-title">Still Life with Apples</h3>
-                        <div class="artist-name">Gustave Courbet, 1872</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art6" class="text-link">Analysis</a>
-                            <a href="Courbet.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="image-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/John_Constable_-_Dedham_Vale_-_WGA5183.jpg"
-                            alt="Dedham Vale by John Constable">
-                    </div>
-                    <div class="card-details">
-                        <span class="era-tag">Romanticism</span>
-                        <h3 class="art-title">Dedham Vale</h3>
-                        <div class="artist-name">John Constable, 1802</div>
-                        <div class="card-links">
-                            <a href="detailsClassic.html?art=art7" class="text-link">Analysis</a>
-                            <a href="Constable.html" class="text-link">Artist Bio</a>
-                        </div>
-                    </div>
-                </div>
+          <div class="card-details">
+            <span class="era-tag">Academic Realism</span>
+            <h3 class="art-title">Autumn Landscape</h3>
+            <div class="artist-name">Theodore Ralli, c. 1890</div>
 
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 Silent Storiest. All rights reserved.</p>
-        <p>
-            <a href="aboutPage.html">About</a> |
-            <a href="ArtistsPage.html">Artists</a> |
-            <a href="Contact.html">Contact us</a>
-        </p>
-    </footer>
+            <!-- Links to analysis page + artist bio -->
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art1" class="text-link">Analysis</a>
+              <a href="Ralli.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 2 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg"
+              alt="Girl with a Pearl Earring by Vermeer"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Dutch Golden Age</span>
+            <h3 class="art-title">Girl with a Pearl Earring</h3>
+            <div class="artist-name">Johannes Vermeer, 1665</div>
+
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art3" class="text-link">Analysis</a>
+              <a href="Vermeer.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 3 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/60/Stilleven_met_aardewerk_en_flessen_-_s0138V1962_-_Van_Gogh_Museum.jpg"
+              alt="Still Life with Earthenware and Bottles by Van Gogh"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Realism</span>
+            <h3 class="art-title">Still Life with Earthenware and Bottles</h3>
+            <div class="artist-name">Vincent van Gogh, 1885</div>
+
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art4" class="text-link">Analysis</a>
+              <a href="Van.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 4 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg"
+              alt="The Hay Wain by John Constable"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Romanticism</span>
+            <h3 class="art-title">The Hay Wain</h3>
+            <div class="artist-name">John Constable, 1821</div>
+
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art5" class="text-link">Analysis</a>
+              <a href="Constable.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 5 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/23/Gustave_Courbet_-_Still_Life_with_Apples_-_Mesdag_Collection.jpg"
+              alt="Still Life with Apples by Gustave Courbet"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Realism</span>
+            <h3 class="art-title">Still Life with Apples</h3>
+            <div class="artist-name">Gustave Courbet, 1872</div>
+
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art6" class="text-link">Analysis</a>
+              <a href="Courbet.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork card 6 -->
+        <div class="art-card">
+          <div class="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e7/John_Constable_-_Dedham_Vale_-_WGA5183.jpg"
+              alt="Dedham Vale by John Constable"
+            >
+          </div>
+
+          <div class="card-details">
+            <span class="era-tag">Romanticism</span>
+            <h3 class="art-title">Dedham Vale</h3>
+            <div class="artist-name">John Constable, 1802</div>
+
+            <div class="card-links">
+              <a href="detailsClassic.html?art=art7" class="text-link">Analysis</a>
+              <a href="Constable.html" class="text-link">Artist Bio</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .grid -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Silent Storiest. All rights reserved.</p>
+    <p>
+      <a href="aboutPage.html">About</a> |
+      <a href="ArtistsPage.html">Artists</a> |
+      <a href="Contact.html">Contact us</a>
+    </p>
+  </footer>
 </body>
-
 </html>

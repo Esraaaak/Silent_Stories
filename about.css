@@ -1,164 +1,190 @@
+/* =========================
+   ABOUT PAGE STYLES
+   ========================= */
+
+/* Hero section layout + spacing */
 .hero {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10rem 1rem 4rem 1rem;
-    position: relative;
-    overflow: hidden;
+  min-height: 60vh;                 /* Keeps the hero tall enough */
+  display: flex;                    /* Centers content easily */
+  flex-direction: column;           /* Stack title elements vertically */
+  justify-content: center;          /* Vertical center */
+  align-items: center;              /* Horizontal center */
+  text-align: center;               /* Center text alignment */
+  padding: 10rem 1rem 4rem 1rem;    /* Top-heavy padding for a “banner” feel */
+  position: relative;               /* Needed for ::before background layer */
+  overflow: hidden;                 /* Prevent background from spilling out */
 }
 
+/* Background image overlay for the hero */
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.35;
-    z-index: -1;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  content: '';
+  position: absolute;               /* Layer behind the hero content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;           /* Fill the hero area */
+  background-position: center;      /* Keep subject centered */
+  opacity: 0.35;                    /* Make image subtle behind text */
+  z-index: -1;                      /* Sends layer behind hero text */
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%); /* Fade out at bottom */
 }
 
+/* Main hero headline */
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    letter-spacing: -1px;
+  font-size: clamp(3rem, 6vw, 5rem); /* Responsive font sizing */
+  line-height: 0.9;                  /* Tight line spacing for style */
+  margin-bottom: 2rem;               /* Space under heading */
+  letter-spacing: -1px;              /* Slightly tighter letters */
 }
 
+/* =========================
+   CONTENT SECTIONS
+   ========================= */
 
-
-/* --- 4. CONTENT SECTIONS --- */
+/* Centered content wrapper */
 .content-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
+  max-width: 1100px;               /* Keeps content from stretching too wide */
+  margin: 0 auto;                  /* Centers the container */
+  padding: 60px 20px;              /* Comfortable spacing */
 }
 
+/* Mission paragraph styling */
 .mission-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: 80px;
-    font-weight: 300;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 1.2rem;               /* Slightly larger body text */
+  line-height: 1.8;                /* Easy reading */
+  text-align: center;              /* Centered mission statement */
+  color: var(--text-secondary);    /* Uses theme variable */
+  margin-bottom: 80px;             /* Space before next section */
+  font-weight: 300;                /* Light weight for elegant look */
+  max-width: 900px;                /* Prevents overly long lines */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Highlighted word inside mission text */
 .mission-text strong {
-    color: var(--text-primary);
-    font-weight: 500;
+  color: var(--text-primary);      /* Stronger contrast */
+  font-weight: 500;                /* Slightly bolder */
 }
 
-/* --- 5. TEAM GRID (4 IN A ROW) --- */
+/* =========================
+   TEAM SECTION
+   ========================= */
+
+/* Section heading */
 .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--text-primary);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
 }
 
+/* Team grid layout */
 .team-grid {
-    display: grid;
-    /* Forces 4 equal columns in one line */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  gap: 30px;                             /* Space between cards */
+  margin-top: 50px;
 }
 
+/* Individual team card */
 .team-card {
-    background: white;
-    padding: 30px 20px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: white;               /* Card background */
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #e0e0e0;       /* Light border */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* Centers text within card */
 }
 
+/* Hover effect for team card */
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    border-color: var(--accent);
+  transform: translateY(-5px);     /* Slight lift */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: var(--accent);     /* Accent border on hover */
 }
 
+/* Role label above the name */
 .team-role {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
 }
 
+/* Team member name */
 .team-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    margin-bottom: 0;
-    color: var(--text-primary);
-    line-height: 1.2;
+  font-family: 'Cormorant Garamond', serif; /* Matches site typography */
+  font-size: 20px;
+  margin-bottom: 0;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-/* --- 6. NAV CARDS --- */
+/* =========================
+   FOOTER
+   ========================= */
 
-/* --- 7. FOOTER --- */
 footer {
-    text-align: center;
-    padding: 50px 20px;
-    border-top: 1px solid #ddd;
-    margin-top: 80px;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #ddd;      /* Separator line */
+  margin-top: 80px;
 }
 
 footer p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 footer a {
-    color: var(--text-primary);
-    margin: 0 10px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: var(--text-primary);
+  margin: 0 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 footer a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Medium screens: 2 cards per row */
 @media (max-width: 992px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* Tablets/smaller: adjust hero text + hide nav links */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
+  .hero h1 {
+    font-size: 3rem;               /* Prevents oversized heading */
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .nav-links {
+    display: none;                 /* Simplifies header on mobile */
+  }
 }
 
+/* Small phones: 1 card per row */
 @media (max-width: 576px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .team-card {
-        padding: 20px;
-    }
+  .team-card {
+    padding: 20px;                 /* Tighter spacing on small screens */
+  }
 }
