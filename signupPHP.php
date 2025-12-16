@@ -27,12 +27,12 @@ VALUES (?, ?, ?, ?)"
  );
 $stmt->bind_param("ssss", $name, $email, $phone, $hashedPassword);
 
-    // تنفيذ الاستعلام
+
     $stmt->execute();
 
 $user_id = $conn->insert_id;
     
-    // 🚨 التأكد من وجود الـ ID قبل حفظه في الجلسة (إجراء احترازي)
+ 
     if ($user_id > 0) {
         $_SESSION['user_id'] = $user_id;
      $_SESSION['user_name'] = $name;
@@ -40,7 +40,7 @@ $user_id = $conn->insert_id;
 
  echo "Signup successful|$name";
     } else {
-        // في حالة النجاح النظري ولكن فشل استرجاع الـ ID
+
         echo "Signup successful, but login failed. Please log in.";
     }
 
@@ -51,12 +51,12 @@ $user_id = $conn->insert_id;
 echo "Something went wrong. Please try again.";
  }
 } finally {
-    // 🚨 التأكد من إغلاق الـ statement والاتصال
+
     if (isset($stmt)) {
         $stmt->close();
     }
     if (isset($conn)) {
-        // إذا لم يكن الاتصال يُغلق في DB.php، يجب إغلاقه هنا
+     
         $conn->close();
     }
 }
