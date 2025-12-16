@@ -13,9 +13,11 @@
     <div id="details-container"></div>
 
     <a href="modernPage.html" class="back">← Back to Modern Gallery</a>
+        <!-- Website header -->
 <header>
     <div class="logo">Silent Stories</div>
     <nav class="nav-links">
+         <!-- Main navigation menu -->
         <a href="Silent storiest home.html" style="color:var(--accent);">Home</a>
    <a href="ArtExhibitions.html">Exhibitions</a> 
             <a href="classicPage.html">Classic</a> 
@@ -25,7 +27,7 @@
              <a href="aboutPage.html">About</a> 
             <a href="Contact.html">Contact</a> 
              
-
+<!-- Authentication links -->
         <span class="auth-links">
             <a href="login.html">Login</a>
             <a href="signup.html">Sign Up</a>
@@ -35,7 +37,7 @@
 
 <div id="details-container"></div>
 
-
+ <!-- Website footer -->
 <footer>
     <p>©️ 2025 Silent Stories. All rights reserved.</p>
     <p class="in1">
@@ -46,12 +48,17 @@
 </footer>
 
     <script>
+        // ----------------------------------------------------
+        // Retrieve artwork ID from the URL query string
+        // Example: details.html?art=scream
+        // ----------------------------------------------------
         const params = new URLSearchParams(window.location.search);
         const artId = params.get('art');
 //---------------------------
 // Artwork data object
 // Stores all artworks with title, artist, year, image, and description
 // ------
+        // Artwork 1-6
         const artworks = {
     scream: {
         title: "New Beginning",
@@ -237,5 +244,6 @@ art6: {
     </script>
 </body>
 </html>
+
 
 
