@@ -20,6 +20,8 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Artworks</title>
     <link rel="stylesheet" href="style.css">
+              <link rel="stylesheet" href="gallery.css">
+
 
     <style>
         main {
@@ -102,7 +104,12 @@ $result = $conn->query($sql);
 
 <!-- ===== MAIN ===== -->
 <main>
-    <h1 class="page-title">User Artworks</h1>
+   <section class="hero">
+  <h1>
+    <span></span>
+    User Artwork
+  </h1>
+</section>
 
     <div class="artworks-container">
         <?php
@@ -143,4 +150,5 @@ $result = $conn->query($sql);
 </html>
 
 <?php $conn->close(); ?>
+
 
