@@ -24,11 +24,10 @@ while($row = $result_wishlist->fetch_assoc()) {
 }
 $wishlist_count = count($wishlist_events_ids);
 
-// 4. جلب جميع بيانات الفعاليات (للعرض)
 $sql_events = "SELECT id, title, event_date, location, description, image_url FROM events ORDER BY id ASC";
 $result_events = $conn->query($sql_events);
 
-$events = []; // مصفوفة لحفظ بيانات الفعاليات
+$events = []; 
 if ($result_events && $result_events->num_rows > 0) {
  while($row = $result_events->fetch_assoc()) {
  $events[] = $row;
@@ -392,7 +391,7 @@ if (data.success) {
  } else {
  iconElement.textContent = '♡';
  }
- window.location.reload(); // تحديث العداد
+ window.location.reload(); 
  } else {
 alert(data.message);
  }

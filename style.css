@@ -2,27 +2,27 @@
  General Styling for the whole project     
  ===================================  */
 :root {
-  --bg-body: #F2F0EB;                      /* Page background color */
-  --text-primary: #2c2a29;                 /* Main text color */
-  --text-secondary: #4a4a4a;               /* Secondary text color */
-  --accent: #b07c55;                       /* Accent (links/highlights) */
-  --white-trans: rgba(255, 255, 255, 0.98);/* Slightly transparent white */
+  --bg-body: #F2F0EB;                      
+  --text-primary: #2c2a29;                
+  --text-secondary: #4a4a4a;             
+  --accent: #b07c55;              
+  --white-trans: rgba(255, 255, 255, 0.98);/
 }
 
 /* =========================
    GLOBAL RESET & TYPOGRAPHY
    ========================= */
 * {
-  box-sizing: border-box;                  /* Keeps padding/border inside width */
+  box-sizing: border-box;                 
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-body);        /* Uses theme background */
-  font-family: 'Montserrat', sans-serif;   /* Default font */
-  color: var(--text-primary);              /* Default text color */
-  line-height: 1.6;                        /* Comfortable reading line height */
+  background-color: var(--bg-body);        
+  font-family: 'Montserrat', sans-serif; 
+  color: var(--text-primary);              
+  line-height: 1.6;                       
 }
 
 h1, h2, h3 {
@@ -33,42 +33,42 @@ h1, h2, h3 {
 }
 
 a {
-  text-decoration: none;                   /* Remove underline */
-  color: inherit;                          /* Inherit text color */
-  transition: color 0.3s;                  /* Smooth hover effect */
+  text-decoration: none;                  
+  color: inherit;                         
+  transition: color 0.3s;                
 }
 
 a:hover {
-  color: var(--accent);                    /* Accent color on hover */
+  color: var(--accent);                  
 }
 
 /* =========================
    HEADER & NAVIGATION
    ========================= */
 header {
-  background-color: var(--white-trans);    /* Light header background */
+  background-color: var(--white-trans);    
   padding: 15px 40px;
-  position: fixed;                         /* Sticks to top */
+  position: fixed;                        
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;                            /* Keeps header above content */
+  z-index: 100;                         
   border-bottom: 1px solid #e0e0e0;
-  display: flex;                           /* Logo left, nav right */
+  display: flex;                          
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .logo {
-  font-family: 'Cormorant Garamond', serif;/* Logo font */
+  font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
-  font-weight: 3000;                       /* Very bold (unusual but works) */
+  font-weight: 3000;                       
   letter-spacing: 0.5px;
 }
 
 .nav-links {
-  display: flex;                           /* Links in a row */
+  display: flex;                          
   align-items: center;
 }
 
@@ -76,7 +76,7 @@ header {
 .auth-links {
   display: flex;
   align-items: center;
-  border-left: 1px solid #ccc;             /* Divider line */
+  border-left: 1px solid #ccc;           
   padding-left: 20px;
   margin-left: 20px;
   height: 100%;
@@ -120,14 +120,14 @@ header {
    HERO BANNER
    ========================= */
 .hero-banner {
-  height: 60vh;                            /* Hero height */
-  min-height: 400px;                       /* Minimum height */
-  display: flex;                           /* Center content */
+  height: 60vh;                            
+  min-height: 400px;                      
+  display: flex;                          
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 60px;                       /* Space for fixed header */
-  position: relative;                      /* Needed for overlay */
+  padding-top: 60px;                       
+  position: relative;                      
   background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
@@ -138,7 +138,7 @@ header {
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  font-size: 0.2em;                        /* Smaller than main title */
+  font-size: 0.2em;                       
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--accent);
@@ -159,19 +159,19 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(242, 240, 235, 0.85);   /* Light wash over image */
+  background: rgba(242, 240, 235, 0.85);  
 }
 
 /* Hero text container above overlay */
 .hero-content {
   position: relative;
-  z-index: 1;                               /* Above the overlay */
+  z-index: 1;                              
   padding: 0 20px;
   color: var(--text-primary);
 }
 
 .hero-content h1 {
-  font-size: clamp(3.5rem, 6vw, 5.5rem);   /* Responsive size */
+  font-size: clamp(3.5rem, 6vw, 5.5rem);   
   letter-spacing: -2px;
   margin: 0;
   color: var(--text-primary);
@@ -181,13 +181,13 @@ header {
    SECTIONS & LAYOUT
    ========================= */
 section {
-  max-width: 1300px;                        /* Content width */
-  margin: 0 auto 80px auto;                 /* Center + bottom spacing */
+  max-width: 1300px;                       
+  margin: 0 auto 80px auto;                 
   padding: 0 30px;
 }
 
 #article {
-  margin-top: 80px;                         /* Space below fixed header */
+  margin-top: 80px;                         
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,7 +215,7 @@ section {
 }
 
 .content-block {
-  max-width: 700px;                         /* Limits text width */
+  max-width: 700px;                        
   margin: 0 auto;
 }
 
@@ -297,7 +297,6 @@ section {
   margin: 0 auto;
 }
 
-/* Button wrapper (note: "btn" is a tag selector; usually you'd use .btn) */
 btn {
   display: flex;
   justify-content: center;

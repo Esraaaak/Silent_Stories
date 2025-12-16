@@ -1,31 +1,31 @@
 /* =========================================================
    HOME PAGE ONLY STYLES
-   هذا الملف خاص بالصفحة الرئيسية فقط
-   يعتمد على المتغيرات والتنسيقات العامة في style.css
+   This file is specific to the home page only
+   Depends on the variables and global styles in style.css
    ========================================================= */
 
 
 /* =========================================================
    1. HERO SECTION
-   - القسم العلوي (الصورة الكبيرة)
-   - ممتد بعرض الشاشة كامل
+   - Top section (large image)
+   - Full-width section
    ========================================================= */
 
 .hero {
-    height: 70vh;              /* ارتفاع نسبي حسب الشاشة */
-    min-height: 400px;         /* أقل ارتفاع لضمان شكل جميل */
-    max-width: none;           /* إلغاء أي تقييد عرض من style.css */
+    height: 70vh;              /* Relative height based on screen */
+    min-height: 400px;         /* Minimum height for a good look */
+    max-width: none;           /* Remove any width limitation from style.css */
 
-    display: flex;             /* توسيط المحتوى */
+    display: flex;             /* Center content */
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    position: relative;        /* مرجع للـ ::before */
-    overflow: hidden;          /* منع أي تجاوز للخلفية */
+    position: relative;        /* Reference for ::before */
+    overflow: hidden;          /* Prevent background overflow */
 }
 
-/* الخلفية (الصورة) للـ hero */
+/* Hero background (image) */
 .hero::before {
     content: '';
     position: absolute;
@@ -36,13 +36,13 @@
     height: 100%;
 
     background-image: url('https://images.unsplash.com/photo-1577720580479-7d839d829c73?q=80&w=2000&auto=format&fit=crop');
-    background-size: cover;    /* تغطية كاملة بدون تشويه */
+    background-size: cover;    /* Full coverage without distortion */
     background-position: center;
 
-    opacity: 0.15;             /* شفافية  */
-    z-index: -1;               /* خلف المحتوى */
+    opacity: 0.15;             /* Transparency */
+    z-index: -1;               /* Behind content */
 
-    /* عشان تدمج الصورة مع الصفحة */
+    /* To blend the image with the page */
     mask-image: linear-gradient(
         to bottom,
         black 50%,
@@ -53,11 +53,11 @@
 
 /* =========================================================
    2. EXPLORE SECTION
-   - قسم عرض المحتوى / الكروت
+   - Content / cards display section
    ========================================================= */
 
 #explore {
-    background-color: var(--bg-body); /* نفس خلفية الموقع */
-    padding: 80px 20px;               /* فراغ من فوق وتحت  */
+    background-color: var(--bg-body); /* Same background as the website */
+    padding: 80px 20px;               /* Top and bottom spacing */
     text-align: center;
 }
