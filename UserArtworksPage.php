@@ -80,7 +80,7 @@ $result = $conn->query($sql);
 
 <body>
 
-<!-- ===== HEADER (نفس صفحاتك) ===== -->
+<!-- ===== HEADER  ===== -->
 <header>
     <div class="logo">Silent Stories</div>
     <nav class="nav-links">
@@ -129,7 +129,7 @@ $result = $conn->query($sql);
     </div>
 </main>
 
-<!-- ===== FOOTER (نفس صفحاتك) ===== -->
+<!-- ===== FOOTER  ===== -->
 <footer>
     <p>© 2025 Silent Stories. All rights reserved.</p>
     <p>
@@ -143,3 +143,4 @@ $result = $conn->query($sql);
 </html>
 
 <?php $conn->close(); ?>
+
